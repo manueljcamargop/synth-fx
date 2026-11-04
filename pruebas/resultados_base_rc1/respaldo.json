@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/AUDITORIA_Codex.txt",
+    "sha256": "271b474417efe12d92d79bf46d1d7c297dd120d8c0d9cd982e4185fc3b891831",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/Escena_Muda_Mision_01.mp4",
+    "sha256": "5392adde1560d757535bfb502b08b9ec31b31abcc3f4ee5a2b5054399bdf6240",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/Escena_Muda_Mision_02.mp4",
+    "sha256": "b8ee0cc305962d31f585a6eb8c4517e4be20ea6c8f39bed88cbf212b0bb7abdc",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/Escena_Muda_Mision_03.mp4",
+    "sha256": "77aca8d7276c1395ec2b22a43d17250010119765aea95bd7aa291c9cf339ec3c",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/Escena_Muda_Mision_04.mp4",
+    "sha256": "25143a7d5a1fd9b4e2f8663a08b70d01a5b24dc127f4c59e7f807b99d7b42ec0",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/LEEME.txt",
+    "sha256": "f781e1936dadb73296848e2f6ef079f25904ad0bf180a0ba275699bb1ef097a3",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/Mision_01_Disparo_Laser.html",
+    "sha256": "6c7dc20735eb11d5a86ee5b0027761a3a19d0aadd4d90f14ac166c7edb719143",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/Mision_02_Naves_Espaciales.html",
+    "sha256": "6ccf5440abb6ae011a56e361da9e6ba506ec8e660ba5dd0dbde160547f0da440",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/Mision_03_Espadas_de_Energia.html",
+    "sha256": "82229e857ad61326d74823043930f610c5a77abfa17e75d904983cec16f87339",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/Mision_04_Ambientes_Tecnologicos.html",
+    "sha256": "3562f1d65f47d6dc735fbc5aa7573719075b8309e0973b19135110d90405523e",
+    "backupMatch": true
+  },
+  {
+    "file": "SONOFX_LAB_Misiones_01_02_03_04_v0.4.0/index.html",
+    "sha256": "31caf30db1fc6ea8ea714adb639c4c0947c2ee02243a37f2666bcad9f28de937",
+    "backupMatch": true
+  }
+]

@@ -1,0 +1,654 @@
+{
+  "browser": "WebKit automatizado",
+  "controls": [
+    {
+      "mission": 1,
+      "step": 0,
+      "selector": "#playScene0",
+      "label": "▶ Ver escena sin sonido",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 0,
+      "selector": "#stopScene0",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "#listenA",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 0.44,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.25152158190075097,
+          "offlineEnergy": 1227.5573119646572,
+          "delay": 0.025000000000000022
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "#listenB",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 0.44,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.2527332364405157,
+          "offlineEnergy": 1239.4128191081404,
+          "delay": 0.025000000000000022
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "#listenAB",
+      "label": "⇄ Comparar A/B",
+      "signals": [
+        {
+          "duration": 0.44,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.25152158190075097,
+          "offlineEnergy": 1227.5573119646572,
+          "delay": 0.02966666666666673
+        },
+        {
+          "duration": 0.44,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.2527332364405157,
+          "offlineEnergy": 1239.4128191081404,
+          "delay": 0.7770000000000001
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "■ Detener audio",
+      "label": "■ Detener audio",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "[data-answer=\"a\"]",
+      "label": "Un sonido que conserva la misma frecuencia.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "[data-answer=\"b\"]",
+      "label": "Un sonido que empieza agudo y baja rápidamente.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "[data-answer=\"c\"]",
+      "label": "Un sonido que empieza grave y sube rápidamente.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "#hintPitch",
+      "label": "¿Necesitas una pista?",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-preset=\"classic\"]",
+      "label": "⚡ Láser breve",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-preset=\"heavy\"]",
+      "label": "◈ Láser pesado",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-preset=\"soft\"]",
+      "label": "⌁ Pulso suave",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"saw\"]",
+      "label": "Diente de sierra",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.21798333525657654,
+          "rms": 0.12191878914876872,
+          "offlineEnergy": 463.7627638020601,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"triangle\"]",
+      "label": "Triangular",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.12270965215168256,
+          "offlineEnergy": 469.7989524130323,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"sine\"]",
+      "label": "Senoidal",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.15028796636440192,
+          "offlineEnergy": 704.6979524191653,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"square\"]",
+      "label": "Cuadrada",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.21162892253373367,
+          "offlineEnergy": 1397.3481866070183,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "#playCustom",
+      "label": "▶ Probar mi disparo",
+      "signals": [
+        {
+          "duration": 0.36,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.28895699386783374,
+          "offlineEnergy": 1325.584786988328,
+          "delay": 0.02499999999999991
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "■ Detener",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "#downloadWav",
+      "label": "↓ Exportar efecto WAV",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 3,
+      "selector": "#playSynced",
+      "label": "▶ Reproducir escena + sonido",
+      "signals": [
+        {
+          "duration": 0.36,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.28895699386783374,
+          "offlineEnergy": 1325.584786988328,
+          "delay": 5.370000000000001
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 3,
+      "selector": "#stopScene3",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 3,
+      "selector": "#analyzeSync",
+      "label": "✓ Analizar sincronía",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 3,
+      "selector": "#alignSync",
+      "label": "◎ Ajustar al destello",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-opt=\"0\"]",
+      "label": "Mantener la frecuencia constante",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-opt=\"1\"]",
+      "label": "Hacer un barrido rápido de agudo a grave",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-opt=\"2\"]",
+      "label": "Subir el volumen sin cambiar la frecuencia",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-opt=\"0\"]",
+      "label": "El contenido de armónicos y, por tanto, el timbre",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-opt=\"1\"]",
+      "label": "La posición del clip en la escena",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-opt=\"2\"]",
+      "label": "La duración del video",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-opt=\"0\"]",
+      "label": "El brillo de la interfaz",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-opt=\"1\"]",
+      "label": "La duración y el tiempo de ataque, según el efecto",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-opt=\"2\"]",
+      "label": "La velocidad de reproducción del video",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-opt=\"0\"]",
+      "label": "En cualquier lugar si el efecto es bonito",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-opt=\"1\"]",
+      "label": "A los 6,20 s, y luego verificas escuchando",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-opt=\"2\"]",
+      "label": "Siempre al comenzar el video (0 s)",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "#downloadWav2",
+      "label": "↓ Descargar mi disparo WAV",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "#evaluateQuiz",
+      "label": "Revisar respuestas",
+      "signals": [],
+      "ok": true
+    }
+  ],
+  "missions": [
+    {
+      "mission": 1,
+      "parameters": [
+        {
+          "case": "square",
+          "energy": 1325.584786988328,
+          "duration": 0.36
+        },
+        {
+          "parameter": "bright",
+          "case": "square",
+          "difference": 0.0009062273670728953
+        },
+        {
+          "parameter": "start",
+          "case": "square",
+          "difference": 0.1667156880514233
+        },
+        {
+          "parameter": "end",
+          "case": "square",
+          "difference": 0.15999867299553172
+        },
+        {
+          "parameter": "dur",
+          "case": "square",
+          "difference": 0.2176474464921376
+        },
+        {
+          "parameter": "attack",
+          "case": "square",
+          "difference": 0.0003570972285160471
+        }
+      ],
+      "quizCorrect": 4,
+      "video": {
+        "duration": 12,
+        "width": 960,
+        "height": 540,
+        "advanced": 0.21759904166629607,
+        "seek": 8.7,
+        "error": null
+      },
+      "layouts": [
+        {
+          "step": 0,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 1,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 2,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 3,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 4,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 0,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 1,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 2,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 3,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 4,
+          "width": 390,
+          "content": 390
+        }
+      ],
+      "jsErrors": []
+    }
+  ],
+  "wav": [
+    {
+      "file": "SynthFX_Laser_Mision01.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 15876,
+      "duration": 0.36,
+      "peak": 0.739990234375,
+      "rms": 0.28894814767848637
+    }
+  ],
+  "failures": [],
+  "variants": [
+    {
+      "mission": 1,
+      "case": "default",
+      "button": "playCustom",
+      "signals": [
+        {
+          "duration": 0.36,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.28895699386783374,
+          "offlineEnergy": 1325.584786988328,
+          "delay": 0.025000000000000355
+        }
+      ]
+    }
+  ],
+  "sliders": [
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "bright",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "bright",
+      "bound": "max",
+      "value": "100",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "fStart",
+      "bound": "min",
+      "value": "250",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "fStart",
+      "bound": "max",
+      "value": "2200",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "fEnd",
+      "bound": "min",
+      "value": "80",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "fEnd",
+      "bound": "max",
+      "value": "1400",
+      "peak": 0.7399999499320984
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "dur",
+      "bound": "min",
+      "value": "0.12",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "dur",
+      "bound": "max",
+      "value": "1.2",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "attack",
+      "bound": "min",
+      "value": "0.001",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "attack",
+      "bound": "max",
+      "value": "0.12",
+      "peak": 0.7400000095367432
+    }
+  ],
+  "version": "26.4",
+  "localMode": "file:// sin emulación offline: WebKit rechaza file:// con set_offline(True)"
+}

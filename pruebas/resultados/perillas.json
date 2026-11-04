@@ -1,0 +1,250 @@
+[
+  {
+    "engine": "chrome",
+    "mission": 1,
+    "keyboardControls": [
+      "bright",
+      "fStart",
+      "fEnd",
+      "dur",
+      "attack",
+      "syncAt"
+    ],
+    "variants": [
+      "classic",
+      "heavy",
+      "soft"
+    ],
+    "mouseDrag": true,
+    "touchTap": true,
+    "touchDragEmulated": true,
+    "audio": [
+      {
+        "peak": 0.7400000095367432,
+        "duration": 0.36
+      }
+    ],
+    "jsErrors": []
+  },
+  {
+    "engine": "chrome",
+    "mission": 2,
+    "keyboardControls": [
+      "base",
+      "ramp",
+      "filter",
+      "noise",
+      "lfoRate",
+      "lfoDepth",
+      "attack",
+      "motion",
+      "release",
+      "at"
+    ],
+    "variants": [
+      "exploradora",
+      "carguero",
+      "interceptora"
+    ],
+    "mouseDrag": true,
+    "touchTap": true,
+    "touchDragEmulated": true,
+    "audio": [
+      {
+        "peak": 0.298568993806839,
+        "duration": 4.2
+      }
+    ],
+    "jsErrors": []
+  },
+  {
+    "engine": "chrome",
+    "mission": 3,
+    "keyboardControls": [
+      "ctl_base",
+      "ctl_noise",
+      "ctl_spark",
+      "ctl_sweep",
+      "ctl_lfo",
+      "ctl_depth",
+      "ctl_cutoff",
+      "ctl_duration",
+      "ctl_attack",
+      "time_encendido",
+      "time_zumbido",
+      "time_movimiento",
+      "time_choque",
+      "time_apagado"
+    ],
+    "variants": [
+      "encendido",
+      "zumbido",
+      "movimiento",
+      "choque",
+      "apagado"
+    ],
+    "mouseDrag": true,
+    "touchTap": true,
+    "touchDragEmulated": true,
+    "audio": [
+      {
+        "peak": 0.34478163719177246,
+        "duration": 0.92
+      }
+    ],
+    "jsErrors": []
+  },
+  {
+    "engine": "chrome",
+    "mission": 4,
+    "keyboardControls": [
+      "c_base",
+      "c_cutoff",
+      "c_lfo",
+      "c_mod",
+      "c_noise",
+      "c_level",
+      "syncInterface",
+      "syncAlarm"
+    ],
+    "variants": [
+      "amb",
+      "ui",
+      "alarm"
+    ],
+    "mouseDrag": true,
+    "touchTap": true,
+    "touchDragEmulated": true,
+    "audio": [
+      {
+        "peak": 0.220963716506958,
+        "duration": 3
+      }
+    ],
+    "jsErrors": []
+  },
+  {
+    "engine": "webkit",
+    "mission": 1,
+    "keyboardControls": [
+      "bright",
+      "fStart",
+      "fEnd",
+      "dur",
+      "attack",
+      "syncAt"
+    ],
+    "variants": [
+      "classic",
+      "heavy",
+      "soft"
+    ],
+    "mouseDrag": true,
+    "touchTap": true,
+    "touchDragEmulated": false,
+    "audio": [
+      {
+        "peak": 0.7400000095367432,
+        "duration": 0.36
+      }
+    ],
+    "jsErrors": []
+  },
+  {
+    "engine": "webkit",
+    "mission": 2,
+    "keyboardControls": [
+      "base",
+      "ramp",
+      "filter",
+      "noise",
+      "lfoRate",
+      "lfoDepth",
+      "attack",
+      "motion",
+      "release",
+      "at"
+    ],
+    "variants": [
+      "exploradora",
+      "carguero",
+      "interceptora"
+    ],
+    "mouseDrag": true,
+    "touchTap": true,
+    "touchDragEmulated": false,
+    "audio": [
+      {
+        "peak": 0.298568993806839,
+        "duration": 4.2
+      }
+    ],
+    "jsErrors": []
+  },
+  {
+    "engine": "webkit",
+    "mission": 3,
+    "keyboardControls": [
+      "ctl_base",
+      "ctl_noise",
+      "ctl_spark",
+      "ctl_sweep",
+      "ctl_lfo",
+      "ctl_depth",
+      "ctl_cutoff",
+      "ctl_duration",
+      "ctl_attack",
+      "time_encendido",
+      "time_zumbido",
+      "time_movimiento",
+      "time_choque",
+      "time_apagado"
+    ],
+    "variants": [
+      "encendido",
+      "zumbido",
+      "movimiento",
+      "choque",
+      "apagado"
+    ],
+    "mouseDrag": true,
+    "touchTap": true,
+    "touchDragEmulated": false,
+    "audio": [
+      {
+        "peak": 0.34478163719177246,
+        "duration": 0.92
+      }
+    ],
+    "jsErrors": []
+  },
+  {
+    "engine": "webkit",
+    "mission": 4,
+    "keyboardControls": [
+      "c_base",
+      "c_cutoff",
+      "c_lfo",
+      "c_mod",
+      "c_noise",
+      "c_level",
+      "syncInterface",
+      "syncAlarm"
+    ],
+    "variants": [
+      "amb",
+      "ui",
+      "alarm"
+    ],
+    "mouseDrag": true,
+    "touchTap": true,
+    "touchDragEmulated": false,
+    "audio": [
+      {
+        "peak": 0.220963716506958,
+        "duration": 3
+      }
+    ],
+    "jsErrors": []
+  }
+]

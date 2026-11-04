@@ -1,0 +1,44 @@
+Synth FX v0.5.0-rc2
+Laboratorio Interactivo de Diseño Sonoro
+
+Aplicación universitaria de Diseño Sonoro para estudiantes de Ingeniería Multimedia.
+Cuatro misiones originales: disparos láser, naves espaciales, espadas de energía y ambientes tecnológicos.
+
+INICIAR
+1. Extraer TODO el paquete en una carpeta.
+2. Abrir index.html y elegir una misión.
+3. Pulsar un botón de escucha para habilitar Web Audio. Utilizar volumen moderado.
+4. Observar, escuchar, experimentar, fabricar, sincronizar y reflexionar.
+5. Exportar WAV cuando el diseño esté listo. Se pueden importar después en un DAW.
+
+ARCHIVOS
+- index.html: navegación principal.
+- Mision_*.html: cuatro misiones, con sus actividades y sintetizadores originales revisados.
+- knobs.js: perillas giratorias para todos los parámetros y posiciones temporales.
+- synthfx.js / synthfx.css: utilidades locales de formas de onda, escucha y presentación.
+- Escena_Muda_Mision_*.mp4: referencias audiovisuales, disponibles también dentro de las misiones.
+- AUDITORIA_SYNTH_FX.md: cambios, resultados medidos, controles y limitaciones.
+- PUBLICACION_GITHUB_PAGES.md: instrucciones para una publicación posterior autorizada.
+- pruebas/: scripts de verificación y evidencia. NO es necesario instalar nada para usar la aplicación.
+
+USO LOCAL
+Mantener todos los HTML, JS, CSS y MP4 juntos. No se requieren internet ni dependencias externas.
+Los HTML comparten synthfx.js, knobs.js y synthfx.css: no distribuir una misión sin estos archivos.
+Los controles de sincronización trabajan con el Canvas original; el MP4 es la referencia muda separada.
+Los sonidos son diseños sintéticos de ciencia ficción, no reproducciones físicas exactas.
+
+EXPORTACIÓN
+M01: WAV mono 44,1 kHz, duración elegida.
+M02: WAV estéreo 32 kHz, 4,2 s.
+M03: WAV mono 44,1 kHz, evento elegido o banda de efectos de 15 s.
+M04: WAV mono 44,1 kHz por capa, o mezcla estéreo de 14 s.
+Todos son PCM de 16 bits. Guardar o compartir desde Descargas según el navegador.
+
+ESTADO
+Candidata a publicación: consultar el informe para distinguir las pruebas ejecutadas de las pendientes.
+No se ha publicado en GitHub. La carpeta original v0.4.0 se conserva sin modificar como respaldo.
+
+PERILLAS
+Arrastrar hacia arriba/derecha aumenta; abajo/izquierda disminuye.
+Tocar el aro elige una posición. Mayús + arrastre permite ajuste fino.
+Con teclado: flechas, Inicio/Fin y RePág/AvPág. Los valores y unidades siguen visibles.

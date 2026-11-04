@@ -1,0 +1,5202 @@
+{
+  "browser": "Google Chrome headless en macOS",
+  "controls": [
+    {
+      "mission": 1,
+      "step": 0,
+      "selector": "#playScene0",
+      "label": "▶ Ver escena sin sonido",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 0,
+      "selector": "#stopScene0",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "#listenA",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 0.44,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.25152158190075097,
+          "offlineEnergy": 1227.5573119646572,
+          "delay": 0.025000000000000022
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "#listenB",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 0.44,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.2527332364405157,
+          "offlineEnergy": 1239.4128191081404,
+          "delay": 0.025000000000000022
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "#listenAB",
+      "label": "⇄ Comparar A/B",
+      "signals": [
+        {
+          "duration": 0.44,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.25152158190075097,
+          "offlineEnergy": 1227.5573119646572,
+          "delay": 0.02966666666666673
+        },
+        {
+          "duration": 0.44,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.2527332364405157,
+          "offlineEnergy": 1239.4128191081404,
+          "delay": 0.7690000000000001
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "■ Detener audio",
+      "label": "■ Detener audio",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "[data-answer=\"a\"]",
+      "label": "Un sonido que conserva la misma frecuencia.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "[data-answer=\"b\"]",
+      "label": "Un sonido que empieza agudo y baja rápidamente.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "[data-answer=\"c\"]",
+      "label": "Un sonido que empieza grave y sube rápidamente.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 1,
+      "selector": "#hintPitch",
+      "label": "¿Necesitas una pista?",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-preset=\"classic\"]",
+      "label": "⚡ Láser breve",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-preset=\"heavy\"]",
+      "label": "◈ Láser pesado",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-preset=\"soft\"]",
+      "label": "⌁ Pulso suave",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"saw\"]",
+      "label": "Diente de sierra",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.21798333525657654,
+          "rms": 0.12191878914876872,
+          "offlineEnergy": 463.7627638020601,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"triangle\"]",
+      "label": "Triangular",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.12270965215168256,
+          "offlineEnergy": 469.7989524130323,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"sine\"]",
+      "label": "Senoidal",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.15028796636440192,
+          "offlineEnergy": 704.6979524191653,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"square\"]",
+      "label": "Cuadrada",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.21162892253373367,
+          "offlineEnergy": 1397.3481866070183,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "#playCustom",
+      "label": "▶ Probar mi disparo",
+      "signals": [
+        {
+          "duration": 0.36,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.28895699386783374,
+          "offlineEnergy": 1325.584786988328,
+          "delay": 0.02499999999999991
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "■ Detener",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 2,
+      "selector": "#downloadWav",
+      "label": "↓ Exportar efecto WAV",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 3,
+      "selector": "#playSynced",
+      "label": "▶ Reproducir escena + sonido",
+      "signals": [
+        {
+          "duration": 0.36,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.28895699386783374,
+          "offlineEnergy": 1325.584786988328,
+          "delay": 5.369999999999999
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 3,
+      "selector": "#stopScene3",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 3,
+      "selector": "#analyzeSync",
+      "label": "✓ Analizar sincronía",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 3,
+      "selector": "#alignSync",
+      "label": "◎ Ajustar al destello",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-opt=\"0\"]",
+      "label": "Mantener la frecuencia constante",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-opt=\"1\"]",
+      "label": "Hacer un barrido rápido de agudo a grave",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-opt=\"2\"]",
+      "label": "Subir el volumen sin cambiar la frecuencia",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-opt=\"0\"]",
+      "label": "El contenido de armónicos y, por tanto, el timbre",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-opt=\"1\"]",
+      "label": "La posición del clip en la escena",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-opt=\"2\"]",
+      "label": "La duración del video",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-opt=\"0\"]",
+      "label": "El brillo de la interfaz",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-opt=\"1\"]",
+      "label": "La duración y el tiempo de ataque, según el efecto",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-opt=\"2\"]",
+      "label": "La velocidad de reproducción del video",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-opt=\"0\"]",
+      "label": "En cualquier lugar si el efecto es bonito",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-opt=\"1\"]",
+      "label": "A los 6,20 s, y luego verificas escuchando",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-opt=\"2\"]",
+      "label": "Siempre al comenzar el video (0 s)",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "#downloadWav2",
+      "label": "↓ Descargar mi disparo WAV",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 1,
+      "step": 4,
+      "selector": "#evaluateQuiz",
+      "label": "Revisar respuestas",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 0,
+      "selector": "#play0",
+      "label": "▶ Ver escena muda",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 0,
+      "selector": "#stop0",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-hear=\"0\"][data-ab=\"A\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.24895766377449036,
+          "rms": 0.11461311300130012,
+          "offlineEnergy": 1765.500666296452,
+          "delay": 0
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-hear=\"0\"][data-ab=\"B\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.3460330069065094,
+          "rms": 0.14178861982046523,
+          "offlineEnergy": 2701.9793083034856,
+          "delay": 0
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"0\"][data-choice=\"0\"]",
+      "label": "A aumenta claramente la altura",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"0\"][data-choice=\"1\"]",
+      "label": "B aumenta claramente la altura",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"0\"][data-choice=\"2\"]",
+      "label": "Ambos tienen idéntica altura",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-hear=\"1\"][data-ab=\"A\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.2603728771209717,
+          "rms": 0.11703309269726052,
+          "offlineEnergy": 1840.84249927675,
+          "delay": 0
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-hear=\"1\"][data-ab=\"B\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.2215835005044937,
+          "rms": 0.10153594461261223,
+          "offlineEnergy": 1385.603257701586,
+          "delay": 0
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"1\"][data-choice=\"0\"]",
+      "label": "A conserva más componentes agudos",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"1\"][data-choice=\"1\"]",
+      "label": "B conserva más componentes agudos",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"1\"][data-choice=\"2\"]",
+      "label": "El filtro cambia la duración del video",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-hear=\"2\"][data-ab=\"A\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.24511778354644775,
+          "rms": 0.114641293496494,
+          "offlineEnergy": 1766.368957859385,
+          "delay": 0
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-hear=\"2\"][data-ab=\"B\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.24449118971824646,
+          "rms": 0.11461141263834894,
+          "offlineEnergy": 1765.4482818951199,
+          "delay": 0
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"2\"][data-choice=\"0\"]",
+      "label": "A tiene vibrato más pronunciado",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"2\"][data-choice=\"1\"]",
+      "label": "B tiene vibrato más pronunciado",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "[data-answer=\"2\"][data-choice=\"2\"]",
+      "label": "El LFO solo sirve para crear melodías",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 1,
+      "selector": "#stopAB",
+      "label": "■ Detener audio",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "[data-preset=\"exploradora\"]",
+      "label": "✦ Nave exploradora",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "[data-preset=\"carguero\"]",
+      "label": "▣ Carguero pesado",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "[data-preset=\"interceptora\"]",
+      "label": "⚡ Interceptora",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"saw\"]",
+      "label": "Diente de sierra",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.21798333525657654,
+          "rms": 0.12191878914876872,
+          "offlineEnergy": 463.7627638020601,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"square\"]",
+      "label": "Cuadrada",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.21162892253373367,
+          "offlineEnergy": 1397.3481866070183,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"tri\"]",
+      "label": "Triangular",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.12270965215168256,
+          "offlineEnergy": 469.7989524130323,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "[data-sfx-wave=\"sine\"]",
+      "label": "Senoidal",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "▶ Escuchar",
+      "label": "▶ Escuchar",
+      "signals": [
+        {
+          "duration": 0.65,
+          "rate": 48000,
+          "channels": 1,
+          "peak": 0.2199999988079071,
+          "rms": 0.15028796636440192,
+          "offlineEnergy": 704.6979524191653,
+          "delay": NaN
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "#hearEngine",
+      "label": "▶ Escuchar mi motor",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.49652838706970215,
+          "rms": 0.15497894728340103,
+          "offlineEnergy": 2753.9997281801425,
+          "delay": 0
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "#stopEngine",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 2,
+      "selector": "#exportEngine",
+      "label": "↓ Descargar WAV",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 3,
+      "selector": "#play3",
+      "label": "▶ Escuchar con imagen",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.49652838706970215,
+          "rms": 0.15497894728340103,
+          "offlineEnergy": 2753.9997281801425,
+          "delay": 1.5
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 3,
+      "selector": "#stop3",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 3,
+      "selector": "#checkSync",
+      "label": "Comprobar sincronía",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 3,
+      "selector": "#syncHelp",
+      "label": "Pista: alinear con el destello",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"0\"][data-c=\"0\"]",
+      "label": "Aumentar el corte del filtro pasa-bajos",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"0\"][data-c=\"1\"]",
+      "label": "Mover el clip en la línea de tiempo",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"0\"][data-c=\"2\"]",
+      "label": "Cambiar la duración del video",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"1\"][data-c=\"0\"]",
+      "label": "Incrementar el barrido de pitch",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"1\"][data-c=\"1\"]",
+      "label": "Bajar el brillo de la pantalla",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"1\"][data-c=\"2\"]",
+      "label": "Aumentar el volumen solamente",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"2\"][data-c=\"0\"]",
+      "label": "Vibración periódica de la altura",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"2\"][data-c=\"1\"]",
+      "label": "Cambia automáticamente la resolución del video",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"2\"][data-c=\"2\"]",
+      "label": "Convierte el ruido en una melodía",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"3\"][data-c=\"0\"]",
+      "label": "Su espectro armónico",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"3\"][data-c=\"1\"]",
+      "label": "Su posición temporal respecto a la imagen",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"3\"][data-c=\"2\"]",
+      "label": "La forma de onda del sintetizador",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"4\"][data-c=\"0\"]",
+      "label": "El sonido viaja libremente por el vacío",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"4\"][data-c=\"1\"]",
+      "label": "El sonido que diseñamos es una convención de ficción audiovisual",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "[data-q=\"4\"][data-c=\"2\"]",
+      "label": "Todas las naves reales tienen motor de diente de sierra",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "#grade",
+      "label": "Evaluar mis respuestas",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "#exportFinal",
+      "label": "↓ Exportar mi motor WAV",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 2,
+      "step": 4,
+      "selector": "#exportSettings",
+      "label": "↓ Guardar ficha técnica TXT",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"0\"][data-side=\"a\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 1.5,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.39221036434173584,
+          "rms": 0.20637342236130632,
+          "offlineEnergy": 2817.3278025883637,
+          "delay": 0.020000000000000004
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"0\"][data-side=\"b\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 1.5,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.4673476219177246,
+          "rms": 0.20818601756840185,
+          "offlineEnergy": 2867.0347948120493,
+          "delay": 0.020000000000000004
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"0\"][data-side=\"ab\"]",
+      "label": "▶ Comparar A / B",
+      "signals": [
+        {
+          "duration": 1.5,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.39221036434173584,
+          "rms": 0.20637342236130632,
+          "offlineEnergy": 2817.3278025883637,
+          "delay": 0.01999999999999999
+        },
+        {
+          "duration": 1.5,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.4673476219177246,
+          "rms": 0.20818601756840185,
+          "offlineEnergy": 2867.0347948120493,
+          "delay": 1.92
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"0\"][data-side=\"stop\"]",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-answer=\"0\"][data-option=\"0\"]",
+      "label": "A: zumbido estable",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-answer=\"0\"][data-option=\"1\"]",
+      "label": "B: zumbido oscilante",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"1\"][data-side=\"a\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 0.75,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.5072575211524963,
+          "rms": 0.1301979154839997,
+          "offlineEnergy": 560.6707697702263,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"1\"][data-side=\"b\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 0.75,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.38684481382369995,
+          "rms": 0.12407943056310176,
+          "offlineEnergy": 509.2129458141633,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"1\"][data-side=\"ab\"]",
+      "label": "▶ Comparar A / B",
+      "signals": [
+        {
+          "duration": 0.75,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.5072575211524963,
+          "rms": 0.1301979154839997,
+          "offlineEnergy": 560.6707697702263,
+          "delay": 0.020000000000000018
+        },
+        {
+          "duration": 0.75,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.38684481382369995,
+          "rms": 0.12407943056310176,
+          "offlineEnergy": 509.2129458141633,
+          "delay": 1.17
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"1\"][data-side=\"stop\"]",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-answer=\"1\"][data-option=\"0\"]",
+      "label": "A: barrido con más ruido",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-answer=\"1\"][data-option=\"1\"]",
+      "label": "B: barrido casi tonal",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"2\"][data-side=\"a\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 1.1000226757369616,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.8272297382354736,
+          "rms": 0.16478913096511386,
+          "offlineEnergy": 1317.3384077200426,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"2\"][data-side=\"b\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 1.1000226757369616,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.49336114525794983,
+          "rms": 0.16068552671176617,
+          "offlineEnergy": 1252.5461852133703,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"2\"][data-side=\"ab\"]",
+      "label": "▶ Comparar A / B",
+      "signals": [
+        {
+          "duration": 1.1000226757369616,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.8272297382354736,
+          "rms": 0.16478913096511386,
+          "offlineEnergy": 1317.3384077200426,
+          "delay": 0.020000000000000018
+        },
+        {
+          "duration": 1.1000226757369616,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.49336114525794983,
+          "rms": 0.16068552671176617,
+          "offlineEnergy": 1252.5461852133703,
+          "delay": 1.5199999999999998
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-listen=\"2\"][data-side=\"stop\"]",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-answer=\"2\"][data-option=\"0\"]",
+      "label": "A: choque más brillante al inicio",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 1,
+      "selector": "[data-answer=\"2\"][data-option=\"1\"]",
+      "label": "B: choque menos brillante al inicio",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#restore",
+      "label": "Restablecer este evento",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-cue=\"encendido\"]",
+      "label": "Encendido",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-cue=\"zumbido\"]",
+      "label": "Zumbido",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-cue=\"movimiento\"]",
+      "label": "Movimiento",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-cue=\"choque\"]",
+      "label": "Choque",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-cue=\"apagado\"]",
+      "label": "Apagado",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-wave=\"sine\"]",
+      "label": "Senoidal",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-wave=\"triangle\"]",
+      "label": "Triangular",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-wave=\"square\"]",
+      "label": "Cuadrada",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "[data-wave=\"saw\"]",
+      "label": "Diente de sierra",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#waveListen",
+      "label": "▶ Escuchar solo la onda",
+      "signals": [
+        {
+          "duration": 0.45,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.3901377022266388,
+          "rms": 0.2093149242850581,
+          "offlineEnergy": 869.4637762522809,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#playTone",
+      "label": "▶ Núcleo",
+      "signals": [
+        {
+          "duration": 0.92,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.33332300186157227,
+          "rms": 0.10139006632147862,
+          "offlineEnergy": 417.0779508007947,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#playNoise",
+      "label": "▶ Textura",
+      "signals": [
+        {
+          "duration": 0.92,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.023480482399463654,
+          "rms": 0.004131253520628606,
+          "offlineEnergy": 0.692452696301026,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#playSpark",
+      "label": "▶ Chispa",
+      "signals": [
+        {
+          "duration": 0.92,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.007017381954938173,
+          "rms": 0.0009302651810603412,
+          "offlineEnergy": 0.0351107372553865,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#playFull",
+      "label": "▶ Mezcla completa",
+      "signals": [
+        {
+          "duration": 0.92,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.34478163719177246,
+          "rms": 0.10133569684494971,
+          "offlineEnergy": 416.63076241835154,
+          "delay": 0.020000000000000018
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#stopSound",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#playAll",
+      "label": "▶ Escuchar diseño completo",
+      "signals": [
+        {
+          "duration": 15,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.9100000262260437,
+          "rms": 0.16250437746809845,
+          "offlineEnergy": 17468.675488598627,
+          "delay": 0.08000000000000007
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#exportPack",
+      "label": "↓ Descargar WAV del evento elegido",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 2,
+      "selector": "#hintLab",
+      "label": "Necesito una pista",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 3,
+      "selector": "#scenePlay",
+      "label": "▶ Reproducir con sonido",
+      "signals": [
+        {
+          "duration": 15,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.9100000262260437,
+          "rms": 0.16615491053102696,
+          "offlineEnergy": 18262.331015198917,
+          "delay": 0.05500000000000016
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 3,
+      "selector": "#sceneMute",
+      "label": "▶ Ver sin sonido",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 3,
+      "selector": "#sceneStop",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 3,
+      "selector": "#checkSync",
+      "label": "Comprobar sincronía",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 3,
+      "selector": "#resetTiming",
+      "label": "Reiniciar posiciones",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 3,
+      "selector": "#showGuide",
+      "label": "Ver puntos de referencia",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 3,
+      "selector": "#exportScene",
+      "label": "↓ Descargar banda de efectos WAV (15 s)",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-choice=\"0\"]",
+      "label": "Un impulso de pocos milisegundos",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-choice=\"1\"]",
+      "label": "Una señal sostenida con envolvente y modulación controladas",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"0\"][data-choice=\"2\"]",
+      "label": "Un silencio entre cada fotograma",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-choice=\"0\"]",
+      "label": "Aumentar la chispa transitoria inicial",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-choice=\"1\"]",
+      "label": "Eliminar la envolvente de amplitud",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"1\"][data-choice=\"2\"]",
+      "label": "Bajar el volumen de toda la escena a cero",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-choice=\"0\"]",
+      "label": "Una altura musical exacta",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-choice=\"1\"]",
+      "label": "Una textura aperiódica de aire o fricción",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"2\"][data-choice=\"2\"]",
+      "label": "Una progresión armónica",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-choice=\"0\"]",
+      "label": "La forma de onda triangular",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-choice=\"1\"]",
+      "label": "La sincronización temporal",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"3\"][data-choice=\"2\"]",
+      "label": "La ausencia de una melodía",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"4\"][data-choice=\"0\"]",
+      "label": "Mayor riqueza armónica",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"4\"][data-choice=\"1\"]",
+      "label": "Que se eliminen todos los armónicos",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "[data-quiz=\"4\"][data-choice=\"2\"]",
+      "label": "Que el sonido se convierta en una grabación real",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "#grade",
+      "label": "Evaluar comprensión",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 3,
+      "step": 4,
+      "selector": "#retry",
+      "label": "Borrar respuestas",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 0,
+      "selector": "#playVisualIntro",
+      "label": "▶ Ver escena muda",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 0,
+      "selector": "#stopVisualIntro",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"0\"][data-side=\"a\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 2.1,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.09639833867549896,
+          "rms": 0.048536320115574356,
+          "offlineEnergy": 218.16826443916668,
+          "delay": 0.03
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"0\"][data-side=\"b\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 2.1,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.12305031716823578,
+          "rms": 0.049609783842346065,
+          "offlineEnergy": 227.92530976360223,
+          "delay": 0.029999999999999985
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"0\"][data-side=\"ab\"]",
+      "label": "▶ Comparar A/B",
+      "signals": [
+        {
+          "duration": 4.6000226757369616,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.12305031716823578,
+          "rms": 0.046893613833824864,
+          "offlineEnergy": 446.0935742027934,
+          "delay": 0.03
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"0\"][data-side=\"stop\"]",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-exanswer=\"0\"][data-val=\"a\"]",
+      "label": "El sonido A",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-exanswer=\"0\"][data-val=\"b\"]",
+      "label": "El sonido B",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"1\"][data-side=\"a\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 0.42,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.11904250085353851,
+          "rms": 0.03067107140102271,
+          "offlineEnergy": 17.42391620806227,
+          "delay": 0.030000000000000027
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"1\"][data-side=\"b\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 0.42,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.05487293004989624,
+          "rms": 0.011447287010825143,
+          "offlineEnergy": 2.4271299166597715,
+          "delay": 0.030000000000000027
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"1\"][data-side=\"ab\"]",
+      "label": "▶ Comparar A/B",
+      "signals": [
+        {
+          "duration": 1.24,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.11904250085353851,
+          "rms": 0.019052920788997306,
+          "offlineEnergy": 19.851046124722046,
+          "delay": 0.030000000000000027
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"1\"][data-side=\"stop\"]",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-exanswer=\"1\"][data-val=\"a\"]",
+      "label": "El sonido A",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-exanswer=\"1\"][data-val=\"b\"]",
+      "label": "El sonido B",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"2\"][data-side=\"a\"]",
+      "label": "▶ Escuchar A",
+      "signals": [
+        {
+          "duration": 2.6,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.15683802962303162,
+          "rms": 0.09675713713583817,
+          "offlineEnergy": 1073.4404516536622,
+          "delay": 0.030000000000000027
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"2\"][data-side=\"b\"]",
+      "label": "▶ Escuchar B",
+      "signals": [
+        {
+          "duration": 2.6,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.15614864230155945,
+          "rms": 0.09641530808463836,
+          "offlineEnergy": 1065.8692278461247,
+          "delay": 0.030000000000000027
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"2\"][data-side=\"ab\"]",
+      "label": "▶ Comparar A/B",
+      "signals": [
+        {
+          "duration": 5.6000226757369616,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.15683802962303162,
+          "rms": 0.09307277024490046,
+          "offlineEnergy": 2139.309679499881,
+          "delay": 0.030000000000000027
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-ex=\"2\"][data-side=\"stop\"]",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-exanswer=\"2\"][data-val=\"a\"]",
+      "label": "El sonido A",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 1,
+      "selector": "[data-exanswer=\"2\"][data-val=\"b\"]",
+      "label": "El sonido B",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "[data-layer=\"amb\"]",
+      "label": "Atmósfera de maquinaria",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "[data-layer=\"ui\"]",
+      "label": "Confirmaciones de la interfaz",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "[data-layer=\"alarm\"]",
+      "label": "Alarma tecnológica",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "[data-wave=\"sine\"]",
+      "label": "Senoidal",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "[data-wave=\"triangle\"]",
+      "label": "Triangular",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "[data-wave=\"square\"]",
+      "label": "Cuadrada",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "[data-wave=\"saw\"]",
+      "label": "Diente de sierra",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "#hearWave",
+      "label": "▶ Oír solo esta forma de onda",
+      "signals": [
+        {
+          "duration": 0.6,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.12554603815078735,
+          "rms": 0.03259349118183241,
+          "offlineEnergy": 28.109401759938308,
+          "delay": 0.029999999999999805
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "#playLayer",
+      "label": "▶ Escuchar capa",
+      "signals": [
+        {
+          "duration": 3,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.2042805254459381,
+          "rms": 0.07801925061967183,
+          "offlineEnergy": 805.3105587178392,
+          "delay": 0.029999999999999805
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "#playAll",
+      "label": "▶ Escuchar combinación",
+      "signals": [
+        {
+          "duration": 4.5,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.2592623233795166,
+          "rms": 0.06367629758816334,
+          "offlineEnergy": 723.1770346921777,
+          "delay": 0.029999999999999805
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "#stopAudio",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "#exportLayer",
+      "label": "↓ Exportar esta capa WAV",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 2,
+      "selector": "#restoreLayer",
+      "label": "Restablecer capa",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 3,
+      "selector": "#playScene",
+      "label": "▶ Reproducir con sonido",
+      "signals": [
+        {
+          "duration": 14,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.3792416751384735,
+          "rms": 0.08465299577808615,
+          "offlineEnergy": 4424.302968950931,
+          "delay": 0.029999999999999805
+        }
+      ],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 3,
+      "selector": "#playSceneMute",
+      "label": "▶ Solo imagen",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 3,
+      "selector": "#stopScene",
+      "label": "■ Detener",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 3,
+      "selector": "#autoSync",
+      "label": "Alinear con la escena",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 3,
+      "selector": "#exportMix",
+      "label": "↓ Exportar mezcla WAV",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"0\"][data-a=\"0\"]",
+      "label": "Establece una sensación de espacio y continuidad.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"0\"][data-a=\"1\"]",
+      "label": "Sustituye siempre todos los efectos puntuales.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"0\"][data-a=\"2\"]",
+      "label": "Produce automáticamente un diálogo.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"1\"][data-a=\"0\"]",
+      "label": "aumentan los agudos.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"1\"][data-a=\"1\"]",
+      "label": "se atenúan progresivamente componentes altas.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"1\"][data-a=\"2\"]",
+      "label": "se acelera la escena de video.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"2\"][data-a=\"0\"]",
+      "label": "La tasa de pulsos.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"2\"][data-a=\"1\"]",
+      "label": "El nombre del archivo WAV.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"2\"][data-a=\"2\"]",
+      "label": "La frecuencia de muestreo del proyecto.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"3\"][data-a=\"0\"]",
+      "label": "Colocarla al azar y subir volumen.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"3\"][data-a=\"1\"]",
+      "label": "Ajustar su inicio según el acontecimiento visual y la intención narrativa.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "[data-q=\"3\"][data-a=\"2\"]",
+      "label": "Convertirla en una melodía obligatoriamente.",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "#resetQuiz",
+      "label": "Repetir evaluación",
+      "signals": [],
+      "ok": true
+    },
+    {
+      "mission": 4,
+      "step": 4,
+      "selector": "#downloadSummary",
+      "label": "↓ Descargar ficha de práctica (TXT)",
+      "signals": [],
+      "ok": true
+    }
+  ],
+  "missions": [
+    {
+      "mission": 1,
+      "parameters": [
+        {
+          "case": "square",
+          "energy": 1325.584786988328,
+          "duration": 0.36
+        },
+        {
+          "parameter": "bright",
+          "case": "square",
+          "difference": 0.0009062273670728953
+        },
+        {
+          "parameter": "start",
+          "case": "square",
+          "difference": 0.1667156880514233
+        },
+        {
+          "parameter": "end",
+          "case": "square",
+          "difference": 0.15999867299553172
+        },
+        {
+          "parameter": "dur",
+          "case": "square",
+          "difference": 0.2176474464921376
+        },
+        {
+          "parameter": "attack",
+          "case": "square",
+          "difference": 0.0003570972285160471
+        }
+      ],
+      "quizCorrect": 4,
+      "video": {
+        "duration": 12,
+        "width": 960,
+        "height": 540,
+        "advanced": 0.2242,
+        "seek": 0,
+        "error": null
+      },
+      "layouts": [
+        {
+          "step": 0,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 1,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 2,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 3,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 4,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 0,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 1,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 2,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 3,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 4,
+          "width": 390,
+          "content": 390
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "mission": 2,
+      "parameters": [
+        {
+          "case": "saw",
+          "energy": 1985.0900461032559,
+          "duration": 4.2
+        },
+        {
+          "parameter": "base",
+          "case": "saw",
+          "difference": 0.02979920785838715
+        },
+        {
+          "parameter": "ramp",
+          "case": "saw",
+          "difference": 0.026203987185976548
+        },
+        {
+          "parameter": "filter",
+          "case": "saw",
+          "difference": 0.00022769537720683747
+        },
+        {
+          "parameter": "noise",
+          "case": "saw",
+          "difference": 6.659465472299189e-05
+        },
+        {
+          "parameter": "lfoRate",
+          "case": "saw",
+          "difference": 0.013189809953574107
+        },
+        {
+          "parameter": "lfoDepth",
+          "case": "saw",
+          "difference": 0.0035642772630801903
+        },
+        {
+          "parameter": "attack",
+          "case": "saw",
+          "difference": 3.600592228153113e-05
+        },
+        {
+          "parameter": "motion",
+          "case": "saw",
+          "difference": 9.740108063670432e-05
+        },
+        {
+          "parameter": "release",
+          "case": "saw",
+          "difference": 8.101850267569613e-05
+        },
+        {
+          "case": "tri",
+          "energy": 1310.9012187096598,
+          "duration": 4.2
+        },
+        {
+          "parameter": "base",
+          "case": "tri",
+          "difference": 0.019408478156681078
+        },
+        {
+          "parameter": "ramp",
+          "case": "tri",
+          "difference": 0.016893211534553663
+        },
+        {
+          "parameter": "filter",
+          "case": "tri",
+          "difference": 7.767164992712898e-05
+        },
+        {
+          "parameter": "noise",
+          "case": "tri",
+          "difference": 0.00020926537798056155
+        },
+        {
+          "parameter": "lfoRate",
+          "case": "tri",
+          "difference": 0.016708036477344052
+        },
+        {
+          "parameter": "lfoDepth",
+          "case": "tri",
+          "difference": 0.002671028279502491
+        },
+        {
+          "parameter": "attack",
+          "case": "tri",
+          "difference": 7.426324885806334e-05
+        },
+        {
+          "parameter": "motion",
+          "case": "tri",
+          "difference": 4.387196364548742e-06
+        },
+        {
+          "parameter": "release",
+          "case": "tri",
+          "difference": 0.00019090521814890064
+        },
+        {
+          "case": "saw",
+          "energy": 1744.322050905277,
+          "duration": 4.2
+        },
+        {
+          "parameter": "base",
+          "case": "saw",
+          "difference": 0.025081789637711998
+        },
+        {
+          "parameter": "ramp",
+          "case": "saw",
+          "difference": 0.022352993178961913
+        },
+        {
+          "parameter": "filter",
+          "case": "saw",
+          "difference": 0.0002588363292050704
+        },
+        {
+          "parameter": "noise",
+          "case": "saw",
+          "difference": 0.00048233218594299064
+        },
+        {
+          "parameter": "lfoRate",
+          "case": "saw",
+          "difference": 0.024273639832374537
+        },
+        {
+          "parameter": "lfoDepth",
+          "case": "saw",
+          "difference": 0.009649000115012412
+        },
+        {
+          "parameter": "attack",
+          "case": "saw",
+          "difference": 1.5192066630983786e-05
+        },
+        {
+          "parameter": "motion",
+          "case": "saw",
+          "difference": 0.00040243120901465543
+        },
+        {
+          "parameter": "release",
+          "case": "saw",
+          "difference": 1.270935840570229e-05
+        }
+      ],
+      "quizCorrect": 5,
+      "video": {
+        "duration": 12,
+        "width": 960,
+        "height": 540,
+        "advanced": 0.2104,
+        "seek": 0,
+        "error": null
+      },
+      "layouts": [
+        {
+          "step": 0,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 1,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 2,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 3,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 4,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 0,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 1,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 2,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 3,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 4,
+          "width": 390,
+          "content": 390
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "mission": 3,
+      "parameters": [
+        {
+          "case": "encendido",
+          "energy": 1188.2647960653055,
+          "duration": 1.05
+        },
+        {
+          "parameter": "base",
+          "case": "encendido",
+          "difference": 0.051409315957830486
+        },
+        {
+          "parameter": "noise",
+          "case": "encendido",
+          "difference": 1.834652990566561e-05
+        },
+        {
+          "parameter": "spark",
+          "case": "encendido",
+          "difference": 2.60834409856316e-06
+        },
+        {
+          "parameter": "lfo",
+          "case": "encendido",
+          "difference": 0.04389628200594472
+        },
+        {
+          "parameter": "depth",
+          "case": "encendido",
+          "difference": 0.04277301391108551
+        },
+        {
+          "parameter": "sweep",
+          "case": "encendido",
+          "difference": 0.05287125941738578
+        },
+        {
+          "parameter": "cutoff",
+          "case": "encendido",
+          "difference": 0.0008596251456156907
+        },
+        {
+          "parameter": "attack",
+          "case": "encendido",
+          "difference": 0.00013860291420559137
+        },
+        {
+          "case": "zumbido",
+          "energy": 5322.319592966087,
+          "duration": 2.6
+        },
+        {
+          "parameter": "base",
+          "case": "zumbido",
+          "difference": 0.09297330983792956
+        },
+        {
+          "parameter": "noise",
+          "case": "zumbido",
+          "difference": 4.821203546828389e-06
+        },
+        {
+          "parameter": "spark",
+          "case": "zumbido",
+          "difference": 1.0417017635091968e-07
+        },
+        {
+          "parameter": "lfo",
+          "case": "zumbido",
+          "difference": 0.03353155980526173
+        },
+        {
+          "parameter": "depth",
+          "case": "zumbido",
+          "difference": 0.004481910747342009
+        },
+        {
+          "parameter": "sweep",
+          "case": "zumbido",
+          "difference": 0.019426141665705787
+        },
+        {
+          "parameter": "cutoff",
+          "case": "zumbido",
+          "difference": 0.00022718082954657464
+        },
+        {
+          "parameter": "attack",
+          "case": "zumbido",
+          "difference": 0.00024822548148752414
+        },
+        {
+          "case": "movimiento",
+          "energy": 485.6103696988535,
+          "duration": 0.75
+        },
+        {
+          "parameter": "base",
+          "case": "movimiento",
+          "difference": 0.029634832679017484
+        },
+        {
+          "parameter": "noise",
+          "case": "movimiento",
+          "difference": 7.169969006043167e-05
+        },
+        {
+          "parameter": "spark",
+          "case": "movimiento",
+          "difference": 4.854639833701868e-07
+        },
+        {
+          "parameter": "lfo",
+          "case": "movimiento",
+          "difference": 0.017211176214239513
+        },
+        {
+          "parameter": "depth",
+          "case": "movimiento",
+          "difference": 0.004095055616388664
+        },
+        {
+          "parameter": "sweep",
+          "case": "movimiento",
+          "difference": 0.029749169437184135
+        },
+        {
+          "parameter": "cutoff",
+          "case": "movimiento",
+          "difference": 0.0005626266578415786
+        },
+        {
+          "parameter": "attack",
+          "case": "movimiento",
+          "difference": 0.00018041724422579634
+        },
+        {
+          "case": "choque",
+          "energy": 1373.1795389213328,
+          "duration": 1.1000226757369616
+        },
+        {
+          "parameter": "base",
+          "case": "choque",
+          "difference": 0.05403129933917773
+        },
+        {
+          "parameter": "noise",
+          "case": "choque",
+          "difference": 0.00013100636874364946
+        },
+        {
+          "parameter": "spark",
+          "case": "choque",
+          "difference": 0.0002110125152728028
+        },
+        {
+          "parameter": "lfo",
+          "case": "choque",
+          "difference": 0.029217719760451275
+        },
+        {
+          "parameter": "depth",
+          "case": "choque",
+          "difference": 0.025305057377661262
+        },
+        {
+          "parameter": "sweep",
+          "case": "choque",
+          "difference": 0.04303179285943967
+        },
+        {
+          "parameter": "cutoff",
+          "case": "choque",
+          "difference": 0.0003109634460888063
+        },
+        {
+          "parameter": "attack",
+          "case": "choque",
+          "difference": 6.824813092042453e-05
+        },
+        {
+          "case": "apagado",
+          "energy": 416.63076241835154,
+          "duration": 0.92
+        },
+        {
+          "parameter": "base",
+          "case": "apagado",
+          "difference": 0.02241602260546478
+        },
+        {
+          "parameter": "noise",
+          "case": "apagado",
+          "difference": 3.4561193338347594e-06
+        },
+        {
+          "parameter": "spark",
+          "case": "apagado",
+          "difference": 1.7524216047495377e-07
+        },
+        {
+          "parameter": "lfo",
+          "case": "apagado",
+          "difference": 0.013859698287024574
+        },
+        {
+          "parameter": "depth",
+          "case": "apagado",
+          "difference": 0.017222038964215487
+        },
+        {
+          "parameter": "sweep",
+          "case": "apagado",
+          "difference": 0.019338187467546907
+        },
+        {
+          "parameter": "cutoff",
+          "case": "apagado",
+          "difference": 0.0006995778926801532
+        },
+        {
+          "parameter": "attack",
+          "case": "apagado",
+          "difference": 3.0455651392834443e-05
+        }
+      ],
+      "quizCorrect": 5,
+      "video": {
+        "duration": 15,
+        "width": 768,
+        "height": 432,
+        "advanced": 0.2335,
+        "seek": 0,
+        "error": null
+      },
+      "layouts": [
+        {
+          "step": 0,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 1,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 2,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 3,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 4,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 0,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 1,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 2,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 3,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 4,
+          "width": 390,
+          "content": 390
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "mission": 4,
+      "parameters": [
+        {
+          "case": "amb",
+          "energy": 413.31458936675654,
+          "duration": 2
+        },
+        {
+          "parameter": "base",
+          "case": "amb",
+          "difference": 0.00967137936920939
+        },
+        {
+          "parameter": "cutoff",
+          "case": "amb",
+          "difference": 0.00015325348576801726
+        },
+        {
+          "parameter": "mod",
+          "case": "amb",
+          "difference": 0.0017546403537086507
+        },
+        {
+          "parameter": "lfo",
+          "case": "amb",
+          "difference": 0.005948711734427241
+        },
+        {
+          "parameter": "noise",
+          "case": "amb",
+          "difference": 3.307027192419319e-07
+        },
+        {
+          "parameter": "level",
+          "case": "amb",
+          "difference": 0.0009489365568984282
+        },
+        {
+          "case": "ui",
+          "energy": 23.39120874870251,
+          "duration": 0.19
+        },
+        {
+          "parameter": "base",
+          "case": "ui",
+          "difference": 0.005668667149012162
+        },
+        {
+          "parameter": "cutoff",
+          "case": "ui",
+          "difference": 7.342100378533846e-05
+        },
+        {
+          "parameter": "sweep",
+          "case": "ui",
+          "difference": 0.004061826934546474
+        },
+        {
+          "parameter": "decay",
+          "case": "ui",
+          "difference": 0.0057765644006879694
+        },
+        {
+          "parameter": "noise",
+          "case": "ui",
+          "difference": 3.454388476221911e-08
+        },
+        {
+          "parameter": "level",
+          "case": "ui",
+          "difference": 0.0005653084841557989
+        },
+        {
+          "case": "alarm",
+          "energy": 1774.2403295699341,
+          "duration": 2
+        },
+        {
+          "parameter": "base",
+          "case": "alarm",
+          "difference": 0.041588944177706116
+        },
+        {
+          "parameter": "cutoff",
+          "case": "alarm",
+          "difference": 0.0006833369467385915
+        },
+        {
+          "parameter": "rate",
+          "case": "alarm",
+          "difference": 0.03302941017597499
+        },
+        {
+          "parameter": "mod",
+          "case": "alarm",
+          "difference": 0.040383180017707965
+        },
+        {
+          "parameter": "noise",
+          "case": "alarm",
+          "difference": 6.268733329895363e-07
+        },
+        {
+          "parameter": "level",
+          "case": "alarm",
+          "difference": 0.0040735109618747
+        }
+      ],
+      "quizCorrect": 4,
+      "video": {
+        "duration": 14,
+        "width": 768,
+        "height": 432,
+        "advanced": 0.2312,
+        "seek": 0,
+        "error": null
+      },
+      "layouts": [
+        {
+          "step": 0,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 1,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 2,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 3,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 4,
+          "width": 1440,
+          "content": 1440
+        },
+        {
+          "step": 0,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 1,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 2,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 3,
+          "width": 390,
+          "content": 390
+        },
+        {
+          "step": 4,
+          "width": 390,
+          "content": 390
+        }
+      ],
+      "jsErrors": []
+    }
+  ],
+  "wav": [
+    {
+      "file": "SynthFX_M04_amb.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 176400,
+      "duration": 4.0,
+      "peak": 0.146636962890625,
+      "rms": 0.07158466285276381
+    },
+    {
+      "file": "SynthFX_Mision02_MotorNave.wav",
+      "channels": 2,
+      "sampleRate": 32000,
+      "bits": 16,
+      "frames": 134400,
+      "duration": 4.2,
+      "peak": 0.471771240234375,
+      "rms": 0.1234199562201759
+    },
+    {
+      "file": "SynthFX_M03_choque.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 48511,
+      "duration": 1.1000226757369616,
+      "peak": 0.797576904296875,
+      "rms": 0.16824297987284526
+    },
+    {
+      "file": "SynthFX_M04_Ambiente_Sala_Control_14s.wav",
+      "channels": 2,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 617400,
+      "duration": 14.0,
+      "peak": 0.37615966796875,
+      "rms": 0.07667146539589544
+    },
+    {
+      "file": "SynthFX_M03_encendido.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 46305,
+      "duration": 1.05,
+      "peak": 0.439971923828125,
+      "rms": 0.16019013838297658
+    },
+    {
+      "file": "SynthFX_M03_apagado.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 40572,
+      "duration": 0.92,
+      "peak": 0.344757080078125,
+      "rms": 0.1013340603853364
+    },
+    {
+      "file": "SynthFX_M04_alarm.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 132300,
+      "duration": 3.0,
+      "peak": 0.220947265625,
+      "rms": 0.13926334723896236
+    },
+    {
+      "file": "SynthFX_Laser_Mision01.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 15876,
+      "duration": 0.36,
+      "peak": 0.739990234375,
+      "rms": 0.28894814767848637
+    },
+    {
+      "file": "SynthFX_M03_zumbido.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 114660,
+      "duration": 2.6,
+      "peak": 0.427734375,
+      "rms": 0.21544565214190747
+    },
+    {
+      "file": "SynthFX_M03_movimiento.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 33075,
+      "duration": 0.75,
+      "peak": 0.421356201171875,
+      "rms": 0.12116775636817417
+    },
+    {
+      "file": "SynthFX_M04_ui.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 8379,
+      "duration": 0.19,
+      "peak": 0.15863037109375,
+      "rms": 0.0528252702874211
+    },
+    {
+      "file": "SynthFX_M03_Banda_Efectos_15s.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bits": 16,
+      "frames": 661500,
+      "duration": 15.0,
+      "peak": 0.910003662109375,
+      "rms": 0.16615237356676188
+    }
+  ],
+  "failures": [],
+  "variants": [
+    {
+      "mission": 1,
+      "case": "default",
+      "button": "playCustom",
+      "signals": [
+        {
+          "duration": 0.36,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7400000095367432,
+          "rms": 0.28895699386783374,
+          "offlineEnergy": 1325.584786988328,
+          "delay": 0.025000000000000355
+        }
+      ]
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "button": "hearEngine",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.3412371575832367,
+          "rms": 0.12326169516329638,
+          "offlineEnergy": 1985.0900461032559,
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "button": "hearEngine",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.24124614894390106,
+          "rms": 0.098680905482223,
+          "offlineEnergy": 1310.9012187096598,
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "button": "hearEngine",
+      "signals": [
+        {
+          "duration": 4.2,
+          "rate": 32000,
+          "channels": 2,
+          "peak": 0.4717928171157837,
+          "rms": 0.12342188973283229,
+          "offlineEnergy": 1744.322050905277,
+          "delay": 0
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "button": "playTone",
+      "signals": [
+        {
+          "duration": 1.05,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.4122287333011627,
+          "rms": 0.15977390506020323,
+          "offlineEnergy": 1182.0601826817413,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "button": "playNoise",
+      "signals": [
+        {
+          "duration": 1.05,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.03790368139743805,
+          "rms": 0.009518411097575133,
+          "offlineEnergy": 4.195239937528151,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "button": "playSpark",
+      "signals": [
+        {
+          "duration": 1.05,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.023842422291636467,
+          "rms": 0.003588970789209566,
+          "offlineEnergy": 0.5964413379411475,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "button": "playFull",
+      "signals": [
+        {
+          "duration": 1.05,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.43999290466308594,
+          "rms": 0.1601926814692659,
+          "offlineEnergy": 1188.2647960653055,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "button": "waveListen",
+      "signals": [
+        {
+          "duration": 0.45,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.3901377022266388,
+          "rms": 0.2093149242850581,
+          "offlineEnergy": 869.4637762522809,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "button": "playTone",
+      "signals": [
+        {
+          "duration": 2.6,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.41279566287994385,
+          "rms": 0.21531680578148094,
+          "offlineEnergy": 5315.789736843438,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "button": "playNoise",
+      "signals": [
+        {
+          "duration": 2.6,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.020513320341706276,
+          "rms": 0.004879386501524858,
+          "offlineEnergy": 2.7298725923006155,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "button": "playSpark",
+      "signals": [
+        {
+          "duration": 2.6,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.004446089733392,
+          "rms": 0.0007172312178461899,
+          "offlineEnergy": 0.05898346827235974,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "button": "playFull",
+      "signals": [
+        {
+          "duration": 2.6,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.4277490973472595,
+          "rms": 0.21544901156107701,
+          "offlineEnergy": 5322.319592966087,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "button": "waveListen",
+      "signals": [
+        {
+          "duration": 0.45,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.39248961210250854,
+          "rms": 0.21201126139937,
+          "offlineEnergy": 892.0084390842163,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "button": "playTone",
+      "signals": [
+        {
+          "duration": 0.75,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.3739117681980133,
+          "rms": 0.11995476087166294,
+          "offlineEnergy": 475.920959489852,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "button": "playNoise",
+      "signals": [
+        {
+          "duration": 0.75,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.09143983572721481,
+          "rms": 0.018816815391380595,
+          "offlineEnergy": 11.710949309229319,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "button": "playSpark",
+      "signals": [
+        {
+          "duration": 0.75,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.008852099999785423,
+          "rms": 0.0015483388030090328,
+          "offlineEnergy": 0.07929245209248142,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "button": "playFull",
+      "signals": [
+        {
+          "duration": 0.75,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.4213789105415344,
+          "rms": 0.12116970473427917,
+          "offlineEnergy": 485.6103696988535,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "button": "waveListen",
+      "signals": [
+        {
+          "duration": 0.45,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.3901377022266388,
+          "rms": 0.2093149242850581,
+          "offlineEnergy": 869.4637762522809,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "button": "playTone",
+      "signals": [
+        {
+          "duration": 1.1000226757369616,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.3963184356689453,
+          "rms": 0.1633020866528491,
+          "offlineEnergy": 1293.6705612875267,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "button": "playNoise",
+      "signals": [
+        {
+          "duration": 1.1000226757369616,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.15949995815753937,
+          "rms": 0.025435114107983686,
+          "offlineEnergy": 31.38395033510486,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "button": "playSpark",
+      "signals": [
+        {
+          "duration": 1.1000226757369616,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.31926193833351135,
+          "rms": 0.032280599709711304,
+          "offlineEnergy": 50.550262612796566,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "button": "playFull",
+      "signals": [
+        {
+          "duration": 1.1000226757369616,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.7976077198982239,
+          "rms": 0.16824553527323485,
+          "offlineEnergy": 1373.1795389213328,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "button": "waveListen",
+      "signals": [
+        {
+          "duration": 0.45,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.39559999108314514,
+          "rms": 0.3641263939591484,
+          "offlineEnergy": 2631.2094707833166,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "button": "playTone",
+      "signals": [
+        {
+          "duration": 0.92,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.33332300186157227,
+          "rms": 0.10139006632147862,
+          "offlineEnergy": 417.0779508007947,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "button": "playNoise",
+      "signals": [
+        {
+          "duration": 0.92,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.023480482399463654,
+          "rms": 0.004131253520628606,
+          "offlineEnergy": 0.692452696301026,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "button": "playSpark",
+      "signals": [
+        {
+          "duration": 0.92,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.007017381954938173,
+          "rms": 0.0009302651810603412,
+          "offlineEnergy": 0.0351107372553865,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "button": "playFull",
+      "signals": [
+        {
+          "duration": 0.92,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.34478163719177246,
+          "rms": 0.10133569684494971,
+          "offlineEnergy": 416.63076241835154,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "button": "waveListen",
+      "signals": [
+        {
+          "duration": 0.45,
+          "rate": 44100,
+          "channels": 1,
+          "peak": 0.3901377022266388,
+          "rms": 0.2093149242850581,
+          "offlineEnergy": 869.4637762522809,
+          "delay": 0.019999999999999574
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "button": "playLayer",
+      "signals": [
+        {
+          "duration": 4,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.14665107429027557,
+          "rms": 0.07159877305652187,
+          "offlineEnergy": 904.2941910843048,
+          "delay": 0.03000000000000025
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "button": "hearWave",
+      "signals": [
+        {
+          "duration": 0.6,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.12554603815078735,
+          "rms": 0.03259349118183241,
+          "offlineEnergy": 28.109401759938308,
+          "delay": 0.03000000000000025
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "button": "playLayer",
+      "signals": [
+        {
+          "duration": 0.19,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.1586371809244156,
+          "rms": 0.052836037183365415,
+          "offlineEnergy": 23.39120874870251,
+          "delay": 0.03000000000000025
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "button": "hearWave",
+      "signals": [
+        {
+          "duration": 0.6,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.12854748964309692,
+          "rms": 0.04049047840412522,
+          "offlineEnergy": 43.38061014330897,
+          "delay": 0.03000000000000025
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "button": "playLayer",
+      "signals": [
+        {
+          "duration": 3,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.220963716506958,
+          "rms": 0.13927632816028304,
+          "offlineEnergy": 2566.341586002651,
+          "delay": 0.03000000000000025
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "button": "hearWave",
+      "signals": [
+        {
+          "duration": 0.6,
+          "rate": 44100,
+          "channels": 2,
+          "peak": 0.12860161066055298,
+          "rms": 0.056730748973780845,
+          "offlineEnergy": 85.15827868167771,
+          "delay": 0.03000000000000025
+        }
+      ]
+    }
+  ],
+  "sliders": [
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "bright",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "bright",
+      "bound": "max",
+      "value": "100",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "fStart",
+      "bound": "min",
+      "value": "250",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "fStart",
+      "bound": "max",
+      "value": "2200",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "fEnd",
+      "bound": "min",
+      "value": "80",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "fEnd",
+      "bound": "max",
+      "value": "1400",
+      "peak": 0.7399999499320984
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "dur",
+      "bound": "min",
+      "value": "0.12",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "dur",
+      "bound": "max",
+      "value": "1.2",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "attack",
+      "bound": "min",
+      "value": "0.001",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 1,
+      "case": "default",
+      "slider": "attack",
+      "bound": "max",
+      "value": "0.12",
+      "peak": 0.7400000095367432
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "base",
+      "bound": "min",
+      "value": "40",
+      "peak": 0.26117441058158875
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "base",
+      "bound": "max",
+      "value": "210",
+      "peak": 0.25498318672180176
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "ramp",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.2531525194644928
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "ramp",
+      "bound": "max",
+      "value": "120",
+      "peak": 0.2917702794075012
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "filter",
+      "bound": "min",
+      "value": "200",
+      "peak": 0.20994694530963898
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "filter",
+      "bound": "max",
+      "value": "6000",
+      "peak": 0.27770110964775085
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.2728811502456665
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "noise",
+      "bound": "max",
+      "value": "40",
+      "peak": 0.23640447854995728
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "lfoRate",
+      "bound": "min",
+      "value": "1",
+      "peak": 0.2588486075401306
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "lfoRate",
+      "bound": "max",
+      "value": "12",
+      "peak": 0.25808221101760864
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "lfoDepth",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.2575954794883728
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "lfoDepth",
+      "bound": "max",
+      "value": "16",
+      "peak": 0.25880128145217896
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "attack",
+      "bound": "min",
+      "value": "20",
+      "peak": 0.25947487354278564
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "attack",
+      "bound": "max",
+      "value": "800",
+      "peak": 0.25947487354278564
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "motion",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.2802989184856415
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "motion",
+      "bound": "max",
+      "value": "100",
+      "peak": 0.2888122498989105
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "release",
+      "bound": "min",
+      "value": "100",
+      "peak": 0.25947487354278564
+    },
+    {
+      "mission": 2,
+      "case": "exploradora",
+      "slider": "release",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.25947487354278564
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "base",
+      "bound": "min",
+      "value": "40",
+      "peak": 0.22269245982170105
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "base",
+      "bound": "max",
+      "value": "210",
+      "peak": 0.19367091357707977
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "ramp",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.205667644739151
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "ramp",
+      "bound": "max",
+      "value": "120",
+      "peak": 0.28598761558532715
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "filter",
+      "bound": "min",
+      "value": "200",
+      "peak": 0.18833957612514496
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "filter",
+      "bound": "max",
+      "value": "6000",
+      "peak": 0.25584664940834045
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.2497013360261917
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "noise",
+      "bound": "max",
+      "value": "40",
+      "peak": 0.20139829814434052
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "lfoRate",
+      "bound": "min",
+      "value": "1",
+      "peak": 0.21699070930480957
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "lfoRate",
+      "bound": "max",
+      "value": "12",
+      "peak": 0.22411757707595825
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "lfoDepth",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.21428774297237396
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "lfoDepth",
+      "bound": "max",
+      "value": "16",
+      "peak": 0.22127175331115723
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "attack",
+      "bound": "min",
+      "value": "20",
+      "peak": 0.21950271725654602
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "attack",
+      "bound": "max",
+      "value": "800",
+      "peak": 0.21950271725654602
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "motion",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.22905434668064117
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "motion",
+      "bound": "max",
+      "value": "100",
+      "peak": 0.25606897473335266
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "release",
+      "bound": "min",
+      "value": "100",
+      "peak": 0.21950271725654602
+    },
+    {
+      "mission": 2,
+      "case": "carguero",
+      "slider": "release",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.21950271725654602
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "base",
+      "bound": "min",
+      "value": "40",
+      "peak": 0.2995592951774597
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "base",
+      "bound": "max",
+      "value": "210",
+      "peak": 0.3004814386367798
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "ramp",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.26912805438041687
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "ramp",
+      "bound": "max",
+      "value": "120",
+      "peak": 0.3046676814556122
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "filter",
+      "bound": "min",
+      "value": "200",
+      "peak": 0.18623043596744537
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "filter",
+      "bound": "max",
+      "value": "6000",
+      "peak": 0.3098582327365875
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.31711411476135254
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "noise",
+      "bound": "max",
+      "value": "40",
+      "peak": 0.2940208911895752
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "lfoRate",
+      "bound": "min",
+      "value": "1",
+      "peak": 0.30032533407211304
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "lfoRate",
+      "bound": "max",
+      "value": "12",
+      "peak": 0.3038603663444519
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "lfoDepth",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.2955204248428345
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "lfoDepth",
+      "bound": "max",
+      "value": "16",
+      "peak": 0.2944791615009308
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "attack",
+      "bound": "min",
+      "value": "20",
+      "peak": 0.298568993806839
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "attack",
+      "bound": "max",
+      "value": "800",
+      "peak": 0.298568993806839
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "motion",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.3515279293060303
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "motion",
+      "bound": "max",
+      "value": "100",
+      "peak": 0.3037392497062683
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "release",
+      "bound": "min",
+      "value": "100",
+      "peak": 0.298568993806839
+    },
+    {
+      "mission": 2,
+      "case": "interceptora",
+      "slider": "release",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.298568993806839
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_base",
+      "bound": "min",
+      "value": "55",
+      "peak": 0.45126280188560486
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_base",
+      "bound": "max",
+      "value": "1100",
+      "peak": 0.39653512835502625
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.42657285928726196
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_noise",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.6040430068969727
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_spark",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.4303760230541229
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_spark",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.626882016658783
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_sweep",
+      "bound": "min",
+      "value": "-1200",
+      "peak": 0.44792255759239197
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_sweep",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.4271710515022278
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_lfo",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.4070500135421753
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_lfo",
+      "bound": "max",
+      "value": "15",
+      "peak": 0.4271162748336792
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_depth",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.4070500135421753
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_depth",
+      "bound": "max",
+      "value": "0.75",
+      "peak": 0.5087799429893494
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_cutoff",
+      "bound": "min",
+      "value": "250",
+      "peak": 0.30861151218414307
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_cutoff",
+      "bound": "max",
+      "value": "9000",
+      "peak": 0.4574317932128906
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_duration",
+      "bound": "min",
+      "value": "0.18",
+      "peak": 0.4003784656524658
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_duration",
+      "bound": "max",
+      "value": "3.5",
+      "peak": 0.44801461696624756
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_attack",
+      "bound": "min",
+      "value": "0.002",
+      "peak": 0.4476478397846222
+    },
+    {
+      "mission": 3,
+      "case": "encendido",
+      "slider": "ctl_attack",
+      "bound": "max",
+      "value": "0.5",
+      "peak": 0.325667142868042
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_base",
+      "bound": "min",
+      "value": "55",
+      "peak": 0.43274345993995667
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_base",
+      "bound": "max",
+      "value": "1100",
+      "peak": 0.2950798571109772
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.41397997736930847
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_noise",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.5880058407783508
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_spark",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.425782710313797
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_spark",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.4585558772087097
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_sweep",
+      "bound": "min",
+      "value": "-1200",
+      "peak": 0.4331004321575165
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_sweep",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.409184992313385
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_lfo",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.39666905999183655
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_lfo",
+      "bound": "max",
+      "value": "15",
+      "peak": 0.42578160762786865
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_depth",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.39666905999183655
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_depth",
+      "bound": "max",
+      "value": "0.75",
+      "peak": 0.48315563797950745
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_cutoff",
+      "bound": "min",
+      "value": "250",
+      "peak": 0.3443259298801422
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_cutoff",
+      "bound": "max",
+      "value": "9000",
+      "peak": 0.45323747396469116
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_duration",
+      "bound": "min",
+      "value": "0.18",
+      "peak": 0.40447258949279785
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_duration",
+      "bound": "max",
+      "value": "3.5",
+      "peak": 0.4277946949005127
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_attack",
+      "bound": "min",
+      "value": "0.002",
+      "peak": 0.43228378891944885
+    },
+    {
+      "mission": 3,
+      "case": "zumbido",
+      "slider": "ctl_attack",
+      "bound": "max",
+      "value": "0.5",
+      "peak": 0.42417779564857483
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_base",
+      "bound": "min",
+      "value": "55",
+      "peak": 0.41491442918777466
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_base",
+      "bound": "max",
+      "value": "1100",
+      "peak": 0.37791940569877625
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.3801296353340149
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_noise",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.5168421864509583
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_spark",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.4179832637310028
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_spark",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.6011915802955627
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_sweep",
+      "bound": "min",
+      "value": "-1200",
+      "peak": 0.4022023677825928
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_sweep",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.4291112720966339
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_lfo",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.3942645788192749
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_lfo",
+      "bound": "max",
+      "value": "15",
+      "peak": 0.42594027519226074
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_depth",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.3942645788192749
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_depth",
+      "bound": "max",
+      "value": "0.75",
+      "peak": 0.49476689100265503
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_cutoff",
+      "bound": "min",
+      "value": "250",
+      "peak": 0.28182896971702576
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_cutoff",
+      "bound": "max",
+      "value": "9000",
+      "peak": 0.4731697738170624
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_duration",
+      "bound": "min",
+      "value": "0.18",
+      "peak": 0.35075175762176514
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_duration",
+      "bound": "max",
+      "value": "3.5",
+      "peak": 0.44505035877227783
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_attack",
+      "bound": "min",
+      "value": "0.002",
+      "peak": 0.477336049079895
+    },
+    {
+      "mission": 3,
+      "case": "movimiento",
+      "slider": "ctl_attack",
+      "bound": "max",
+      "value": "0.5",
+      "peak": 0.2665139138698578
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_base",
+      "bound": "min",
+      "value": "55",
+      "peak": 0.7976077198982239
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_base",
+      "bound": "max",
+      "value": "1100",
+      "peak": 0.7829884886741638
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.7143693566322327
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_noise",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.8473958969116211
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_spark",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.5531138777732849
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_spark",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.8660591244697571
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_sweep",
+      "bound": "min",
+      "value": "-1200",
+      "peak": 0.7976077198982239
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_sweep",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.7976077198982239
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_lfo",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.7881883978843689
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_lfo",
+      "bound": "max",
+      "value": "15",
+      "peak": 0.8223237991333008
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_depth",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.7881883978843689
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_depth",
+      "bound": "max",
+      "value": "0.75",
+      "peak": 0.8117366433143616
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_cutoff",
+      "bound": "min",
+      "value": "250",
+      "peak": 0.6678434014320374
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_cutoff",
+      "bound": "max",
+      "value": "9000",
+      "peak": 0.8551521301269531
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_duration",
+      "bound": "min",
+      "value": "0.18",
+      "peak": 0.7439678907394409
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_duration",
+      "bound": "max",
+      "value": "3.5",
+      "peak": 0.8062085509300232
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_attack",
+      "bound": "min",
+      "value": "0.002",
+      "peak": 0.8585683703422546
+    },
+    {
+      "mission": 3,
+      "case": "choque",
+      "slider": "ctl_attack",
+      "bound": "max",
+      "value": "0.5",
+      "peak": 0.19269563257694244
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_base",
+      "bound": "min",
+      "value": "55",
+      "peak": 0.3890119791030884
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_base",
+      "bound": "max",
+      "value": "1100",
+      "peak": 0.30964183807373047
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.3399740755558014
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_noise",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.4634299874305725
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_spark",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.3413379192352295
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_spark",
+      "bound": "max",
+      "value": "1",
+      "peak": 0.6663163900375366
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_sweep",
+      "bound": "min",
+      "value": "-1200",
+      "peak": 0.3500005900859833
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_sweep",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.33910873532295227
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_lfo",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.34907442331314087
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_lfo",
+      "bound": "max",
+      "value": "15",
+      "peak": 0.3542439937591553
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_depth",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.34907442331314087
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_depth",
+      "bound": "max",
+      "value": "0.75",
+      "peak": 0.3567475378513336
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_cutoff",
+      "bound": "min",
+      "value": "250",
+      "peak": 0.13762612640857697
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_cutoff",
+      "bound": "max",
+      "value": "9000",
+      "peak": 0.39346641302108765
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_duration",
+      "bound": "min",
+      "value": "0.18",
+      "peak": 0.3175450265407562
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_duration",
+      "bound": "max",
+      "value": "3.5",
+      "peak": 0.35152462124824524
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_attack",
+      "bound": "min",
+      "value": "0.002",
+      "peak": 0.3490898609161377
+    },
+    {
+      "mission": 3,
+      "case": "apagado",
+      "slider": "ctl_attack",
+      "bound": "max",
+      "value": "0.5",
+      "peak": 0.1873340904712677
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_base",
+      "bound": "min",
+      "value": "35",
+      "peak": 0.15135322511196136
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_base",
+      "bound": "max",
+      "value": "200",
+      "peak": 0.1380646526813507
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_cutoff",
+      "bound": "min",
+      "value": "100",
+      "peak": 0.10802003741264343
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_cutoff",
+      "bound": "max",
+      "value": "6000",
+      "peak": 0.15837687253952026
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_lfo",
+      "bound": "min",
+      "value": "0.2",
+      "peak": 0.14442193508148193
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_lfo",
+      "bound": "max",
+      "value": "9",
+      "peak": 0.14587830007076263
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_mod",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.1357705146074295
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_mod",
+      "bound": "max",
+      "value": "0.95",
+      "peak": 0.17651773989200592
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.14452411234378815
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_noise",
+      "bound": "max",
+      "value": "0.8",
+      "peak": 0.15470542013645172
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_level",
+      "bound": "min",
+      "value": "0",
+      "peak": 0
+    },
+    {
+      "mission": 4,
+      "case": "amb",
+      "slider": "c_level",
+      "bound": "max",
+      "value": "0.95",
+      "peak": 0.2122751921415329
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_base",
+      "bound": "min",
+      "value": "250",
+      "peak": 0.18780361115932465
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_base",
+      "bound": "max",
+      "value": "1700",
+      "peak": 0.17581239342689514
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_sweep",
+      "bound": "min",
+      "value": "-850",
+      "peak": 0.18482553958892822
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_sweep",
+      "bound": "max",
+      "value": "950",
+      "peak": 0.18520958721637726
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_cutoff",
+      "bound": "min",
+      "value": "300",
+      "peak": 0.06158411502838135
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_cutoff",
+      "bound": "max",
+      "value": "8000",
+      "peak": 0.18778179585933685
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_decay",
+      "bound": "min",
+      "value": "0.07",
+      "peak": 0.1843530237674713
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_decay",
+      "bound": "max",
+      "value": "0.65",
+      "peak": 0.1843530237674713
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.1832277476787567
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_noise",
+      "bound": "max",
+      "value": "0.5",
+      "peak": 0.2089536488056183
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_level",
+      "bound": "min",
+      "value": "0",
+      "peak": 0
+    },
+    {
+      "mission": 4,
+      "case": "ui",
+      "slider": "c_level",
+      "bound": "max",
+      "value": "0.95",
+      "peak": 0.29189229011535645
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_base",
+      "bound": "min",
+      "value": "180",
+      "peak": 0.22101648151874542
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_base",
+      "bound": "max",
+      "value": "1200",
+      "peak": 0.21977533400058746
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_rate",
+      "bound": "min",
+      "value": "0.5",
+      "peak": 0.2210303246974945
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_rate",
+      "bound": "max",
+      "value": "6",
+      "peak": 0.2210255265235901
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_cutoff",
+      "bound": "min",
+      "value": "400",
+      "peak": 0.18364585936069489
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_cutoff",
+      "bound": "max",
+      "value": "8500",
+      "peak": 0.22274622321128845
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_mod",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.22109901905059814
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_mod",
+      "bound": "max",
+      "value": "0.5",
+      "peak": 0.22097298502922058
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_noise",
+      "bound": "min",
+      "value": "0",
+      "peak": 0.21352499723434448
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_noise",
+      "bound": "max",
+      "value": "0.5",
+      "peak": 0.25075563788414
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_level",
+      "bound": "min",
+      "value": "0",
+      "peak": 0
+    },
+    {
+      "mission": 4,
+      "case": "alarm",
+      "slider": "c_level",
+      "bound": "max",
+      "value": "0.95",
+      "peak": 0.3229469656944275
+    }
+  ],
+  "version": "156.0.8078.80",
+  "localMode": "file:// con emulación offline"
+}

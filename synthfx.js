@@ -1,0 +1,22 @@
+/* Synth FX v0.5.0-rc2 · utilidades locales, sin dependencias. */
+window.SynthFX=(()=>{
+ 'use strict';
+ const tau=2*Math.PI;
+ const names={sine:'Senoidal',triangle:'Triangular',square:'Cuadrada',saw:'Diente de sierra'};
+ const spectra={sine:'Una sola componente sinusoidal: timbre puro.',triangle:'Armónicos impares con amplitud ideal proporcional a 1/n²: timbre suave.',square:'Armónicos impares con amplitud ideal proporcional a 1/n: timbre hueco y brillante.',saw:'Armónicos pares e impares con amplitud ideal proporcional a 1/n: timbre rico y áspero.'};
+ const canonical=w=>w==='tri'?'triangle':w;
+ function ideal(w,p){w=canonical(w);const t=((p/tau)%1+1)%1;if(w==='sine')return Math.sin(p);if(w==='triangle')return 2/Math.PI*Math.asin(Math.sin(p));if(w==='square')return t<.5?1:-1;return 2*t-1;}
+ function blep(t,dt){if(t<dt){t/=dt;return 2*t-t*t-1;}if(t>1-dt){t=(t-1)/dt;return t*t+2*t+1;}return 0;}
+ function wave(w,p,hz,rate){w=canonical(w);const t=((p/tau)%1+1)%1,dt=Math.min(.49,hz/rate);if(w==='saw')return 2*t-1-blep(t,dt);if(w==='square')return (t<.5?1:-1)+blep(t,dt)-blep((t+.5)%1,dt);return ideal(w,p);}
+ function svg(w){w=canonical(w);let d='';if(w==='square')d='M4 8H28V36H52V8H76V36H100';else if(w==='saw')d='M4 36L52 8V36L100 8';else if(w==='triangle')d='M4 22L16 8L40 36L64 8L88 36L100 22';else for(let i=0;i<=96;i++)d+=(i?'L':'M')+(4+i)+' '+(22-14*Math.sin(i/96*4*Math.PI)).toFixed(3);return `<svg viewBox="0 0 104 44" role="img" aria-label="Onda ${names[w]}"><path d="M4 22H100" stroke="#4e7680" stroke-width=".7"/><path d="${d}" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;}
+ let preview=null,source=null,previewRequest=0;
+ function stopPreview(){previewRequest++;if(source){try{source.stop();source.disconnect();}catch(_){}source=null;}}
+ async function listen(w,stop){stopPreview();stop?.();const request=previewRequest;try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw Error('Web Audio no disponible.');preview??=new AC();await preview.resume();if(request!==previewRequest)return;if(preview.state!=='running')throw Error('Vuelve a tocar Escuchar para activar el audio.');const n=Math.ceil(preview.sampleRate*.65),b=preview.createBuffer(1,n,preview.sampleRate),data=b.getChannelData(0);for(let i=0;i<n;i++){const t=i/preview.sampleRate;data[i]=wave(w,t*tau*220,220,preview.sampleRate)*.22*Math.min(1,t/.025,(.65-t)/.04);}const src=preview.createBufferSource();source=src;src.buffer=b;src.connect(preview.destination);src.onended=()=>{src.disconnect();if(source===src)source=null;};src.start();}catch(e){alert('No se pudo escuchar la onda: '+e.message);}}
+ function note(container){let n=container.parentElement.querySelector('.sfx-spectrum');if(!n){n=document.createElement('p');n.className='sfx-spectrum';container.after(n);}n.textContent='Modelo ideal de una señal periódica. '+Object.entries(names).map(([w,n])=>n+': '+spectra[w]).join(' ')+' El efecto final cambia con filtros, envolventes y ruido. Compara cada onda a 220 Hz y nivel moderado.';}
+ function bindSelect(select,stop){const box=document.createElement('div');box.className='sfx-waves';box.setAttribute('role','group');box.setAttribute('aria-label','Formas de onda: selección y escucha');select.after(box);for(const opt of select.options){const w=canonical(opt.value),card=document.createElement('div');card.innerHTML=`<button type="button" class="sfx-wave" data-sfx-wave="${opt.value}">${svg(w)}<span>${names[w]}</span></button><button type="button" class="sfx-listen" aria-label="Escuchar onda ${names[w]}">▶ Escuchar</button>`;card.firstChild.onclick=()=>{select.value=opt.value;select.dispatchEvent(new Event('input',{bubbles:true}));select.dispatchEvent(new Event('change',{bubbles:true}));};card.lastChild.onclick=()=>listen(w,stop);box.append(card);}const update=()=>box.querySelectorAll('[data-sfx-wave]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sfxWave===select.value)));select.addEventListener('input',update);new MutationObserver(update).observe(document.body,{subtree:true,childList:true});update();note(box);}
+ function enhanceWaves(container){note(container);}
+ // Cualquier otro control cancela la demostración aislada antes de iniciar su propia acción.
+ document.addEventListener('click',e=>{if(!e.target.closest('.sfx-listen'))stopPreview();},true);
+ window.addEventListener('pagehide',stopPreview);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopPreview();});
+ return {ideal,wave,svg,bindSelect,enhanceWaves};
+})();

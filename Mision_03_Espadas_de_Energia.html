@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080f1b">
+<meta name="description" content="Synth FX: diseña, escucha y sincroniza una espada de energía mediante síntesis multicapa. Misión 03, acústica aplicada a la imagen.">
+<title>Synth FX | Misión 03 · Espadas de energía</title>
+<style>
+:root{color-scheme:dark;--bg:#070e1a;--panel:#111f31;--panel2:#182b42;--line:#31465c;--ink:#edf8ff;--muted:#b1c5d9;--cyan:#6ff2e4;--pink:#ff9dca;--gold:#f9d391;--ok:#96f0be;--err:#ffaaa0;--violet:#b9b3ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 91% 0,#17495755,transparent 40%),radial-gradient(ellipse at -11% 65%,#242151aa,transparent 55%),var(--bg);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:var(--ink);padding:10px 15px;font-weight:650;transition:.15s}button:hover{border-color:var(--cyan);background:#213950}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+button.primary{background:#c4faee;color:#082629;border-color:#bcfbef}button.primary:hover{background:#91efd9}button.ghost{background:transparent}button:disabled{opacity:.48;cursor:not-allowed}
+a{color:var(--cyan)}.wrap{max-width:1180px;margin:auto;padding:22px 22px 70px}.top{display:flex;gap:15px;align-items:center;justify-content:space-between;border-bottom:1px solid #3e5264;padding-bottom:16px}.brand{display:flex;align-items:center;gap:12px}.mark{height:43px;width:43px;border:1px solid var(--cyan);border-radius:12px;display:grid;place-items:center;color:var(--cyan);font-size:22px;box-shadow:inset 0 0 18px #48d5ca28}.brand b{font-weight:850;letter-spacing:.07em}.brand small{display:block;color:var(--muted);font-size:12px;letter-spacing:.06em}.topright{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.tag{border:1px solid #3c5965;border-radius:30px;padding:5px 12px;font-size:12px;color:#c8e6e9}.steps{display:flex;flex-wrap:wrap;gap:8px;margin:19px 0 22px}.step{font-size:13px;padding:9px 13px;flex:1 1 auto;white-space:nowrap}.step.active{background:var(--cyan);color:#062126;border-color:var(--cyan)}.step.done{border-color:#6eaea5}.pane{display:none}.pane.active{display:block}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase}.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:23px;align-items:center}.hero h1{font-size:clamp(29px,4vw,52px);letter-spacing:-.036em;line-height:1.08;margin:12px 0 13px}.sub{color:var(--muted);max-width:70ch}.hero .sub{font-size:17px}.card{background:linear-gradient(155deg,#14283c,#101d2d);border:1px solid var(--line);border-radius:18px;padding:20px}.card h2{font-size:22px;line-height:1.2;margin:0 0 10px}.card h3{font-size:17px;margin:0 0 10px}.card p{margin:8px 0 12px}.bigspace{margin:25px 0}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.fact{padding:15px;background:#0b1726;border:1px solid #345269;border-radius:13px}.fact strong{display:block;color:var(--cyan)}.tiny{font-size:13px;color:var(--muted)}.scene{position:relative;overflow:hidden;border:1px solid #46677c;border-radius:16px;background:#080f1c}.scene canvas{width:100%;height:auto;display:block;aspect-ratio:16/9}.scene .watermark{position:absolute;left:12px;bottom:9px;font-size:10px;color:#b4ccd4cc;pointer-events:none;letter-spacing:.05em}.panelhead{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.actions button{flex:1 1 auto}.sceneControls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.sceneControls strong{font-variant-numeric:tabular-nums}.progressline{height:7px;background:#243e52;border-radius:10px;overflow:hidden;margin-top:12px}.progressline i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--pink));width:0%;transition:width .12s}
+.callout{border-left:3px solid var(--gold);padding:10px 13px;background:#f9d39110;border-radius:0 10px 10px 0;margin:15px 0}.callout strong{color:var(--gold)}.feedback{min-height:43px;background:#0d1b2c;border:1px solid #304b62;border-radius:12px;padding:11px 13px;color:#d8e7f1;margin:12px 0}.feedback.good{border-color:#4d9a78;background:#123429}.feedback.bad{border-color:#a06966;background:#351c24}.q{padding:17px;background:#0c1a2a;border:1px solid #354b62;border-radius:14px;margin:12px 0}.q h3{margin:0 0 12px;font-size:16px}.q .options{display:grid;grid-template-columns:1fr 1fr;gap:9px}.q .options button{text-align:left;font-weight:500;font-size:14px}.q .options button.selected{border-color:var(--cyan);background:#244752}.q .feedback{font-size:14px}
+.rule{border:0;border-top:1px solid #34465a;margin:20px 0}.row{display:flex;gap:11px;align-items:center;flex-wrap:wrap}.stat{border:1px solid #34536b;padding:10px;border-radius:12px;flex:1;min-width:110px;text-align:center}.stat b{font-size:25px;color:var(--cyan);display:block}.stat span{font-size:12px;color:var(--muted)}.partNav{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 16px}.partNav button{flex:1 1 auto}.partNav button.sel{border-color:var(--cyan);background:#20505b}.controlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.control{background:#0d1c2e;border:1px solid #35506a;border-radius:12px;padding:13px}.control label{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;font-weight:700;margin-bottom:7px}.control output{color:var(--cyan);font-variant-numeric:tabular-nums;font-size:13px}.control input[type=range]{width:100%;accent-color:var(--cyan);cursor:pointer}.control small{display:block;color:var(--muted);font-size:12px;margin-top:5px}.waveselect{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.waveopt{min-width:0;padding:7px 4px;font-size:12px;background:#0e2031}.waveopt svg{width:100%;height:35px;display:block}.waveopt span{display:block}.waveopt.sel{border-color:var(--cyan);background:#1b4750}.scope{width:100%;height:126px;border-radius:12px;background:#070f1b;border:1px solid #315165;display:block}.cue{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:start}.cue .partNav{display:grid;grid-template-columns:1fr;margin:0}.cue .partNav button{text-align:left}.timing{display:grid;grid-template-columns:minmax(130px,1fr) minmax(110px,1.5fr) 58px;gap:10px;align-items:center;border-bottom:1px solid #29435b;padding:11px 0}.timing input{width:100%;accent-color:var(--cyan)}.timing strong{text-align:right;font-variant-numeric:tabular-nums;color:var(--cyan)}.answers{display:flex;gap:8px;flex-wrap:wrap}.answers button{flex:1 1 170px}.tip{display:none;color:#f3dbad;font-size:14px;background:#2f2b25;border-radius:8px;padding:10px;margin-top:8px}.tip.show{display:block}.mini{font-size:13px;color:var(--muted)}.footerNav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:25px 0}.footerNav button{min-width:145px}.hidden{display:none!important}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.checkrow{display:flex;gap:11px;align-items:start;padding:10px;border:1px solid #31465c;border-radius:12px}.checkrow input{accent-color:var(--cyan);margin-top:6px}.goodtext{color:var(--ok)}.warntext{color:var(--gold)}.empty{color:var(--muted);font-style:italic}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.cue{grid-template-columns:1fr}.cue .partNav{display:flex}.partNav button{font-size:13px}}@media(max-width:580px){.wrap{padding:13px 12px 45px}.card{padding:14px;border-radius:14px}.top{align-items:flex-start}.tag{font-size:11px}.steps{gap:6px}.step{padding:8px 8px;font-size:11px}.grid2,.grid3,.controlgrid{grid-template-columns:1fr}.q .options{grid-template-columns:1fr}.waveselect{grid-template-columns:1fr 1fr}.sceneControls{align-items:stretch}.sceneControls button{flex:1 1 120px}.footerNav button{min-width:0}.timing{grid-template-columns:1fr 1fr}.timing label{grid-column:1/3}.timing input{grid-column:1/2}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style><meta name="application-name" content="Synth FX"><meta name="application-version" content="0.5.0-rc2"><link rel="stylesheet" href="synthfx.css"><script src="synthfx.js"></script><script src="knobs.js" defer></script></head><body><nav class="sfx-home" aria-label="Navegación general"><a href="index.html">← Synth FX · Inicio</a><span>Laboratorio Interactivo de Diseño Sonoro · v0.5.0-rc2</span></nav>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="mark" aria-hidden="true">◈</div><div><b>Synth FX</b><small>Diseño sonoro para imagen · Misión 03</small></div></div><div class="topright"><span class="tag">v0.5.0-rc2</span><span class="tag">100% creación de efectos · sin música</span></div></header>
+<nav class="steps" aria-label="Etapas de la misión"><button class="step active" data-step="0">01 · Observa</button><button class="step" data-step="1">02 · Escucha</button><button class="step" data-step="2">03 · Fabrica</button><button class="step" data-step="3">04 · Sincroniza</button><button class="step" data-step="4">05 · Reflexiona</button></nav>
+<main>
+<section class="pane active" id="pane0">
+<div class="hero"><div>
+<div class="eyebrow">Misión 03 · Espadas de energía</div><h1>Un efecto complejo nace de sonidos sencillos.</h1>
+<p class="sub">Una espada de energía no se representa con un único sonido: tiene <b>encendido</b>, un <b>zumbido sostenido</b>, <b>movimiento</b>, <b>choque</b> y <b>apagado</b>. Tu reto es construirlos, escucharlos por separado y colocarlos en una escena de ficción.</p>
+<div class="row"><div class="stat"><b>5</b><span>Eventos sonoros</span></div><div class="stat"><b>3</b><span>Capas de síntesis</span></div><div class="stat"><b>15 s</b><span>Escena original</span></div></div>
+<div class="callout"><strong>Acústica vs. ficción.</strong> Estas espadas son imaginarias: diseñamos sonidos con intención narrativa, no intentamos reproducir un objeto físico real. Ninguna melodía ni instrumento musical es necesario.</div>
+<button class="primary" data-next>Empezar a experimentar →</button>
+</div><div><div class="scene"><canvas id="scene0" width="960" height="540" aria-label="Escena animada de dos espadas futuristas con destellos durante el choque"></canvas><div class="watermark">ESCENA MUDA · ORIGINAL · 15 s</div></div><p class="tiny">Escena dibujada por la aplicación. Los efectos son simulaciones sintéticas; no son sonidos originales de ninguna película.</p></div></div>
+<div class="bigspace card"><h2>¿Qué vas a aprender?</h2><div class="grid3"><div class="fact"><strong>Envolvente</strong>Cómo un sonido aparece, se sostiene y desaparece.</div><div class="fact"><strong>Modulación</strong>Cómo el sonido pulsa, vibra o se mueve sin tocar melodías.</div><div class="fact"><strong>Capas</strong>Cómo combinar un tono, una textura y una chispa para construir un efecto audiovisual.</div></div></div>
+</section>
+<section class="pane" id="pane1">
+<div class="eyebrow">02 · Escucha y compara</div><h1>Antes de mover controles, escucha la intención.</h1><p class="sub">Cada comparación modifica una característica acústica concreta. Escucha A y B varias veces, selecciona una respuesta y revisa la explicación.</p>
+<div id="listenExercises"></div>
+<div class="callout"><strong>Pista general:</strong> no busques cuál sonido es «más bonito». Pregúntate qué cambia en el tiempo: altura, textura, duración o modulación.</div>
+</section>
+<section class="pane" id="pane2">
+<div class="eyebrow">03 · Laboratorio de síntesis multicapa</div><h1>Fabrica el sonido de la espada.</h1>
+<p class="sub">Trabajas sobre <b>cinco eventos</b>. Cada evento combina <b>núcleo tonal</b>, <b>textura de ruido</b> y <b>chispa aguda</b> en proporciones distintas. Prueba una capa sola y después escucha la mezcla.</p>
+<div class="grid2"><div class="card">
+<div class="panelhead"><h2>Elige un evento</h2><button id="restore" class="ghost" type="button">Restablecer este evento</button></div>
+<div class="partNav" id="cueTabs" role="group" aria-label="Evento a diseñar"></div>
+<p class="tiny" id="cueDescription"></p>
+<div class="callout"><strong>Formas de onda:</strong> observa la silueta y escucha su carácter tonal. La misma onda puede sonar distinta según frecuencia, filtro, envolvente y demás capas.</div>
+<div class="waveselect" id="waveButtons" role="group" aria-label="Forma de onda"></div>
+<div class="actions"><button id="waveListen">▶ Escuchar solo la onda</button></div>
+<div class="controlgrid" id="controls"></div>
+</div>
+<div class="card">
+<h2>Escucha por capas</h2>
+<div class="actions"><button id="playTone">▶ Núcleo</button><button id="playNoise">▶ Textura</button><button id="playSpark">▶ Chispa</button><button id="playFull" class="primary">▶ Mezcla completa</button><button id="stopSound" class="ghost">■ Detener</button></div>
+<canvas class="scope" id="scope" width="620" height="160" aria-label="Forma de onda temporal del último sonido generado"></canvas>
+<p class="tiny">La gráfica representa la señal temporal calculada por el sintetizador. No es un espectrograma ni un análisis FFT.</p>
+<div id="labFeedback" class="feedback">Selecciona un evento, modifica un control y escucha el resultado.</div>
+<hr class="rule">
+<h3>Escucha también una secuencia</h3><p class="mini">Se reproducen encendido, zumbido, movimiento, choque y apagado. Puedes cambiar sus parámetros antes de exportarlos.</p>
+<div class="actions"><button id="playAll">▶ Escuchar diseño completo</button><button id="exportPack" class="primary">↓ Descargar WAV del evento elegido</button></div>
+<p class="tiny">Descarga cada evento por separado: selecciona encendido, zumbido, movimiento, choque y apagado uno por uno. También puedes exportar el WAV de la escena completa en la etapa siguiente.</p>
+</div></div>
+<div class="bigspace card"><h3>Reto creativo</h3><p>Construye una espada que parezca tener <b>energía inestable</b>: aumenta la modulación en el zumbido, compara diferentes formas de onda y decide qué aporta el ruido en el choque. No existe una combinación única correcta: debes justificar tus decisiones.</p><div class="actions"><button id="hintLab">Necesito una pista</button></div><div id="hintText" class="tip">Comienza por el zumbido: prueba onda triangular y después diente de sierra. Modifica el LFO y escucha si la energía parece estable o irregular. Después aumenta la textura de ruido solo durante el choque.</div></div>
+</section>
+<section class="pane" id="pane3">
+<div class="eyebrow">04 · Sincroniza</div><h1>El sonido debe obedecer a la imagen.</h1>
+<p class="sub">La acción visual marca cinco eventos. Mueve sus posiciones sonoras y escucha la escena. Una buena sincronía importa tanto como un timbre interesante.</p>
+<div class="grid2"><div class="card"><div class="scene"><canvas id="scene3" width="960" height="540" aria-label="Escena de espadas de energía de 15 segundos con cinco acontecimientos"></canvas><div class="watermark">PREVISUALIZACIÓN · 15 s</div></div><div class="progressline"><i id="filmProgress"></i></div><div class="sceneControls actions"><button id="scenePlay" class="primary">▶ Reproducir con sonido</button><button id="sceneMute">▶ Ver sin sonido</button><button id="sceneStop">■ Detener</button><strong id="clock">00:00 / 00:15</strong></div><p class="tiny">Los acontecimientos visuales son fijos; los momentos de inicio del sonido se pueden ajustar.</p><div id="syncFeedback" class="feedback">Reproduce la escena. Si oyes un evento antes o después de la acción, gira su perilla.</div></div>
+<div class="card"><h2>Ubica los eventos</h2><p class="mini">Los valores iniciales contienen errores deliberados para practicar sincronía. Compara y corrige a oído; si lo necesitas, usa la pista visual.</p><div id="timings"></div><div class="actions"><button id="checkSync">Comprobar sincronía</button><button id="resetTiming" class="ghost">Reiniciar posiciones</button></div><div id="syncResult" class="feedback">Se considera una buena aproximación una desviación de hasta 0,25 s para cada comienzo.</div><div class="actions"><button id="showGuide">Ver puntos de referencia</button></div><div id="syncGuide" class="tip">Encendido: 1,30 s · Zumbido: 2,10 s · Movimiento: 5,60 s · Choque: 8,40 s · Apagado: 11,70 s. Para aprender, escucha primero sin mirar estas cifras.</div></div>
+</div>
+<div class="card bigspace"><h2>Exporta tu diseño final</h2>
+<p>El audio completo se genera a partir de tus parámetros y las posiciones de los eventos. Puedes importarlo más adelante en un DAW, sin necesitar hacerlo ahora.</p>
+<div class="actions"><button class="primary" id="exportScene">↓ Descargar banda de efectos WAV (15 s)</button></div>
+<p class="tiny">PCM WAV mono, 44,1 kHz, 16 bits. Sin voz ni música. La escena muda MP4 se distribuye como archivo separado para una práctica posterior en el DAW.</p>
+</div>
+</section>
+<section class="pane" id="pane4">
+<div class="eyebrow">05 · Explica tus decisiones</div><h1>¿Ya piensas como diseñador sonoro?</h1><p class="sub">Responde con base en lo que oíste y modificaste, no por memorizar nombres de controles.</p>
+<div id="quiz"></div>
+<div class="actions"><button class="primary" id="grade">Evaluar comprensión</button><button id="retry" class="ghost">Borrar respuestas</button></div>
+<div class="feedback hidden" id="report"></div>
+<div class="card bigspace"><h2>Entrega sugerida</h2>
+<div class="checkrow"><input type="checkbox" id="c1"><label for="c1">He probado por separado núcleo, textura y chispa en al menos dos eventos.</label></div>
+<div class="checkrow"><input type="checkbox" id="c2"><label for="c2">He ajustado la sincronización utilizando la escena original.</label></div>
+<div class="checkrow"><input type="checkbox" id="c3"><label for="c3">He exportado un WAV propio y puedo explicar por qué suena así.</label></div>
+<p class="tiny">Después, en otra actividad independiente, podrás reproducir los mismos conceptos con un sintetizador dentro de MorningDAW. Esta misión no enseña funciones del DAW.</p>
+</div>
+</section>
+<aside class="sfx-resource"><details><summary>Escena MP4 original · Misión 03</summary><video controls playsinline preload="metadata" src="Escena_Muda_Mision_03.mp4" aria-label="Escena muda original de la misión 03"></video><p>Este video es la referencia muda para descargar y trabajar en un DAW. Los controles de sincronización de la misión usan la animación Canvas original.</p><a href="Escena_Muda_Mision_03.mp4" download>Descargar MP4</a></details></aside></main>
+<footer class="footerNav"><button id="back" class="ghost" disabled>← Anterior</button><span class="tiny" id="stepStatus" aria-live="polite">Etapa 1 de 5</span><button id="forward" class="primary">Siguiente →</button></footer>
+<p class="tiny">Synth FX · Misión 03 · v0.5.0-rc2 · Material educativo original. Funciona sin conexión. Para reproducir sonido, toca primero un botón de escucha; los navegadores móviles requieren interacción del usuario.</p>
+</div>
+<script>
+(()=>{
+'use strict';
+const $=(q)=>document.querySelector(q), $$=(q)=>Array.from(document.querySelectorAll(q));
+const stepBtns=$$('[data-step]'); const panes=$$('.pane'); let step=0;
+function go(n){stopScene();stopAudio();step=Math.max(0,Math.min(4,n));panes.forEach((e,i)=>e.classList.toggle('active',i===step));stepBtns.forEach((e,i)=>{e.classList.toggle('active',i===step);e.classList.toggle('done',i<step);e.setAttribute('aria-current',i===step?'step':'false')});$('#back').disabled=step===0;$('#forward').textContent=step===4?'Volver al inicio ↺':'Siguiente →';$('#stepStatus').textContent=`Etapa ${step+1} de 5`;window.scrollTo({top:0,behavior:'instant'});if(step===0)drawScene($('#scene0'),0);if(step===3)drawScene($('#scene3'),0);}
+stepBtns.forEach(e=>e.addEventListener('click',()=>go(+e.dataset.step)));
+$$('[data-next]').forEach(e=>e.addEventListener('click',()=>go(1)));
+$('#back').addEventListener('click',()=>go(step-1));$('#forward').addEventListener('click',()=>go(step===4?0:step+1));
+const VISUAL={encendido:1.3,zumbido:2.1,movimiento:5.6,choque:8.4,apagado:11.7};
+const CUES=[
+{id:'encendido',title:'Encendido',desc:'La hoja aparece: un ataque suave, un barrido ascendente de frecuencia y un final que deja paso al zumbido.',base:180,wave:'saw',noise:0.14,spark:0.10,lfo:0,depth:0,sweep:950,cutoff:3500,duration:1.05,attack:.04},
+{id:'zumbido',title:'Zumbido',desc:'El núcleo energético permanece encendido: sonido sostenido y pequeñas fluctuaciones de amplitud y tono.',base:114,wave:'triangle',noise:0.09,spark:0.06,lfo:5.5,depth:0.26,sweep:0,cutoff:1400,duration:2.6,attack:.19},
+{id:'movimiento',title:'Movimiento',desc:'El desplazamiento se comunica con una ráfaga breve: cambio de frecuencia, textura y caída rápida.',base:210,wave:'saw',noise:0.45,spark:0.04,lfo:7,depth:0.13,sweep:580,cutoff:2300,duration:.75,attack:.04},
+{id:'choque',title:'Choque',desc:'Un impacto mezcla un transitorio brillante, ruido amplio y una resonancia corta que decae.',base:240,wave:'square',noise:0.65,spark:0.82,lfo:0,depth:0,sweep:-180,cutoff:3800,duration:1.1,attack:.005},
+{id:'apagado',title:'Apagado',desc:'La energía se extingue: el barrido desciende mientras la amplitud se reduce.',base:720,wave:'saw',noise:0.12,spark:0.02,lfo:1,depth:0.08,sweep:-600,cutoff:1900,duration:.92,attack:.012}
+];
+const defaults=Object.fromEntries(CUES.map(c=>[c.id,{...c}]));
+const settings=Object.fromEntries(CUES.map(c=>[c.id,{...c}]));
+const cueOrder=CUES.map(c=>c.id);
+let selected='zumbido',playedCount=0,comparedCount=0,exportCount=0,sceneVisited=false;
+const controls=[
+['base','Altura inicial',55,1100,1,'Hz','Frecuencia fundamental aproximada del núcleo tonal.'],
+['noise','Textura de ruido',0,1,.01,'','Mezcla una señal irregular que aporta aire, aspereza o impacto.'],
+['spark','Chispa aguda',0,1,.01,'','Capa transitoria de frecuencia alta: útil para encendidos e impactos.'],
+['sweep','Barrido de frecuencia',-1200,1200,10,'Hz','Cambio de altura al transcurrir el evento: negativo baja, positivo sube.'],
+['lfo','Velocidad del LFO',0,15,.1,'Hz','Número de oscilaciones de la modulación por segundo.'],
+['depth','Profundidad de LFO',0,.75,.01,'','Intensidad de la modulación de amplitud y frecuencia.'],
+['cutoff','Filtro paso bajo',250,9000,50,'Hz','Atenúa componentes agudos del núcleo y ruido.'],
+['duration','Duración',.18,3.5,.01,'s','Tiempo del sonido aislado (el zumbido se prolonga en la escena).'],
+['attack','Ataque',.002,.5,.002,'s','Tiempo aproximado hasta alcanzar el volumen máximo.']
+];
+const WAVE_NAMES={sine:'Senoidal',triangle:'Triangular',square:'Cuadrada',saw:'Diente de sierra'};
+function waveValue(type,phase){return SynthFX.ideal(type,phase);}
+function waveformSVG(type){return SynthFX.svg(type);}
+function renderTabs(){const e=$('#cueTabs');e.innerHTML=CUES.map(c=>`<button class="${c.id===selected?'sel':''}" data-cue="${c.id}">${c.title}</button>`).join('');e.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{stopAudio();selected=b.dataset.cue;renderLab();}));}
+function renderWaves(){const e=$('#waveButtons'),w=settings[selected].wave;e.innerHTML=Object.entries(WAVE_NAMES).map(([id,name])=>`<button class="waveopt ${w===id?'sel':''}" data-wave="${id}" aria-pressed="${w===id}">${waveformSVG(id)}<span>${name}</span></button>`).join('');e.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{settings[selected].wave=b.dataset.wave;renderWaves();$('#labFeedback').textContent=`Onda ${WAVE_NAMES[b.dataset.wave]} seleccionada. Escúchala sola y después en la mezcla.`;}));}
+function formatControl(key,val){if(['base','cutoff','sweep'].includes(key))return Math.round(val)+' Hz';if(['lfo'].includes(key))return (+val).toFixed(1)+' Hz';if(['duration','attack'].includes(key))return (+val).toFixed(2)+' s';return Math.round(val*100)+' %';}
+function renderControls(){const e=$('#controls');e.innerHTML=controls.map(([key,label,min,max,step,unit,hint])=>`<div class="control"><label for="ctl_${key}">${label}<output id="out_${key}">${formatControl(key,settings[selected][key])}</output></label><input id="ctl_${key}" type="range" min="${min}" max="${max}" step="${step}" value="${settings[selected][key]}" data-param="${key}" aria-label="${label}"><small>${hint}</small></div>`).join('');e.querySelectorAll('[data-param]').forEach(el=>el.addEventListener('input',()=>{settings[selected][el.dataset.param]=+el.value;$('#out_'+el.dataset.param).textContent=formatControl(el.dataset.param,+el.value);$('#labFeedback').textContent='Parámetro modificado. Escucha la capa correspondiente para comparar.';}));}
+function renderLab(){renderTabs();renderWaves();renderControls();$('#cueDescription').textContent=settings[selected].desc;drawScope();}
+$('#restore').addEventListener('click',()=>{settings[selected]={...defaults[selected]};renderLab();$('#labFeedback').textContent='Valores originales restaurados para '+defaults[selected].title+'.';});
+$('#hintLab').addEventListener('click',()=>$('#hintText').classList.toggle('show'));
+let audioContext=null,sources=[];
+function ensureAudio(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw Error('Este navegador no ofrece Web Audio.');if(!audioContext)audioContext=new AC({latencyHint:'interactive'});return audioContext;}
+let audioRequest=0;async function readyAudio(){const request=++audioRequest;const ctx=ensureAudio();if(ctx.state!=='running')await ctx.resume();await Promise.resolve();if(request!==audioRequest)throw Error('Reproducción cancelada.');if(ctx.state!=='running')throw Error('El navegador no permitió iniciar el audio. Toca de nuevo el botón.');return ctx;}
+function stopAudio(){audioRequest++;sources.forEach(s=>{try{s.stop()}catch(_e){}});sources=[];}
+function clip(x){return Math.max(-1,Math.min(1,x));}
+function hashedNoise(i,seed){let h=(Math.imul(i+seed,1597334677) ^ Math.imul((i+seed)>>>3,3812015801))|0;h^=h>>>13;h=Math.imul(h,1274126177);h^=h>>>16;return ((h>>>0)/2147483648)-1;}
+function makePCM(cue, duration, rate=44100,layer='full'){
+ const cfg={...cue},n=Math.max(1,Math.ceil(duration*rate)),data=new Float32Array(n);
+ let phase=0,phaseHi=0,lp=0,lpHi=0;
+ const selectedTone=layer==='full'||layer==='tone',selectedNoise=layer==='full'||layer==='noise',selectedSpark=layer==='full'||layer==='spark';
+ let k=0;
+ for(let i=0;i<n;i++){
+   const t=i/rate,p=t/duration,attack=Math.min(cfg.attack,duration*.4);
+   let env;
+   if(cfg.id==='zumbido'){env=Math.min(1,t/Math.max(.005,attack))*Math.min(1,(duration-t)/Math.min(.23,duration*.14));}
+   else if(cfg.id==='choque'){env=Math.min(1,t/Math.max(.002,attack))*Math.pow(Math.max(0,1-p),2.4);}
+   else if(cfg.id==='apagado'){env=Math.min(1,t/Math.max(.002,attack))*Math.pow(Math.max(0,1-p),1.35);}
+   else if(cfg.id==='movimiento'){env=Math.min(1,t/Math.max(.003,attack))*Math.pow(Math.max(0,1-p),.9);}
+   else{env=Math.min(1,t/Math.max(.004,attack))*Math.pow(Math.max(0,1-p),.35);}
+   const startHz=Math.max(35,cfg.base),endHz=Math.max(35,cfg.base+cfg.sweep);
+   const f=startHz+(endHz-startHz)*(p<0?0:p);
+   const trem=cfg.depth*Math.sin(2*Math.PI*cfg.lfo*t);
+   const hz=Math.max(25,f*(1+.10*trem));
+   phase+=2*Math.PI*hz/rate;phaseHi+=2*Math.PI*(1400+850*(1-p))/rate;
+   let core=SynthFX.wave(cfg.wave,phase,hz,rate);const rawNoise=hashedNoise(i,cfg.id.charCodeAt(0)*45);
+   const coef=1-Math.exp(-2*Math.PI*cfg.cutoff/rate);
+   lp+=coef*(core-lp);lpHi+=coef*(rawNoise-lpHi);
+   const gated=env*(1+.32*trem);
+   // La chispa es breve y decae incluso durante el zumbido.
+   const sparkEnv=Math.exp(-t*(cfg.id==='zumbido'?12:cfg.id==='choque'?24:17));
+   let sample=(selectedTone?lp*.43:0)+(selectedNoise?lpHi*cfg.noise*.34:0)+(selectedSpark?Math.sin(phaseHi)*sparkEnv*cfg.spark*.48:0);
+   data[i]=sample*gated*.92*Math.min(1,(duration-t)/.008);
+ }
+ let peak=0;for(const x of data)peak=Math.max(peak,Math.abs(x));if(peak>.91)for(let i=0;i<data.length;i++)data[i]*=.91/peak;
+ return data;
+}
+function audioBuffer(pcm,ctx){const buf=ctx.createBuffer(1,pcm.length,44100);buf.copyToChannel(pcm,0);return buf;}
+function schedulePCM(ctx,pcm,when,gain=1){const src=ctx.createBufferSource(),g=ctx.createGain();src.buffer=audioBuffer(pcm,ctx);g.gain.value=gain;src.connect(g);g.connect(ctx.destination);src.start(when);sources.push(src);src.onended=()=>{const i=sources.indexOf(src);if(i!==-1)sources.splice(i,1);try{src.disconnect();g.disconnect()}catch(_e){}};return src;}
+function drawScope(data){const canvas=$('#scope'),cx=canvas.getContext('2d'),w=canvas.width,h=canvas.height;cx.clearRect(0,0,w,h);cx.fillStyle='#08111e';cx.fillRect(0,0,w,h);cx.strokeStyle='#24445b';cx.lineWidth=1;for(let y=h/4;y<h;y+=h/4){cx.beginPath();cx.moveTo(0,y);cx.lineTo(w,y);cx.stroke();}cx.strokeStyle='#71eee0';cx.lineWidth=2;cx.beginPath();if(!data)data=makePCM(settings[selected],Math.min(.11,settings[selected].duration));const len=data.length;for(let x=0;x<w;x++){const z=data[Math.min(len-1,Math.floor((x/w)*len))]||0;const y=h/2-z*h*.76;if(x===0)cx.moveTo(x,y);else cx.lineTo(x,y);}cx.stroke();}
+async function playCue(id,layer='full',duration){try{const ctx=await readyAudio();stopAudio();const cfg=settings[id],dur=duration||Math.min(cfg.duration,3.5),pcm=makePCM(cfg,dur,44100,layer);schedulePCM(ctx,pcm,ctx.currentTime+.02);drawScope(pcm.subarray(0,Math.min(pcm.length,4410)));playedCount++;$('#labFeedback').textContent=`Escuchando ${cfg.title.toLowerCase()}: ${layer==='full'?'mezcla completa':layer==='tone'?'solo núcleo tonal':layer==='noise'?'solo textura de ruido':'solo chispa aguda'}. Ajusta los valores y vuelve a comparar.`;}catch(err){$('#labFeedback').textContent=`No pudo comenzar el audio: ${err.message}`;}}
+$('#playTone').addEventListener('click',()=>playCue(selected,'tone'));$('#playNoise').addEventListener('click',()=>playCue(selected,'noise'));$('#playSpark').addEventListener('click',()=>playCue(selected,'spark'));$('#playFull').addEventListener('click',()=>playCue(selected));$('#stopSound').addEventListener('click',()=>stopAudio());
+$('#waveListen').addEventListener('click',async()=>{const old=settings[selected];const p={...old,id:'zumbido',base:220,noise:0,spark:0,lfo:0,depth:0,sweep:0,cutoff:9000,attack:.03,duration:.45};try{const ctx=await readyAudio();stopAudio();const pcm=makePCM(p,.45,44100,'tone');schedulePCM(ctx,pcm,ctx.currentTime+.02);drawScope(pcm.subarray(0,4400));$('#labFeedback').textContent=`Forma de onda: ${WAVE_NAMES[old.wave]}. Esta demostración neutraliza el barrido y las otras capas para comparar formas de onda.`;}catch(err){$('#labFeedback').textContent=err.message;}});
+
+const exercises=[
+ {title:'Escucha 1 · Estabilidad del zumbido',prompt:'¿Cuál zumbido comunica una energía más inestable?',event:'zumbido',a:{lfo:0,depth:0,noise:.07},b:{lfo:8.4,depth:.63,noise:.07},correct:1,options:['A: zumbido estable','B: zumbido oscilante'],why:'La modulación periódica (LFO) altera la intensidad y ligeramente la frecuencia. Un valor intenso puede sugerir energía inestable. No cambia la nota como una melodía.'},
+ {title:'Escucha 2 · Textura del movimiento',prompt:'¿Qué barrido produce más sensación de aire o fricción?',event:'movimiento',a:{noise:.75,cutoff:4000},b:{noise:.02,cutoff:4000},correct:0,options:['A: barrido con más ruido','B: barrido casi tonal'],why:'La capa de ruido aporta una componente aperiódica que puede reforzar un gesto de movimiento. Su presencia se modifica con el filtro.'},
+ {title:'Escucha 3 · Transitorio del choque',prompt:'¿Qué choque posee una chispa inicial más marcada?',event:'choque',a:{spark:.98,noise:.5},b:{spark:.01,noise:.5},correct:0,options:['A: choque más brillante al inicio','B: choque menos brillante al inicio'],why:'La capa de chispa aguda tiene una envolvente muy corta. Hace más definido el ataque del impacto sin convertirlo en un sonido continuo.'}
+];
+const answers={};
+function exerciseHTML(){const root=$('#listenExercises');root.innerHTML=exercises.map((e,i)=>`<div class="card bigspace"><div class="eyebrow">${e.title}</div><h2>${e.prompt}</h2><div class="actions"><button data-listen="${i}" data-side="a">▶ Escuchar A</button><button data-listen="${i}" data-side="b">▶ Escuchar B</button><button data-listen="${i}" data-side="ab">▶ Comparar A / B</button><button data-listen="${i}" data-side="stop" class="ghost">■ Detener</button></div><div class="answers">${e.options.map((o,j)=>`<button data-answer="${i}" data-option="${j}" ${answers[i]===j?'style="border-color:var(--cyan)"':''}>${o}</button>`).join('')}</div><div id="listenFb${i}" class="feedback ${answers[i]===undefined?'':answers[i]===e.correct?'good':'bad'}">${answers[i]===undefined?'Escucha antes de responder. Puedes repetir A y B cuantas veces quieras.':(answers[i]===e.correct?'Correcto. ':'Observa la diferencia. ')+e.why}</div></div>`).join('');
+ root.querySelectorAll('[data-listen]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.listen;if(b.dataset.side==='stop'){stopAudio();return;}playExercise(i,b.dataset.side);}));
+ root.querySelectorAll('[data-answer]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.answer;answers[i]=+b.dataset.option;exerciseHTML();}));
+}
+async function playExercise(index,side){
+ const e=exercises[index];
+ try{const ctx=await readyAudio();stopAudio();let parts=side==='ab'?['a','b']:[side];
+ for(let j=0;j<parts.length;j++){const c={...defaults[e.event],...e[parts[j]]},d=e.event==='zumbido'?1.5:c.duration;const pcm=makePCM(c,d);schedulePCM(ctx,pcm,ctx.currentTime+.02+j*(d+.4));}
+ comparedCount++;
+ $('#listenFb'+index).textContent=side==='ab'?'Primero suena A; después, B. La comparación está separada por una breve pausa.':'Escuchando '+side.toUpperCase()+'. Puedes repetirlo o comparar ambos.';
+ }catch(err){$('#listenFb'+index).textContent='No se pudo reproducir el sonido: '+err.message;}
+}
+const timingDefaults={encendido:1.75,zumbido:2.7,movimiento:6.25,choque:7.95,apagado:12.4};
+let timings={...timingDefaults};let raf=0,sceneRunning=false,sceneStart=0;
+function timingUI(){const e=$('#timings');e.innerHTML=cueOrder.map(id=>`<div class="timing"><label for="time_${id}">${defaults[id].title}</label><input type="range" id="time_${id}" data-time="${id}" min="0" max="14.75" step=".05" value="${timings[id]}"><strong id="timeval_${id}">${timings[id].toFixed(2).replace('.',',')} s</strong></div>`).join('');e.querySelectorAll('[data-time]').forEach(sl=>sl.addEventListener('input',()=>{timings[sl.dataset.time]=+sl.value;$('#timeval_'+sl.dataset.time).textContent=(+sl.value).toFixed(2).replace('.',',')+' s';$('#syncResult').textContent='Has cambiado el momento del sonido. Reproduce la escena para evaluar la sincronía.';$('#syncResult').className='feedback';}));}
+$('#resetTiming').addEventListener('click',()=>{timings={...timingDefaults};timingUI();$('#syncResult').textContent='Posiciones iniciales restauradas; vuelve a experimentar.';$('#syncResult').className='feedback';});
+$('#checkSync').addEventListener('click',()=>{const ok=cueOrder.filter(id=>Math.abs(timings[id]-VISUAL[id])<=.25).length;$('#syncResult').textContent=`${ok}/5 comienzos ajustados con desviación ≤ 0,25 s. ${ok===5?'Todos los sonidos están aproximadamente sincronizados.': 'Reproduce y compara los que aún están desplazados. Puedes pedir los puntos de referencia.'}`;$('#syncResult').className='feedback '+(ok===5?'good':'bad');});
+$('#showGuide').addEventListener('click',()=>$('#syncGuide').classList.toggle('show'));
+function getSoundPlan(positions){
+ const plan=[];for(const id of cueOrder){const start=positions[id];let duration=id==='zumbido'?Math.max(.5,positions.apagado-start-.05):settings[id].duration;duration=Math.min(duration,15-start);if(duration>.02)plan.push({id,start,duration});}
+ return plan;
+}
+function makeScenePCM(positions=timings,rate=44100){
+ const total=rate*15,mix=new Float32Array(total),plan=getSoundPlan(positions);
+ for(const p of plan){const sig=makePCM(settings[p.id],p.duration,rate,'full'),off=Math.floor(p.start*rate);for(let i=0;i<sig.length&&off+i<total;i++)if(off+i>=0)mix[off+i]+=sig[i];}
+ let peak=0;for(let i=0;i<mix.length;i++){if(Math.abs(mix[i])>peak)peak=Math.abs(mix[i]);}
+ // Normalizar únicamente cuando la suma de capas requiere reducción, no aumentar silencios.
+ const scale=peak>.91?.91/peak:1; if(scale!==1)for(let i=0;i<mix.length;i++)mix[i]*=scale;
+ return mix;
+}
+function cueWAV(pcm,rate=44100){
+ const n=pcm.length,b=new ArrayBuffer(44+n*2),v=new DataView(b);function str(offset,s){for(let j=0;j<s.length;j++)v.setUint8(offset+j,s.charCodeAt(j));}
+ str(0,'RIFF');v.setUint32(4,36+n*2,true);str(8,'WAVE');str(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);str(36,'data');v.setUint32(40,n*2,true);for(let i=0;i<n;i++){const x=Math.max(-1,Math.min(1,pcm[i]));v.setInt16(44+i*2,x<0?Math.round(x*32768):Math.round(x*32767),true);}return new Blob([b],{type:'audio/wav'});
+}
+function saveWAV(name,pcm){const blob=cueWAV(pcm),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);}
+$('#exportScene').addEventListener('click',()=>{saveWAV('SynthFX_M03_Banda_Efectos_15s.wav',makeScenePCM());exportCount++;$('#syncFeedback').textContent='WAV completo descargado con los eventos posicionados como aparecen en tus controles.';});
+$('#exportPack').addEventListener('click',()=>{const id=selected,pcm=makePCM(settings[id],settings[id].duration);saveWAV('SynthFX_M03_'+id+'.wav',pcm);exportCount++;$('#labFeedback').textContent=`Descargado el WAV de ${defaults[id].title.toLowerCase()}. Cambia de evento y pulsa de nuevo para descargar los demás. Así evitas bloqueos de múltiples descargas.`;});
+async function playFullPlan(positions=VISUAL){
+ try{const ctx=await readyAudio();stopAudio();const pcm=makeScenePCM(positions);schedulePCM(ctx,pcm,ctx.currentTime+.08);playedCount++;$('#labFeedback').textContent='Reproduciendo los cinco eventos en el tiempo narrativo de la escena (15 s).';}catch(e){$('#labFeedback').textContent='No se pudo reproducir la secuencia: '+e.message;}
+}
+$('#playAll').addEventListener('click',()=>playFullPlan(VISUAL));
+function drawScene(canvas,t){
+ const c=canvas.getContext('2d'),w=960,h=540;
+ c.clearRect(0,0,w,h);const bg=c.createLinearGradient(0,0,0,h);bg.addColorStop(0,'#080e22');bg.addColorStop(.57,'#18223d');bg.addColorStop(1,'#061e28');c.fillStyle=bg;c.fillRect(0,0,w,h);
+ // Campo de estrellas determinista.
+ for(let i=0;i<74;i++){const x=(Math.sin(i*148.3+2)*43215.8)%1,y=(Math.sin(i*73.4+20)*5910)%1;const xx=((x+1)%1)*w, yy=((y+1)%1)*h*.75;const r=i%6===0?1.6:.6;c.fillStyle=`rgba(196,232,255,${.19+.25*(.5+.5*Math.sin(t*1.7+i*2))})`;c.fillRect(xx,yy,r,r);}
+ // Aros espaciales y una plataforma de entrenamiento.
+ c.strokeStyle='#40617c40';c.lineWidth=3;for(let j=1;j<=3;j++){c.beginPath();c.ellipse(480,480,110+j*130,60+j*45,0,Math.PI,Math.PI*2);c.stroke();}
+ c.fillStyle='#132e3b';c.beginPath();c.moveTo(0,446);c.lineTo(960,446);c.lineTo(960,540);c.lineTo(0,540);c.fill();c.strokeStyle='#295569';for(let i=0;i<15;i++){c.beginPath();c.moveTo(i*75,450);c.lineTo(480+(i-7)*180,540);c.stroke();}
+ const activation=Math.max(0,Math.min(1,(t-1.3)/.7));const retreat=Math.max(0,Math.min(1,(12.18-t)/.5));const extent=Math.min(activation,retreat);
+ let sweep=0;if(t>5.25&&t<=8.4)sweep=Math.min(1,(t-5.25)/3.1);else if(t>8.4)sweep=Math.max(.26,1-(t-8.4)*.60);
+ function drawBlade(side){const isLeft=side==='L',baseX=isLeft?290+150*sweep:720-130*sweep,baseY=447,tipX=isLeft?385+115*sweep:590-90*sweep,tipY=175+90*sweep;const hx=baseX+(tipX-baseX)*extent,hy=baseY+(tipY-baseY)*extent;const palette=isLeft?['#4af9ee','#b7ffff']:['#ff9fc7','#ffe0eb'];
+ // Empuñadura.
+ c.save();c.translate(baseX,baseY);c.rotate(Math.atan2(tipY-baseY,tipX-baseX)+Math.PI/2);c.fillStyle='#a0bdcc';c.fillRect(-14,-11,28,56);c.fillStyle='#172735';c.fillRect(-10,-6,20,43);c.strokeStyle=palette[0];c.lineWidth=3;c.beginPath();c.moveTo(-15,1);c.lineTo(15,1);c.stroke();c.restore();
+ if(extent>.005){c.save();c.lineCap='round';c.shadowColor=palette[0];c.shadowBlur=36;c.strokeStyle=palette[0];c.lineWidth=24;c.beginPath();c.moveTo(baseX,baseY);c.lineTo(hx,hy);c.stroke();c.shadowBlur=18;c.strokeStyle=palette[0];c.lineWidth=11;c.stroke();c.shadowBlur=7;c.strokeStyle=palette[1];c.lineWidth=4;c.stroke();c.restore();}
+ }
+ drawBlade('L');drawBlade('R');
+ const impact=Math.max(0,1-Math.abs(t-8.4)/.49);if(impact>0){c.save();c.translate(500,265);c.shadowColor='#ffe7ae';c.shadowBlur=40;c.fillStyle=`rgba(255,250,213,${impact*.85})`;c.beginPath();c.arc(0,0,9+impact*14,0,Math.PI*2);c.fill();c.strokeStyle=`rgba(255,220,130,${impact})`;for(let i=0;i<18;i++){const a=i*Math.PI*2/18+t*.25,ra=24+impact*(18+i%5*14);c.lineWidth=2;c.beginPath();c.moveTo(Math.cos(a)*19,Math.sin(a)*19);c.lineTo(Math.cos(a)*ra,Math.sin(a)*ra);c.stroke();}c.restore();}
+ c.fillStyle='#d4f4ff';c.font='700 18px system-ui';c.fillText('CÁMARA DE PRUEBAS · ENERGÍA',22,35);c.fillStyle='#a9cada';c.font='14px system-ui';c.fillText('SIMULACIÓN VISUAL ORIGINAL',23,59);
+ c.fillStyle='#70f4e5';c.fillRect(22,74,Math.min(916,t/15*916),3);
+ c.font='14px ui-monospace,monospace';c.fillStyle='#b6cfe1';c.fillText(t.toFixed(2).replace('.',',')+' s',22,105);
+ c.fillStyle='#a3c4d5';c.font='13px system-ui';let text=t<1.3?'Espera del encendido':t<2.1?'Encendido de energía':t<5.6?'Zumbido sostenido':t<8.4?'Movimiento de las hojas':t<9.4?'Choque y resonancia':t<11.7?'Energía sostenida':t<12.7?'Apagado':'Final de la secuencia';c.fillText(text,22,520);
+}
+function stopScene(){sceneRunning=false;if(raf)cancelAnimationFrame(raf);raf=0;stopAudio();$('#filmProgress').style.width='0%';$('#clock').textContent='00:00 / 00:15';}
+async function beginScene(withAudio){
+ stopScene();try{
+   let ctx=null,base=0;if(withAudio){ctx=await readyAudio();const pcm=makeScenePCM(timings);base=ctx.currentTime+.055;schedulePCM(ctx,pcm,base);sceneVisited=true;}
+   sceneRunning=true;sceneStart=performance.now();
+   const tick=()=>{if(!sceneRunning)return;const t=Math.min(15,Math.max(0,ctx?ctx.currentTime-base:(performance.now()-sceneStart)/1000));drawScene($('#scene3'),t);$('#filmProgress').style.width=(100*t/15)+'%';$('#clock').textContent='00:'+String(Math.floor(t)).padStart(2,'0')+' / 00:15';if(t<15)raf=requestAnimationFrame(tick);else{sceneRunning=false;raf=0;$('#syncFeedback').textContent='Reproducción terminada. Ajusta los eventos si alguno no coincidió con la acción.';}};
+   tick();$('#syncFeedback').textContent=withAudio?'Escuchando tu mezcla contra la imagen. Detecta si el sonido se adelanta o retrasa.':'Observando la escena muda: identifica encendido, desplazamiento, choque y apagado.';
+ }catch(err){$('#syncFeedback').textContent='No pudo iniciar el sonido: '+err.message;}
+}
+$('#scenePlay').addEventListener('click',()=>beginScene(true));$('#sceneMute').addEventListener('click',()=>beginScene(false));$('#sceneStop').addEventListener('click',()=>{stopScene();drawScene($('#scene3'),0);});
+const quiz=[
+ {q:'El zumbido debe permanecer mientras la hoja está encendida. ¿Qué enfoque de síntesis resulta más apropiado?',o:['Un impulso de pocos milisegundos','Una señal sostenida con envolvente y modulación controladas','Un silencio entre cada fotograma'],a:1,why:'Un zumbido sostenido necesita mantener energía temporalmente; la modulación permite añadir vida sin crear melodías.'},
+ {q:'Quieres que un choque tenga mayor definición en el instante del contacto. ¿Qué modificarías primero?',o:['Aumentar la chispa transitoria inicial','Eliminar la envolvente de amplitud','Bajar el volumen de toda la escena a cero'],a:0,why:'Una señal de ataque corta y brillante ayuda a señalar el instante del impacto.'},
+ {q:'¿Qué agrega principalmente la capa de ruido a un barrido de movimiento?',o:['Una altura musical exacta','Una textura aperiódica de aire o fricción','Una progresión armónica'],a:1,why:'El ruido aporta textura no tonal. Un filtro permite dar forma a su contenido espectral.'},
+ {q:'Si un movimiento se oye medio segundo después del gesto visual, ¿cuál es el problema principal?',o:['La forma de onda triangular','La sincronización temporal','La ausencia de una melodía'],a:1,why:'El diseño audiovisual requiere que el comienzo sonoro acompañe la acción.'},
+ {q:'Al cambiar una onda senoidal por diente de sierra, ¿qué efecto suele esperarse antes del filtrado?',o:['Mayor riqueza armónica','Que se eliminen todos los armónicos','Que el sonido se convierta en una grabación real'],a:0,why:'El diente de sierra ideal contiene armónicos abundantes; el filtro y la envolvente alteran su percepción.'}
+];let qAns={};
+function drawQuiz(){const e=$('#quiz');e.innerHTML=quiz.map((q,i)=>`<div class="q"><h3>${i+1}. ${q.q}</h3><div class="options">${q.o.map((opt,j)=>`<button data-quiz="${i}" data-choice="${j}" class="${qAns[i]===j?'selected':''}">${opt}</button>`).join('')}</div><div class="feedback ${qAns[i]===undefined?'':qAns[i]===q.a?'good':'bad'}">${qAns[i]===undefined?'Elige una respuesta para ver el razonamiento.':(qAns[i]===q.a?'Correcto. ':'Revisa: ')+q.why}</div></div>`).join('');e.querySelectorAll('[data-quiz]').forEach(b=>b.addEventListener('click',()=>{qAns[+b.dataset.quiz]=+b.dataset.choice;drawQuiz();}));}
+$('#grade').addEventListener('click',()=>{const score=quiz.filter((q,i)=>qAns[i]===q.a).length,total=Object.keys(qAns).length;const r=$('#report');r.classList.remove('hidden');r.className='feedback '+(score===quiz.length?'good':'');r.innerHTML=`<strong>Comprensión: ${score}/${quiz.length}</strong><p>${total<quiz.length?'Faltan '+(quiz.length-total)+' preguntas. ':''}${score===quiz.length?'Ya identificas las funciones de cada capa y el problema de la sincronía.':'Revisa las explicaciones, repite las comparaciones y vuelve a responder.'}</p><p class="tiny">Actividad auditiva: ${comparedCount?'realizada':'pendiente'} · Exploración de síntesis: ${playedCount?'realizada':'pendiente'} · Escena con sonido: ${sceneVisited?'reproducida':'pendiente'} · Exportación: ${exportCount?'realizada':'opcional'}. Estos indicadores son orientativos y no sustituyen una evaluación docente.</p>`;});
+$('#retry').addEventListener('click',()=>{qAns={};drawQuiz();$('#report').classList.add('hidden');});
+renderLab();exerciseHTML();timingUI();drawQuiz();drawScene($('#scene0'),8.4);drawScene($('#scene3'),0);
+window.addEventListener('pagehide',stopScene);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopScene();});SynthFX.enhanceWaves(document.querySelector('#waveButtons'));
+})();
+</script></body></html>
