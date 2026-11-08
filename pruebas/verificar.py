@@ -39,7 +39,7 @@ with sync_playwright() as pw:
    r.fulfill(status=200,content_type='text/html',body=html)
   page.route('**/'+f.name,route);page.goto(f'http://127.0.0.1:{server.server_port}/{f.name}');page.wait_for_timeout(100)
   check(page.evaluate('!!window.__qa'),f'{mission}: inicialización')
-  check('Synth FX' in page.title(),f'{mission}: título')
+  check('Audio Pedagógico' in page.title(),f'{mission}: título')
   # Todos los botones originales y añadidos de cada etapa; navegación se prueba aparte.
   for step in range(5):
    page.evaluate('(n)=>__qa.go(n)',step)
@@ -136,7 +136,7 @@ with sync_playwright() as pw:
  context.set_offline('--webkit' not in sys.argv)
  report['localMode']='file:// con emulación offline' if '--webkit' not in sys.argv else 'file:// sin emulación offline: WebKit rechaza file:// con set_offline(True)'
  for f in sorted(ROOT.glob('*.html')):
-  page.goto(f.resolve().as_uri());page.wait_for_timeout(100);check('Synth FX' in page.title(),'file offline '+f.name)
+  page.goto(f.resolve().as_uri());page.wait_for_timeout(100);check('Audio Pedagógico' in page.title(),'file offline '+f.name)
  context.set_offline(False)
  browser.close()
 for f in set(downloads):
