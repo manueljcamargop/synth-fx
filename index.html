@@ -8,64 +8,27 @@
   <meta name="description" content="Laboratorio interactivo de diseño sonoro con cuatro misiones de síntesis y un módulo de reverberación.">
   <title>Audio Pedagógico · Laboratorio de diseño sonoro</title>
   <link rel="stylesheet" href="synthfx.css">
-  <style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,-apple-system,sans-serif;color:#ecf7fb;background:radial-gradient(ellipse at top right,#1f546044,transparent 55%),#081423}main{max-width:1060px;margin:0 auto;padding:25px 20px 65px}header{padding:22px 0 28px;border-bottom:1px solid #365061}strong{color:#76e8da}h1{font-size:clamp(32px,5vw,54px);line-height:1.04;margin:15px 0}p{color:#b9cddd}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}.card{background:#112438;border:1px solid #355368;border-radius:19px;padding:22px;display:flex;flex-direction:column;align-items:flex-start}.k{font-weight:750;color:#8af3e4;letter-spacing:.08em;font-size:13px}.card h3{margin:12px 0 4px;font-size:23px}.card p{margin:5px 0 17px;flex:1}.actions{display:flex;gap:8px;flex-wrap:wrap}a{display:inline-block;text-decoration:none;border:1px solid #4c7684;padding:9px 12px;border-radius:11px;color:#d5fff8;font-weight:650}a.primary{background:#baf9ee;color:#09262d;border-color:#baf9ee}footer{color:#829ead;margin-top:27px;font-size:13px}@media(max-width:650px){.grid{grid-template-columns:1fr}.card{padding:17px}}
-
-    .module{margin-top:34px;scroll-margin-top:20px}
-    .module > h2{margin:4px 0 6px;font-size:clamp(24px,4vw,34px)}
-    .module > p{margin:0}
-    .reverb-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .actions a{min-height:44px}
-    @media(max-width:720px){.reverb-grid{grid-template-columns:1fr}}
-  </style>
+  <link rel="stylesheet" href="laboratorio.css">
 </head>
 <body>
 <main>
   <header>
     <p class="k">Laboratorio interactivo de diseño sonoro</p>
     <h1>Audio Pedagógico</h1>
-    <p>Diseña efectos para la imagen y descubre cómo cambia el sonido de un espacio. Escucha, experimenta y exporta tus creaciones.</p>
-    <nav class="actions" aria-label="Secciones del laboratorio">
-      <a href="#sintesis">Síntesis de efectos sonoros</a>
-      <a href="#reverberacion">Reverberación</a>
-    </nav>
+    <p>Diseña efectos para la imagen y descubre cómo cambia el sonido de un espacio.</p>
   </header>
-  <section id="sintesis" class="module" aria-labelledby="titulo-sintesis">
-    <span class="k">01 · SÍNTESIS</span>
-    <h2 id="titulo-sintesis">Síntesis de efectos sonoros</h2>
-    <p>Cuatro misiones para crear, sincronizar y exportar efectos audiovisuales.</p>
-    <div class="grid">
-<section class="card"><span class="k">MISIÓN 01</span><h3>Disparo láser</h3><p>Diseña un disparo con osciladores y barridos de frecuencia.</p><div class="actions"><a class="primary" href="Mision_01_Disparo_Laser.html">Abrir misión</a><a href="Escena_Muda_Mision_01.mp4">Video mudo</a></div></section>
-<section class="card"><span class="k">MISIÓN 02</span><h3>Naves espaciales</h3><p>Experimenta con motores, filtros, ruido y modulación.</p><div class="actions"><a class="primary" href="Mision_02_Naves_Espaciales.html">Abrir misión</a><a href="Escena_Muda_Mision_02.mp4">Video mudo</a></div></section>
-<section class="card"><span class="k">MISIÓN 03</span><h3>Espadas de energía</h3><p>Combina zumbido, movimiento, choques y otros efectos por capas.</p><div class="actions"><a class="primary" href="Mision_03_Espadas_de_Energia.html">Abrir misión</a><a href="Escena_Muda_Mision_03.mp4">Video mudo</a></div></section>
-<section class="card"><span class="k">MISIÓN 04</span><h3>Ambientes tecnológicos</h3><p>Sonoriza una sala de control con ambiente continuo, señales de interfaz y alarma.</p><div class="actions"><a class="primary" href="Mision_04_Ambientes_Tecnologicos.html">Abrir misión</a><a href="Escena_Muda_Mision_04.mp4">Video mudo</a></div></section>
-    </div>
-  </section>
-  <section id="reverberacion" class="module" aria-labelledby="titulo-reverberacion">
-    <span class="k">02 · ACÚSTICA</span>
-    <h2 id="titulo-reverberacion">Reverberación</h2>
-    <p>Escucha las reflexiones, ajusta el efecto y diseña un espacio sonoro propio.</p>
-    <div class="grid reverb-grid">
-      <article class="card">
-        <span class="k">PARTE 01</span>
-        <h3>Observa</h3>
-        <p>Compara cómo suena una misma fuente en diferentes espacios.</p>
-        <div class="actions"><a class="primary" href="Reverberacion_Interactiva_3_Paginas.html#observa">Abrir Observa</a></div>
-      </article>
-      <article class="card">
-        <span class="k">PARTE 02</span>
-        <h3>Experimenta</h3>
-        <p>Cambia la duración, la separación y la cantidad de reverberación.</p>
-        <div class="actions"><a class="primary" href="Reverberacion_Interactiva_3_Paginas.html#experimenta">Abrir Experimenta</a></div>
-      </article>
-      <article class="card">
-        <span class="k">PARTE 03</span>
-        <h3>Aplica</h3>
-        <p>Construye el sonido de un espacio y expórtalo en WAV.</p>
-        <div class="actions"><a class="primary" href="Reverberacion_Interactiva_3_Paginas.html#aplica">Abrir Aplica</a></div>
-      </article>
-    </div>
-  </section>
+  <nav class="grid" aria-label="Secciones del laboratorio">
+    <article class="card" id="sintesis">
+      <h2>Síntesis de efectos sonoros</h2>
+      <p>Crea y sincroniza efectos audiovisuales.</p>
+      <a class="primary" href="sintesis.html">Entrar a Síntesis</a>
+    </article>
+    <article class="card" id="reverberacion">
+      <h2>Reverberación</h2>
+      <p>Explora cómo los espacios transforman lo que escuchas.</p>
+      <a class="primary" href="reverberacion.html">Entrar a Reverberación</a>
+    </article>
+  </nav>
   <footer>Audio Pedagógico · Laboratorio interactivo de diseño sonoro</footer>
 </main>
 </body>

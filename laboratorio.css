@@ -1,0 +1,25 @@
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,sans-serif;color:#ecf7fb;background:radial-gradient(ellipse at top right,#1f546044,transparent 55%),#081423}
+main{max-width:1060px;margin:0 auto;padding:25px 20px 65px}
+header{padding:22px 0 28px;border-bottom:1px solid #365061}
+h1{font-size:clamp(32px,5vw,54px);line-height:1.04;margin:15px 0}
+p{color:#b9cddd}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.card{background:#112438;border:1px solid #355368;border-radius:19px;padding:22px;display:flex;flex-direction:column;align-items:flex-start}
+.k{font-weight:750;color:#8af3e4;letter-spacing:.08em;font-size:13px}
+.card h2{margin:12px 0 4px;font-size:23px}
+.card p{margin:5px 0 17px;flex:1}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+a{display:inline-block;min-height:44px;text-decoration:none;border:1px solid #4c7684;padding:9px 12px;border-radius:11px;color:#d5fff8;font-weight:650}
+a.primary{background:#baf9ee;color:#09262d;border-color:#baf9ee}
+footer{color:#829ead;margin-top:27px;font-size:13px}
+@media(max-width:650px){
+  .grid{grid-template-columns:1fr}
+  .card{padding:17px}
+}
+
+.reverb-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:720px){
+  .reverb-grid{grid-template-columns:1fr}
+}
