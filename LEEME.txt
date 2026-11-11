@@ -6,7 +6,7 @@ Cuatro misiones originales: disparos láser, naves espaciales, espadas de energ�
 
 INICIAR
 1. Extraer TODO el paquete en una carpeta.
-2. Abrir index.html y elegir una misión.
+2. Abrir index.html y elegir Síntesis o Reverberación.
 3. Pulsar un botón de escucha para habilitar Web Audio. Utilizar volumen moderado.
 4. Observar, escuchar, experimentar, fabricar, sincronizar y reflexionar.
 5. Exportar WAV cuando el diseño esté listo. Se pueden importar después en un DAW.
@@ -36,7 +36,7 @@ Todos son PCM de 16 bits. Guardar o compartir desde Descargas según el navegado
 
 ESTADO
 Candidata a publicación: consultar el informe para distinguir las pruebas ejecutadas de las pendientes.
-No se ha publicado en GitHub. La carpeta original v0.4.0 se conserva sin modificar como respaldo.
+Publicada en GitHub Pages: https://manueljcamargop.github.io/synth-fx/ . La carpeta original v0.4.0 se conserva sin modificar como respaldo.
 
 PERILLAS
 Arrastrar hacia arriba/derecha aumenta; abajo/izquierda disminuye.
