@@ -26,6 +26,7 @@ Los parámetros se ajustan con perillas: arrastra hacia arriba/abajo, toca el ar
 - [Observa](Reverberacion_Interactiva_3_Paginas.html#observa) para comparar el sonido directo y las reflexiones de una sala.
 - [Experimenta](Reverberacion_Interactiva_3_Paginas.html#experimenta) con el tiempo de reverberación, el retardo, la mezcla y la absorción.
 - [Aplica](Reverberacion_Interactiva_3_Paginas.html#aplica) los ajustes a una situación y exporta el resultado en WAV.
+- [Entrena tu oído](Entrenador_Reverberacion.html) en cuatro niveles: compara la duración de dos colas (con dificultad adaptativa), reconoce el tamaño y el pre-delay de un espacio, iguala una referencia sin ver sus valores y corrige una sugerencia automática (preset) según el encargo de un cliente. El progreso se guarda solo en el navegador y puede descargarse como registro en TXT.
 
 El procesamiento se realiza en el navegador. El módulo permite usar los sonidos incluidos o cargar un archivo de audio local.
 

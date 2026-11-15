@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081423">
+<meta name="application-name" content="Audio Pedagógico">
+<meta name="application-version" content="0.1-entrenador">
+<meta name="description" content="Entrenador de escucha de reverberación: compara colas, reconoce espacios, iguala referencias y corrige sugerencias automáticas según el encargo.">
+<title>Audio Pedagógico · Entrena tu oído · Reverberación</title>
+<style>
+:root{color-scheme:dark;--bg:#081423;--panel:#101d2f;--panel2:#15283b;--stroke:#294359;--text:#f0f8ff;--muted:#a6bbcc;--cyan:#70e7d9;--blue:#69bfe9;--amber:#ffd37b;--ok:#9befc4;--bad:#ffaaa0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 86% 0%,#16445377,transparent 46%),radial-gradient(ellipse at 5% 80%,#1c264477,transparent 52%),var(--bg);font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);min-height:100vh}
+a{color:var(--cyan)}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.48;cursor:not-allowed}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.shell{width:min(1170px,calc(100% - 36px));margin:auto;padding-bottom:54px}
+.topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;padding:4px 0;border-bottom:1px solid var(--stroke);font-size:.77rem;color:var(--muted)}
+.home-link{display:inline-flex;align-items:center;min-height:44px;font-weight:750}
+.brand{display:flex;gap:12px;align-items:center;margin-top:26px}
+.mark{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#9ef4df,#4db7e0);color:#0b2936;font-size:1.65rem;font-weight:900;box-shadow:0 8px 33px #4ecfda30}
+.brand-title{font-size:1.32rem;font-weight:850}.brand-sub{font-size:.68rem;letter-spacing:.12em;color:var(--muted)}
+.eyebrow{font-size:.76rem;letter-spacing:.12em;color:var(--cyan);font-weight:800;text-transform:uppercase}
+.hero{margin:25px 0 18px}.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.05em;line-height:1.07;margin:6px 0}.hero h1 em{font-style:normal;color:var(--cyan)}.hero p{max-width:760px;color:var(--muted);margin:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.chip{border:1px solid var(--stroke);border-radius:40px;color:#cadde8;background:#132339;padding:5px 10px;font-size:.75rem}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:22px 0 17px}
+.step{min-height:66px;display:flex;align-items:center;gap:10px;background:#102034;border:1px solid #29455b;border-radius:13px;padding:10px 13px;color:#c7daea;font-weight:770;text-align:left}
+.step .number{font-size:.73rem;color:var(--cyan);font-weight:850}.step small{display:block;font-size:.68rem;color:var(--muted);font-weight:550}
+.step[aria-current="true"]{background:#16414b;border-color:#59cfc8;color:#fff;box-shadow:inset 0 0 0 1px #48a9a8}
+.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(318px,1fr);gap:16px;align-items:start}
+.panel{border:1px solid var(--stroke);border-radius:20px;background:linear-gradient(150deg,#12243a,#101b2e);padding:20px;min-width:0}
+.panel h2,.panel h3{margin:0;letter-spacing:-.025em}.panel h2{font-size:1.45rem}.panel h3{font-size:1.03rem;margin-top:16px}
+.subtle{color:var(--muted);font-size:.88rem}
+.insight{display:flex;gap:12px;align-items:flex-start;background:#0d2c39;border:1px solid #2b6670;border-radius:13px;padding:13px;color:#d5f4f7;font-size:.89rem;margin-top:14px}.insight b{color:#90f4df}
+.banner{background:linear-gradient(105deg,#123748,#17334a);border:1px solid #2f7180;padding:15px;border-radius:13px;margin-top:14px}.banner strong{color:#a3ffec}.banner p{color:#d2e8ec;font-size:.9rem;margin:5px 0 0}
+.preset{background:#2a2433;border:1px solid #6a5a86;border-radius:13px;padding:13px;margin-top:12px;font-size:.86rem;color:#e6dcf7}.preset b{color:#cbb8ff}
+.row{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:14px}.row.three{grid-template-columns:repeat(3,1fr)}
+.btn{border:1px solid #3e6076;background:#19364b;color:#e8f7ff;padding:11px 14px;border-radius:11px;font-weight:770;min-height:44px;display:inline-flex;justify-content:center;align-items:center;text-align:center}
+.btn:hover{background:#23506a}.btn.primary{background:linear-gradient(130deg,#9aefdf,#58c9de);color:#0a2d37;border-color:#7eebdc}.btn.ghost{background:transparent}.btn.small{font-size:.83rem;padding:8px 11px;min-height:39px}
+.choice[aria-pressed="true"]{background:#15464a;border-color:#76e7d6;color:#fff}
+.choice.good{border-color:var(--ok);background:#173d30}.choice.badc{border-color:var(--bad);background:#3d2323}
+.control{background:#0b1b2b;border:1px solid #29475d;border-radius:13px;padding:12px 14px;margin-top:10px}
+.control label{display:flex;justify-content:space-between;gap:10px;font-size:.84rem;font-weight:760}.control output{color:var(--cyan);font-variant-numeric:tabular-nums}
+.control input[type=range]{width:100%;accent-color:#67e4d8;margin:11px 0 0;touch-action:pan-y}
+.feedback{border-radius:13px;padding:13px;margin-top:14px;font-size:.9rem;min-height:20px}
+.feedback.ok{background:#123a2b;border:1px solid #4fbf8a;color:#d6ffe9}.feedback.no{background:#3a1f1f;border:1px solid #c56d63;color:#ffe1dc}.feedback.info{background:#0d2333;border:1px solid #2d5068;color:#cfe6f3}
+.feedback:empty{display:none}
+.meter{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.stat{flex:1 1 120px;background:#0b1b2b;border:1px solid #29475d;border-radius:12px;padding:10px 12px}
+.stat b{display:block;font-size:1.25rem;color:var(--cyan);font-variant-numeric:tabular-nums}.stat span{font-size:.74rem;color:var(--muted)}
+.sources{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}
+.sound{border-radius:9px;border:1px solid #375369;background:#142a3d;color:#cde2ed;padding:8px 5px;min-height:39px;font-size:.76rem}.sound[aria-pressed=true]{background:#155259;border-color:#66e7db;color:#fff}
+.status{color:#b5ead9;font-size:.78rem;min-height:22px;margin-top:9px}
+textarea{width:100%;min-height:82px;margin-top:8px;background:#0b1b2b;color:var(--text);border:1px solid #29475d;border-radius:11px;padding:10px;resize:vertical}
+.log{width:100%;border-collapse:collapse;font-size:.84rem;margin-top:10px}.log th,.log td{border-bottom:1px solid #29475d;padding:8px 6px;text-align:left;vertical-align:top}.log th{color:var(--muted);font-weight:700}
+.footnote{border-top:1px solid #274355;padding-top:16px;margin-top:28px;color:#8daabb;font-size:.78rem}
+[hidden]{display:none!important}
+@media(max-width:920px){.layout{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.shell{width:min(100% - 24px,1170px)}.row.three{grid-template-columns:1fr}.sources{grid-template-columns:repeat(2,1fr)}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="topline" aria-label="Navegación general"><a class="home-link" href="reverberacion.html">← Reverberación</a><span>Laboratorio interactivo de diseño sonoro</span></nav>
+<header>
+  <div class="brand"><div class="mark" aria-hidden="true">⌁</div><div><div class="brand-title">Reverberación</div><div class="brand-sub">PARTE 04 · ENTRENA TU OÍDO</div></div></div>
+  <div class="hero"><div class="eyebrow">Entrenador de escucha</div><h1>La máquina ajusta. <em>Tu oído decide.</em></h1>
+  <p>Un preset puede poner reverberación en segundos. Lo difícil es saber si sirve para la escena. Aquí entrenas el oído que necesitas para juzgarlo: comparar colas, reconocer espacios, igualar una referencia y corregir sugerencias automáticas según el encargo.</p>
+  <div class="chips"><span class="chip">🎧 Audífonos recomendados</span><span class="chip">◉ Audio procesado en el navegador</span><span class="chip">Progreso guardado solo en este dispositivo</span></div></div>
+</header>
+
+<nav class="steps" aria-label="Niveles del entrenador">
+  <button class="step" data-go="0" aria-current="true"><span class="number">01</span><span>¿Cuál dura más?<small>Compara dos colas</small></span></button>
+  <button class="step" data-go="1"><span class="number">02</span><span>¿Qué espacio es?<small>Tamaño y pre-delay</small></span></button>
+  <button class="step" data-go="2"><span class="number">03</span><span>Iguala el espacio<small>Copia una referencia</small></span></button>
+  <button class="step" data-go="3"><span class="number">04</span><span>Corrige el preset<small>Según el encargo</small></span></button>
+  <button class="step" data-go="4"><span class="number">✓</span><span>Mi progreso<small>Registro y descarga</small></span></button>
+</nav>
+
+<!-- NIVEL 1 -->
+<section class="level" data-level="0">
+<main class="layout">
+  <section class="panel" aria-labelledby="h1-title">
+    <div class="eyebrow">Nivel 01</div><h2 id="h1-title">¿Cuál de los dos tiene la cola más larga?</h2>
+    <p class="subtle">Escucha A y B todas las veces que necesites. Solo cambia el tiempo de reverberación. Cuando aciertas, la diferencia se hace más pequeña; cuando fallas, vuelve a crecer.</p>
+    <div class="row"><button class="btn" id="l1A">▶ Escuchar A</button><button class="btn" id="l1B">▶ Escuchar B</button></div>
+    <div class="row"><button class="btn choice" id="l1ChooseA">A dura más</button><button class="btn choice" id="l1ChooseB">B dura más</button></div>
+    <div class="feedback" id="l1Feedback" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn primary" id="l1Next">Nueva comparación →</button><button class="btn ghost small" data-stop>■ Detener</button></div>
+  </section>
+  <aside class="panel" aria-label="Tu umbral">
+    <div class="eyebrow">Tu oído</div><h2>Umbral de diferencia</h2>
+    <div class="meter"><div class="stat"><b id="l1Diff">1,2 s</b><span>Diferencia actual</span></div><div class="stat"><b id="l1Best">—</b><span>Mejor diferencia detectada</span></div><div class="stat"><b id="l1Streak">0</b><span>Aciertos seguidos</span></div></div>
+    <div class="insight"><span>✦</span><span>Concéntrate en el <b>final</b> del sonido: ¿cuál se apaga después? No te fijes en cuál suena "más bonito".</span></div>
+    <h3>Fuente sonora</h3><div class="sources" data-sources="l1"></div>
+    <div class="status" data-status></div>
+  </aside>
+</main>
+</section>
+
+<!-- NIVEL 2 -->
+<section class="level" data-level="1" hidden>
+<main class="layout">
+  <section class="panel" aria-labelledby="h2-title">
+    <div class="eyebrow">Nivel 02</div><h2 id="h2-title">¿Qué espacio estás escuchando?</h2>
+    <p class="subtle">Escucha el sonido con reverberación y compáralo con el original. Responde las dos preguntas y comprueba.</p>
+    <div class="row"><button class="btn primary" id="l2Play">▶ Escuchar el espacio</button><button class="btn" id="l2Dry">▶ Original (seco)</button></div>
+    <h3>1. ¿De qué tamaño es?</h3>
+    <div class="row three"><button class="btn choice" data-size="small">Pequeño</button><button class="btn choice" data-size="medium">Mediano</button><button class="btn choice" data-size="large">Grande</button></div>
+    <h3>2. ¿Hay una separación clara entre el sonido y el inicio de la reverberación (pre-delay)?</h3>
+    <div class="row"><button class="btn choice" data-pre="no">No, empieza pegada</button><button class="btn choice" data-pre="yes">Sí, hay una separación</button></div>
+    <div class="row"><button class="btn primary" id="l2Check">Comprobar</button><button class="btn" id="l2Next">Siguiente espacio →</button></div>
+    <div class="feedback" id="l2Feedback" role="status" aria-live="polite"></div>
+  </section>
+  <aside class="panel" aria-label="Ronda">
+    <div class="eyebrow">Ronda de 10</div><h2>Tu ronda</h2>
+    <div class="meter"><div class="stat"><b id="l2Round">0 / 10</b><span>Espacios respondidos</span></div><div class="stat"><b id="l2Score">0</b><span>Respuestas correctas</span></div><div class="stat"><b id="l2Best">—</b><span>Mejor ronda</span></div></div>
+    <div class="insight"><span>✦</span><span>El <b>tamaño</b> se oye sobre todo en la duración de la cola. El <b>pre-delay</b> se oye al principio: un pequeño hueco entre el golpe y el "aire" de la sala.</span></div>
+    <h3>Fuente sonora</h3><div class="sources" data-sources="l2"></div>
+    <div class="status" data-status></div>
+  </aside>
+</main>
+</section>
+
+<!-- NIVEL 3 -->
+<section class="level" data-level="2" hidden>
+<main class="layout">
+  <section class="panel" aria-labelledby="h3-title">
+    <div class="eyebrow">Nivel 03</div><h2 id="h3-title">Iguala el espacio de referencia</h2>
+    <p class="subtle">Alguien ya creó un espacio y no te dice sus valores. Escucha la referencia, mueve tus controles y compara hasta que suenen iguales. Después comprueba qué tan cerca quedaste.</p>
+    <div class="row"><button class="btn primary" id="l3Ref">▶ Referencia</button><button class="btn" id="l3Mine">▶ Mi ajuste</button></div>
+    <div class="control"><label for="l3decay">Tiempo de reverberación <output id="l3decayOut"></output></label><input type="range" id="l3decay" min="0.2" max="4" step="0.1" value="1.2"></div>
+    <div class="control"><label for="l3pre">Pre-delay <output id="l3preOut"></output></label><input type="range" id="l3pre" min="0" max="150" step="5" value="25"></div>
+    <div class="control"><label for="l3wet">Cantidad de reverberación <output id="l3wetOut"></output></label><input type="range" id="l3wet" min="0" max="100" step="1" value="40"></div>
+    <div class="row"><button class="btn primary" id="l3Check">Comprobar</button><button class="btn" id="l3Next">Nueva referencia →</button></div>
+    <div class="feedback" id="l3Feedback" role="status" aria-live="polite"></div>
+  </section>
+  <aside class="panel" aria-label="Resultados">
+    <div class="eyebrow">Precisión</div><h2>Tus resultados</h2>
+    <div class="meter"><div class="stat"><b id="l3Last">—</b><span>Último puntaje (de 100)</span></div><div class="stat"><b id="l3Best">—</b><span>Mejor puntaje</span></div><div class="stat"><b id="l3Count">0</b><span>Referencias igualadas</span></div></div>
+    <div class="insight"><span>✦</span><span>Trabaja de a un parámetro: primero el <b>tiempo</b>, después la <b>cantidad</b> y al final el <b>pre-delay</b>. Alterna seguido entre la referencia y tu ajuste.</span></div>
+    <h3>Fuente sonora</h3><div class="sources" data-sources="l3"></div>
+    <div class="status" data-status></div>
+  </aside>
+</main>
+</section>
+
+<!-- NIVEL 4 -->
+<section class="level" data-level="3" hidden>
+<main class="layout">
+  <section class="panel" aria-labelledby="h4-title">
+    <div class="eyebrow">Nivel 04 · Encargo <span id="l4Index">1</span> de <span id="l4Total">4</span></div><h2 id="h4-title">Corrige la sugerencia automática</h2>
+    <div class="banner"><strong id="l4Client"></strong><p id="l4Brief"></p></div>
+    <div class="preset"><b>Sugerencia automática (preset):</b> <span id="l4PresetText"></span></div>
+    <div class="row"><button class="btn" id="l4PlayPreset">▶ Escuchar el preset</button><button class="btn" id="l4Dry">▶ Original (seco)</button></div>
+    <h3>1. ¿Cuál es el problema del preset para este encargo?</h3>
+    <div id="l4Options" style="display:grid;gap:8px;margin-top:10px"></div>
+    <div class="feedback" id="l4Diag" role="status" aria-live="polite"></div>
+    <div id="l4FixArea" hidden>
+      <h3>2. Corrígelo con tu oído</h3>
+      <div class="control"><label for="l4decay">Tiempo de reverberación <output id="l4decayOut"></output></label><input type="range" id="l4decay" min="0.2" max="4" step="0.1"></div>
+      <div class="control"><label for="l4pre">Pre-delay <output id="l4preOut"></output></label><input type="range" id="l4pre" min="0" max="150" step="5"></div>
+      <div class="control"><label for="l4wet">Cantidad de reverberación <output id="l4wetOut"></output></label><input type="range" id="l4wet" min="0" max="100" step="1"></div>
+      <div class="row"><button class="btn primary" id="l4PlayMine">▶ Escuchar mi versión</button><button class="btn ghost small" data-stop>■ Detener</button></div>
+      <h3>3. Explícale al cliente tu decisión</h3>
+      <label class="subtle" for="l4Why">¿Qué cambiaste y por qué sirve para esta escena? (mínimo 20 caracteres)</label>
+      <textarea id="l4Why" placeholder="Ejemplo: bajé la cantidad y el tiempo porque en un podcast la voz tiene que entenderse..."></textarea>
+      <div class="row"><button class="btn primary" id="l4Check">Entregar al cliente</button><button class="btn" id="l4Next">Siguiente encargo →</button></div>
+      <div class="feedback" id="l4Feedback" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+  <aside class="panel" aria-label="Encargos">
+    <div class="eyebrow">Contexto</div><h2>Lo que el preset no sabe</h2>
+    <div class="insight"><span>✦</span><span>Un preset no conoce la escena. Aplica un ajuste "razonable" que puede estar mal para <b>este</b> encargo. Tu trabajo es oír el problema, corregirlo y explicarlo.</span></div>
+    <div class="meter"><div class="stat"><b id="l4Done">0 / 4</b><span>Encargos aprobados</span></div></div>
+    <p class="subtle" style="margin-top:12px">Algunos encargos piden una reverberación exagerada a propósito. La regla correcta depende de lo que la escena quiere comunicar.</p>
+    <div class="status" data-status></div>
+  </aside>
+</main>
+</section>
+
+<!-- PROGRESO -->
+<section class="level" data-level="4" hidden>
+<main class="layout">
+  <section class="panel" aria-labelledby="h5-title">
+    <div class="eyebrow">Registro</div><h2 id="h5-title">Mi progreso</h2>
+    <p class="subtle">Este resumen se guarda solo en este navegador. Descárgalo para entregarlo como evidencia de tu práctica.</p>
+    <div class="control"><label for="studentName">Nombre o código (opcional)</label><input id="studentName" type="text" style="width:100%;margin-top:8px;background:#0b1b2b;color:var(--text);border:1px solid #29475d;border-radius:10px;padding:9px" maxlength="80"></div>
+    <table class="log"><thead><tr><th>Nivel</th><th>Resultado</th></tr></thead><tbody id="progressBody"></tbody></table>
+    <h3>Justificaciones entregadas (nivel 4)</h3>
+    <table class="log"><thead><tr><th>Encargo</th><th>Lo que explicaste</th></tr></thead><tbody id="whyBody"></tbody></table>
+    <div class="row"><button class="btn primary" id="downloadLog">↓ Descargar registro (TXT)</button><button class="btn ghost" id="resetLog">Borrar mi progreso</button></div>
+    <div class="status" data-status></div>
+  </section>
+  <aside class="panel" aria-label="Cómo leer el registro">
+    <div class="eyebrow">Para leer tus datos</div><h2>¿Qué significa?</h2>
+    <div class="insight"><span>✦</span><span><b>Nivel 1:</b> la diferencia más pequeña de tiempo de reverberación que distinguiste. Mientras más baja, más fino es tu oído.</span></div>
+    <div class="insight"><span>✦</span><span><b>Nivel 2:</b> cuántos espacios reconociste bien en tu mejor ronda de 10.</span></div>
+    <div class="insight"><span>✦</span><span><b>Nivel 3:</b> qué tan cerca quedaste de la referencia (100 = idéntico).</span></div>
+    <div class="insight"><span>✦</span><span><b>Nivel 4:</b> encargos en los que detectaste el error del preset, lo corregiste dentro de lo que pide la escena y lo explicaste.</span></div>
+  </aside>
+</main>
+</section>
+
+<footer class="footnote">Reverberación · Entrenador de escucha · Material educativo experimental · Audio procesado mediante Web Audio. Los espacios son modelos sintéticos, no mediciones de recintos reales. El progreso se guarda solo en este dispositivo.</footer>
+</div>
+
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const fmt=(n,d=1)=>Number(n).toLocaleString('es-CO',{maximumFractionDigits:d,minimumFractionDigits:0});
+const rnd=(a,b)=>a+Math.random()*(b-a);
+const step=(v,s)=>Math.round(v/s)*s;
+const SOURCES={clap:'👏 Palmada',bell:'🔔 Campana',impact:'✦ Impacto',voice:'🗣 Voz'};
+
+/* ---------- Progreso ---------- */
+const KEY='synthfx_entrenador_reverb_v1';
+let P={l1Best:null,l1Trials:0,l1Correct:0,l2Best:null,l2Rounds:0,l3Best:null,l3Count:0,l3Sum:0,l4Done:{},name:''};
+try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s)P=Object.assign(P,s)}catch(_){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(P))}catch(_){}}
+
+/* ---------- Audio ---------- */
+let ctx=null,nodes=[],token=0,timer=0;
+function ensure(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC){say('Este navegador no admite Web Audio.');throw Error('no audio')}if(!ctx)ctx=new AC();return ctx.resume().then(()=>ctx)}
+function say(t){document.querySelectorAll('.level:not([hidden]) [data-status]').forEach(e=>e.textContent=t)}
+function genSound(type,c){
+  const sr=c.sampleRate,dur=type==='bell'?1.8:type==='impact'?.9:type==='voice'?1.25:.28,b=c.createBuffer(1,Math.ceil(dur*sr),sr),d=b.getChannelData(0);let low=0;
+  if(type==='voice'){
+    // Voz sintética: cuatro sílabas con formantes de vocales (a, e, o, i). No es habla real.
+    const syl=[[.02,.25,[730,1090,2440]],[.33,.55,[530,1840,2480]],[.63,.88,[570,840,2410]],[.96,1.2,[300,2290,3010]]];
+    for(const [t0,t1,F] of syl){const f0=118+Math.random()*10;for(let i=Math.floor(t0*sr);i<Math.min(d.length,Math.floor(t1*sr));i++){const t=i/sr,lt=(t-t0)/(t1-t0),env=Math.sin(Math.PI*clamp(lt,0,1))**.6;let s=0;for(let h=1;h<=30;h++){const f=f0*h*(1-.04*lt);if(f>4200)break;let g=0;for(let k=0;k<3;k++){const bw=80+k*40;g+=(k===0?1:k===1?.6:.3)/(1+((f-F[k])/bw)**2)}s+=g*Math.sin(2*Math.PI*f*t)/Math.sqrt(h)}d[i]=s*env*.11}}
+    return b}
+  for(let i=0;i<d.length;i++){const t=i/sr,r=Math.random()*2-1;
+    if(type==='clap'){const bu=Math.exp(-t*55)+.42*Math.exp(-Math.max(0,t-.012)*120)*(t>=.012)+.28*Math.exp(-Math.max(0,t-.025)*120)*(t>=.025);low=.86*low+.14*r;d[i]=clamp((r-low)*bu*.55,-1,1)}
+    else if(type==='bell'){const e=Math.exp(-3.4*t);d[i]=(.43*Math.sin(2*Math.PI*680*t)+.23*Math.sin(2*Math.PI*1357*t)+.12*Math.sin(2*Math.PI*2034*t))*e}
+    else{const e=Math.exp(-t*11);low=.92*low+.08*r;d[i]=(Math.sin(2*Math.PI*(105*t-72*t*t))*.45+low*.37)*e}}
+  return b}
+// Mismo modelo de respuesta al impulso que las páginas Observa, Experimenta y Aplica.
+function impulse(c,decay,damp){const sr=c.sampleRate,len=Math.max(2048,Math.ceil((decay+.14)*sr)),buf=c.createBuffer(2,len,sr);for(let ch=0;ch<2;ch++){const a=buf.getChannelData(ch);let lp=0;const cutoff=14000-11200*(damp/100),coeff=1-Math.exp(-2*Math.PI*cutoff/sr),scale=.018/Math.sqrt(Math.max(.22,decay));for(let i=0;i<len;i++){const t=i/sr;if(t<.014)continue;const n=Math.random()*2-1;lp+=coeff*(n-lp);const on=Math.min(1,(t-.014)/.034);a[i]=lp*scale*Math.exp(-6.91*(t-.014)/decay)*on}[.029,.046,.071,.103,.139].forEach((t,i)=>{const k=Math.round((t+(ch===1?.002:0))*sr);if(k<a.length)a[k]+=[.22,-.17,.13,-.10,.065][i]})}return buf}
+function stop(msg){token++;for(const n of nodes){try{n.stop()}catch(_){}}nodes=[];clearTimeout(timer);if(msg!==false)say('Reproducción detenida.')}
+async function play(sound,p,label){
+  // p = {decay, predelay, wet, damp} o null para el sonido seco
+  try{const c=await ensure();stop(false);const my=token,src=c.createBufferSource();src.buffer=genSound(sound,c);const master=c.createGain();master.gain.value=.82;master.connect(c.destination);
+    if(!p){src.connect(master)}else{const dry=c.createGain(),wet=c.createGain(),pre=c.createDelay(.35),conv=c.createConvolver(),mix=p.wet/100;conv.normalize=false;conv.buffer=impulse(c,p.decay,p.damp??45);pre.delayTime.value=p.predelay/1000;dry.gain.value=1-mix;wet.gain.value=mix*1.35;src.connect(dry);dry.connect(master);src.connect(pre);pre.connect(conv);conv.connect(wet);wet.connect(master)}
+    nodes=[src];src.start();say(label||'Escuchando…');const len=src.buffer.duration+(p?p.predelay/1000+p.decay+.3:0);timer=setTimeout(()=>{if(token===my){nodes=[];say('Listo. Puedes volver a escuchar.')}},len*1000+100)
+  }catch(e){say('No se pudo reproducir el audio.');console.warn(e)}}
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&nodes.length)stop()});
+document.querySelectorAll('[data-stop]').forEach(b=>b.addEventListener('click',()=>stop()));
+
+/* ---------- Fuentes ---------- */
+const chosen={l1:'clap',l2:'clap',l3:'bell'};
+document.querySelectorAll('[data-sources]').forEach(box=>{const k=box.dataset.sources;for(const [id,name] of Object.entries(SOURCES)){const b=document.createElement('button');b.className='sound';b.textContent=name;b.setAttribute('aria-pressed',String(chosen[k]===id));b.addEventListener('click',()=>{chosen[k]=id;box.querySelectorAll('.sound').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));say('Fuente: '+name.replace(/^\S+\s/,'')+'.')});box.appendChild(b)}});
+
+/* ---------- Navegación ---------- */
+let current=0;
+function go(n){stop(false);current=n;document.querySelectorAll('.level').forEach(s=>s.hidden=Number(s.dataset.level)!==n);document.querySelectorAll('[data-go]').forEach(b=>b.setAttribute('aria-current',String(Number(b.dataset.go)===n)));if(n===4)renderProgress();try{history.replaceState(null,'','#nivel'+(n+1))}catch(_){}window.scrollTo(0,0)}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(Number(b.dataset.go))));
+
+/* ---------- Nivel 1: escalera adaptativa ---------- */
+const L1={diff:1.2,streak:0,t:null,answered:false};
+function l1New(){const base=step(rnd(.6,1.8),.05),longer=Math.random()<.5?'A':'B',short=base,long=base+L1.diff;L1.t={longer,A:longer==='A'?long:short,B:longer==='B'?long:short,pre:20,wet:48};L1.answered=false;
+  ['l1ChooseA','l1ChooseB'].forEach(id=>{$(id).classList.remove('good','badc');$(id).disabled=false});$('l1Feedback').textContent='';$('l1Feedback').className='feedback';$('l1Diff').textContent=fmt(L1.diff,2)+' s'}
+function l1Play(w){const t=L1.t;play(chosen.l1,{decay:t[w],predelay:t.pre,wet:t.wet,damp:45},'Escuchando '+w+'…')}
+function l1Answer(w){if(L1.answered)return;L1.answered=true;const ok=w===L1.t.longer,fb=$('l1Feedback');P.l1Trials++;
+  $('l1Choose'+w).classList.add(ok?'good':'badc');if(!ok)$('l1Choose'+L1.t.longer).classList.add('good');
+  if(ok){P.l1Correct++;L1.streak++;const detected=L1.diff;if(P.l1Best===null||detected<P.l1Best)P.l1Best=detected;
+    if(L1.streak>=2){L1.diff=Math.max(.05,step(L1.diff*.7,.05));L1.streak=0}
+    fb.className='feedback ok';fb.textContent=`✓ Bien. ${L1.t.longer} duraba ${fmt(L1.t[L1.t.longer],2)} s y el otro ${fmt(L1.t[L1.t.longer==='A'?'B':'A'],2)} s. Diferencia: ${fmt(detected,2)} s.`}
+  else{L1.streak=0;L1.diff=Math.min(2,step(L1.diff*1.35,.05));fb.className='feedback no';fb.textContent=`↺ Era ${L1.t.longer}. Vuelve a escuchar los dos y atiende al final de la cola. La próxima diferencia será un poco mayor.`}
+  $('l1Streak').textContent=L1.streak;$('l1Best').textContent=P.l1Best===null?'—':fmt(P.l1Best,2)+' s';['l1ChooseA','l1ChooseB'].forEach(id=>$(id).disabled=true);save()}
+$('l1A').addEventListener('click',()=>l1Play('A'));$('l1B').addEventListener('click',()=>l1Play('B'));
+$('l1ChooseA').addEventListener('click',()=>l1Answer('A'));$('l1ChooseB').addEventListener('click',()=>l1Answer('B'));$('l1Next').addEventListener('click',l1New);
+
+/* ---------- Nivel 2: tamaño y pre-delay ---------- */
+const SIZES={small:{name:'pequeño',d:[.3,.6]},medium:{name:'mediano',d:[1,1.6]},large:{name:'grande',d:[2.6,3.8]}};
+const L2={t:null,size:null,pre:null,done:false,round:0,score:0};
+function l2New(){if(L2.round>=10){L2.round=0;L2.score=0}const keys=Object.keys(SIZES),size=keys[Math.floor(Math.random()*3)],pre=Math.random()<.5?'no':'yes';
+  L2.t={size,pre,decay:step(rnd(...SIZES[size].d),.05),predelay:pre==='yes'?step(rnd(70,120),5):step(rnd(0,8),1),wet:size==='small'?38:48};L2.size=L2.pre=null;L2.done=false;
+  document.querySelectorAll('[data-size],[data-pre]').forEach(b=>{b.setAttribute('aria-pressed','false');b.classList.remove('good','badc');b.disabled=false});$('l2Feedback').textContent='';$('l2Feedback').className='feedback';l2Stats()}
+function l2Stats(){$('l2Round').textContent=L2.round+' / 10';$('l2Score').textContent=L2.score;$('l2Best').textContent=P.l2Best===null?'—':P.l2Best+' / 10'}
+document.querySelectorAll('[data-size]').forEach(b=>b.addEventListener('click',()=>{if(L2.done)return;L2.size=b.dataset.size;document.querySelectorAll('[data-size]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))}));
+document.querySelectorAll('[data-pre]').forEach(b=>b.addEventListener('click',()=>{if(L2.done)return;L2.pre=b.dataset.pre;document.querySelectorAll('[data-pre]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))}));
+$('l2Play').addEventListener('click',()=>play(chosen.l2,{decay:L2.t.decay,predelay:L2.t.predelay,wet:L2.t.wet,damp:45},'Escuchando el espacio…'));
+$('l2Dry').addEventListener('click',()=>play(chosen.l2,null,'Sonido original, sin reverberación.'));
+$('l2Check').addEventListener('click',()=>{const fb=$('l2Feedback');if(L2.done)return;if(!L2.size||!L2.pre){fb.className='feedback info';fb.textContent='Responde las dos preguntas antes de comprobar.';return}
+  L2.done=true;const okS=L2.size===L2.t.size,okP=L2.pre===L2.t.pre,ok=okS&&okP;L2.round++;if(ok)L2.score++;
+  document.querySelector(`[data-size="${L2.t.size}"]`).classList.add('good');if(!okS)document.querySelector(`[data-size="${L2.size}"]`).classList.add('badc');
+  document.querySelector(`[data-pre="${L2.t.pre}"]`).classList.add('good');if(!okP)document.querySelector(`[data-pre="${L2.pre}"]`).classList.add('badc');
+  document.querySelectorAll('[data-size],[data-pre]').forEach(b=>b.disabled=true);
+  const detail=`Era un espacio ${SIZES[L2.t.size].name} (cola de ${fmt(L2.t.decay,2)} s) con pre-delay de ${L2.t.predelay} ms.`;
+  fb.className='feedback '+(ok?'ok':'no');fb.textContent=(ok?'✓ Correcto. ':okS?'↺ Acertaste el tamaño, pero no el pre-delay. ':okP?'↺ Acertaste el pre-delay, pero no el tamaño. ':'↺ Revisa las dos respuestas. ')+detail;
+  if(L2.round>=10){P.l2Rounds++;if(P.l2Best===null||L2.score>P.l2Best)P.l2Best=L2.score;fb.textContent+=` Ronda terminada: ${L2.score} de 10. Pulsa "Siguiente espacio" para empezar otra.`;save()}
+  l2Stats()});
+$('l2Next').addEventListener('click',l2New);
+
+/* ---------- Nivel 3: igualar referencia ---------- */
+const L3={t:null,checked:false};
+function l3Out(){$('l3decayOut').textContent=fmt($('l3decay').value)+' s';$('l3preOut').textContent=$('l3pre').value+' ms';$('l3wetOut').textContent=$('l3wet').value+' %'}
+function l3Mine(){return{decay:Number($('l3decay').value),predelay:Number($('l3pre').value),wet:Number($('l3wet').value),damp:45}}
+function l3New(){L3.t={decay:step(rnd(.4,3.4),.1),predelay:step(rnd(0,120),5),wet:Math.round(rnd(20,70)),damp:45};L3.checked=false;$('l3decay').value=1.2;$('l3pre').value=25;$('l3wet').value=40;l3Out();$('l3Feedback').textContent='';$('l3Feedback').className='feedback'}
+['l3decay','l3pre','l3wet'].forEach(id=>$(id).addEventListener('input',l3Out));
+$('l3Ref').addEventListener('click',()=>play(chosen.l3,L3.t,'Escuchando la referencia…'));
+$('l3Mine').addEventListener('click',()=>play(chosen.l3,l3Mine(),'Escuchando tu ajuste…'));
+$('l3Check').addEventListener('click',()=>{const m=l3Mine(),t=L3.t,fb=$('l3Feedback');
+  const sD=Math.max(0,1-Math.abs(Math.log(m.decay/t.decay))/Math.log(1.6)),sP=Math.max(0,1-Math.abs(m.predelay-t.predelay)/60),sW=Math.max(0,1-Math.abs(m.wet-t.wet)/30);
+  const score=Math.round(100*(.45*sD+.25*sP+.30*sW));
+  const hint=(name,mine,target,unit,d)=>`${name}: tú ${fmt(mine,d)}${unit}, referencia ${fmt(target,d)}${unit}`;
+  fb.className='feedback '+(score>=75?'ok':'info');
+  fb.innerHTML=`<b>${score} / 100.</b> ${score>=85?'Muy cerca: tu oído reconoció el espacio.':score>=65?'Buena aproximación. Compara otra vez el parámetro más lejano.':'Todavía hay diferencias claras. Vuelve a alternar entre referencia y ajuste.'}<br>${hint('Tiempo',m.decay,t.decay,' s',1)} · ${hint('Pre-delay',m.predelay,t.predelay,' ms',0)} · ${hint('Cantidad',m.wet,t.wet,' %',0)}`;
+  // Solo el primer intento de cada referencia cuenta: después de comprobar, los valores quedan a la vista.
+  $('l3Last').textContent=score;if(!L3.checked){L3.checked=true;P.l3Count++;P.l3Sum+=score;if(P.l3Best===null||score>P.l3Best)P.l3Best=score}else{fb.innerHTML+='<br><small>Este intento no cuenta para tu registro: pulsa "Nueva referencia" para seguir practicando.</small>'}$('l3Best').textContent=P.l3Best??'—';$('l3Count').textContent=P.l3Count;save()});
+$('l3Next').addEventListener('click',l3New);
+
+/* ---------- Nivel 4: encargos ---------- */
+const BRIEFS=[
+ {id:'podcast',client:'Cliente: podcast de entrevistas',brief:'"Queremos una voz clara e íntima, como si el invitado estuviera al lado del oyente. Nadie debería notar la sala."',sound:'voice',
+  preset:{decay:2.6,predelay:10,wet:55,damp:40},presetText:'"Sala de conciertos": tiempo 2,6 s, pre-delay 10 ms, cantidad 55 %.',
+  options:[['too','La reverberación es demasiada y demasiado larga: la cola tapa las palabras.'],['pre','Falta pre-delay: la reverberación empieza muy pegada.'],['few','Le falta reverberación: la voz suena demasiado seca.']],correct:'too',
+  why:'En un podcast lo primero es que se entienda la voz. Una cola larga se mezcla con la sílaba siguiente y aleja al locutor del oyente.',
+  test:m=>m.decay<=.8&&m.wet<=25,need:'tiempo de 0,8 s o menos y cantidad de 25 % o menos'},
+ {id:'flashback',client:'Cliente: cortometraje (escena de recuerdo)',brief:'"El protagonista recuerda la voz de su madre. Debe sentirse lejana e irreal, como un sueño. No es una habitación verdadera."',sound:'voice',
+  preset:{decay:.4,predelay:5,wet:15,damp:55},presetText:'"Habitación natural": tiempo 0,4 s, pre-delay 5 ms, cantidad 15 %.',
+  options:[['real','Es demasiado realista: suena como una habitación normal y no como un recuerdo.'],['too','Tiene demasiada reverberación: la voz no se entiende.'],['pre','El pre-delay es demasiado largo.']],correct:'real',
+  why:'Aquí la regla de "poca reverb para que se entienda" no aplica. La escena pide un espacio imposible: una cola larga y abundante comunica distancia y memoria.',
+  test:m=>m.decay>=2.5&&m.wet>=55,need:'tiempo de 2,5 s o más y cantidad de 55 % o más'},
+ {id:'hangar',client:'Cliente: videojuego de acción',brief:'"Un disparo dentro de un hangar enorme. El jugador tiene que sentir el tamaño del lugar: el golpe primero y después el espacio."',sound:'impact',
+  preset:{decay:3.2,predelay:0,wet:50,damp:30},presetText:'"Gran espacio rápido": tiempo 3,2 s, pre-delay 0 ms, cantidad 50 %.',
+  options:[['pre','Falta pre-delay: en un espacio enorme las reflexiones tardan en llegar, y sin esa separación el golpe se emborrona.'],['short','La cola es demasiado corta para un hangar.'],['too','Hay que quitar la reverberación porque en un juego se necesita claridad.']],correct:'pre',
+  why:'En un recinto grande las paredes están lejos: el sonido directo llega primero y las reflexiones después. Ese hueco (pre-delay) es lo que el oído interpreta como tamaño.',
+  test:m=>m.predelay>=50&&m.decay>=2.4,need:'pre-delay de 50 ms o más, sin bajar el tiempo de 2,4 s'},
+ {id:'anuncio',client:'Cliente: anuncio para redes sociales',brief:'"Locución con energía que se va a escuchar en el celular, muchas veces con ruido alrededor. Tiene que entenderse a la primera."',sound:'voice',
+  preset:{decay:1.8,predelay:0,wet:45,damp:30},presetText:'"Voz con ambiente": tiempo 1,8 s, pre-delay 0 ms, cantidad 45 %.',
+  options:[['too','Demasiada reverberación para un celular: ensucia las palabras y les resta presencia.'],['few','Le falta reverberación para sonar "grande".'],['bright','El problema es solo el brillo; con más absorción queda bien.']],correct:'too',
+  why:'En el parlante de un celular y con ruido alrededor, la reverberación se convierte en suciedad. Una locución publicitaria necesita presencia: casi seca y muy cercana.',
+  test:m=>m.wet<=20&&m.decay<=1.2,need:'cantidad de 20 % o menos y tiempo de 1,2 s o menos'}
+];
+const L4={i:0,diagOk:false};
+function l4Out(){$('l4decayOut').textContent=fmt($('l4decay').value)+' s';$('l4preOut').textContent=$('l4pre').value+' ms';$('l4wetOut').textContent=$('l4wet').value+' %'}
+function l4Mine(){const b=BRIEFS[L4.i];return{decay:Number($('l4decay').value),predelay:Number($('l4pre').value),wet:Number($('l4wet').value),damp:b.preset.damp}}
+function l4Load(i){stop(false);L4.i=i;L4.diagOk=false;const b=BRIEFS[i];$('l4Index').textContent=i+1;$('l4Total').textContent=BRIEFS.length;$('l4Client').textContent=b.client;$('l4Brief').textContent=b.brief;$('l4PresetText').textContent=b.presetText;
+  const box=$('l4Options');box.innerHTML='';const opts=[...b.options].sort(()=>Math.random()-.5);
+  for(const [k,txt] of opts){const btn=document.createElement('button');btn.className='btn choice';btn.style.justifyContent='flex-start';btn.style.textAlign='left';btn.textContent=txt;btn.addEventListener('click',()=>{if(L4.diagOk)return;const fb=$('l4Diag');if(k===b.correct){L4.diagOk=true;btn.classList.add('good');fb.className='feedback ok';fb.textContent='✓ Ese es el problema. '+b.why;$('l4FixArea').hidden=false;box.querySelectorAll('button').forEach(x=>x.disabled=true)}else{btn.classList.add('badc');btn.disabled=true;fb.className='feedback no';fb.textContent='↺ No es eso. Vuelve a escuchar el preset pensando en lo que pide el cliente.'}});box.appendChild(btn)}
+  $('l4Diag').textContent='';$('l4Diag').className='feedback';$('l4FixArea').hidden=true;$('l4decay').value=b.preset.decay;$('l4pre').value=b.preset.predelay;$('l4wet').value=b.preset.wet;l4Out();$('l4Why').value=(P.l4Done[b.id]&&P.l4Done[b.id].why)||'';$('l4Feedback').textContent='';$('l4Feedback').className='feedback';l4Stats()}
+function l4Stats(){$('l4Done').textContent=Object.keys(P.l4Done).length+' / '+BRIEFS.length}
+['l4decay','l4pre','l4wet'].forEach(id=>$(id).addEventListener('input',l4Out));
+$('l4PlayPreset').addEventListener('click',()=>{const b=BRIEFS[L4.i];play(b.sound,b.preset,'Escuchando la sugerencia automática…')});
+$('l4Dry').addEventListener('click',()=>play(BRIEFS[L4.i].sound,null,'Sonido original, sin reverberación.'));
+$('l4PlayMine').addEventListener('click',()=>play(BRIEFS[L4.i].sound,l4Mine(),'Escuchando tu versión…'));
+$('l4Check').addEventListener('click',()=>{const b=BRIEFS[L4.i],m=l4Mine(),why=$('l4Why').value.trim(),fb=$('l4Feedback');
+  if(why.length<20){fb.className='feedback info';fb.textContent='Antes de entregar, explícale al cliente qué cambiaste y por qué (mínimo 20 caracteres).';return}
+  if(b.test(m)){P.l4Done[b.id]={why,decay:m.decay,predelay:m.predelay,wet:m.wet,date:new Date().toISOString().slice(0,10)};save();l4Stats();fb.className='feedback ok';fb.textContent=`✓ Encargo aprobado. Tu versión: ${fmt(m.decay)} s, ${m.predelay} ms, ${m.wet} %. Compárala una vez más con el preset para fijar la diferencia en tu oído.`}
+  else{fb.className='feedback no';fb.textContent=`↺ El cliente todavía no queda conforme. Escucha tu versión contra el encargo. Pista: este encargo necesita ${b.need}.`}});
+$('l4Next').addEventListener('click',()=>l4Load((L4.i+1)%BRIEFS.length));
+
+/* ---------- Progreso ---------- */
+function rows(){const n=Object.keys(P.l4Done).length;return[
+ ['1 · ¿Cuál dura más?',P.l1Best===null?'Sin datos todavía':`Menor diferencia detectada: ${fmt(P.l1Best,2)} s · ${P.l1Correct} aciertos en ${P.l1Trials} comparaciones`],
+ ['2 · ¿Qué espacio es?',P.l2Best===null?'Sin rondas completas':`Mejor ronda: ${P.l2Best} de 10 · ${P.l2Rounds} rondas completas`],
+ ['3 · Iguala el espacio',P.l3Best===null?'Sin datos todavía':`Mejor puntaje: ${P.l3Best}/100 · promedio ${Math.round(P.l3Sum/Math.max(1,P.l3Count))}/100 en ${P.l3Count} ${P.l3Count===1?'referencia':'referencias'}`],
+ ['4 · Corrige el preset',`${n} de ${BRIEFS.length} encargos aprobados`]]}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function renderProgress(){$('studentName').value=P.name||'';$('progressBody').innerHTML=rows().map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
+  const w=BRIEFS.filter(b=>P.l4Done[b.id]).map(b=>`<tr><td>${esc(b.client.replace('Cliente: ',''))}</td><td>${esc(P.l4Done[b.id].why)}</td></tr>`);$('whyBody').innerHTML=w.length?w.join(''):'<tr><td colspan="2">Todavía no has aprobado encargos.</td></tr>'}
+$('studentName').addEventListener('input',e=>{P.name=e.target.value.slice(0,80);save()});
+$('downloadLog').addEventListener('click',()=>{const lines=['Synth FX · Entrenador de escucha de reverberación','Fecha: '+new Date().toLocaleString('es-CO'),'Estudiante: '+(P.name||'(sin nombre)'),'',...rows().map(r=>r[0]+': '+r[1]),'','Justificaciones del nivel 4:',...BRIEFS.filter(b=>P.l4Done[b.id]).map(b=>`- ${b.client.replace('Cliente: ','')} (${fmt(P.l4Done[b.id].decay)} s, ${P.l4Done[b.id].predelay} ms, ${P.l4Done[b.id].wet} %): ${P.l4Done[b.id].why}`)];
+  const blob=new Blob([lines.join('\r\n')],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Registro_Entrenador_Reverberacion.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);say('Registro descargado.')});
+$('resetLog').addEventListener('click',()=>{if(!$('resetLog').dataset.confirm){$('resetLog').dataset.confirm='1';$('resetLog').textContent='Pulsa otra vez para confirmar';setTimeout(()=>{delete $('resetLog').dataset.confirm;$('resetLog').textContent='Borrar mi progreso'},4000);return}
+  P={l1Best:null,l1Trials:0,l1Correct:0,l2Best:null,l2Rounds:0,l3Best:null,l3Count:0,l3Sum:0,l4Done:{},name:''};save();delete $('resetLog').dataset.confirm;$('resetLog').textContent='Borrar mi progreso';renderProgress();l1New();l2Stats();l4Stats();$('l1Best').textContent='—';$('l3Best').textContent='—';$('l3Count').textContent='0';say('Progreso borrado.')});
+
+/* ---------- Inicio ---------- */
+l1New();l2New();l3New();l4Load(0);
+$('l1Best').textContent=P.l1Best===null?'—':fmt(P.l1Best,2)+' s';$('l3Best').textContent=P.l3Best===null?'—':P.l3Best;$('l3Count').textContent=P.l3Count;
+const h=/^#nivel([1-5])$/.exec(location.hash);go(h?Number(h[1])-1:0);
+})();
+</script>
+</body>
+</html>
