@@ -1,0 +1,711 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#081423"><meta name="application-name" content="Audio Pedagógico"><title>Audio Pedagógico · Audio 3D</title>
+<style>:root{color-scheme:dark;--bg:#081423;--panel:#101d2f;--panel2:#15283b;--stroke:#294359;--text:#f0f8ff;--muted:#a6bbcc;--cyan:#70e7d9;--blue:#69bfe9;--amber:#ffd37b;--ok:#9befc4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 86% 0%,#16445377,transparent 46%),radial-gradient(ellipse at 5% 80%,#1c264477,transparent 52%),var(--bg);font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);min-height:100vh}a{color:var(--cyan)}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.48;cursor:not-allowed}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.shell{width:min(1170px,calc(100% - 36px));margin:auto;padding-bottom:54px}.topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--stroke);font-size:.77rem;color:var(--muted)}.topline strong{color:var(--cyan)}.brand{display:flex;gap:12px;align-items:center;margin-top:26px}.mark{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#9ef4df,#4db7e0);color:#0b2936;font-size:1.65rem;font-weight:900;box-shadow:0 8px 33px #4ecfda30}.brand-title{font-size:1.32rem;font-weight:850}.brand-sub{font-size:.68rem;letter-spacing:.12em;color:var(--muted)}.eyebrow{font-size:.76rem;letter-spacing:.12em;color:var(--cyan);font-weight:800;text-transform:uppercase}.hero{margin:25px 0 18px}.hero h1{font-size:clamp(2.3rem,5vw,3.85rem);letter-spacing:-.055em;line-height:1.07;margin:6px 0}.hero h1 em{font-style:normal;color:var(--cyan)}.hero p{max-width:710px;color:var(--muted);margin:0}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.chip{border:1px solid var(--stroke);border-radius:40px;color:#cadde8;background:#132339;padding:5px 10px;font-size:.75rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 17px}.step{min-height:66px;text-decoration:none;display:flex;align-items:center;gap:12px;background:#102034;border:1px solid #29455b;border-radius:13px;padding:11px 16px;color:#c7daea;font-weight:770}.step .number{font-size:.73rem;color:var(--cyan);font-weight:850}.step small{display:block;font-size:.69rem;color:var(--muted);font-weight:550}.step[aria-current="page"]{background:#16414b;border-color:#59cfc8;color:white;box-shadow:inset 0 0 0 1px #48a9a8}
+.layout{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(318px,.96fr);gap:16px;align-items:start}.panel{border:1px solid var(--stroke);border-radius:20px;background:linear-gradient(150deg,#12243a,#101b2e);padding:20px;min-width:0}.visual-panel{display:flex;flex-direction:column;gap:14px}.panel h2,.panel h3{margin:0;letter-spacing:-.025em}.panel h2{font-size:1.5rem}.panel h3{font-size:1.04rem}.subtle{color:var(--muted);font-size:.87rem}.panel-heading{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.stage-tag{border:1px solid #5f765d;background:#273c32;color:#b6f7d4;padding:5px 10px;font-size:.69rem;border-radius:99px;white-space:nowrap;font-weight:760}.scene{background:#071320;border:1px solid #294e64;border-radius:14px;overflow:hidden;position:relative}.scene canvas{width:100%;height:auto;aspect-ratio:16/9;display:block}.scene .scene-tag{position:absolute;top:12px;left:12px;background:#091724ce;color:#cce8ee;padding:5px 9px;font-size:.65rem;letter-spacing:.10em;font-weight:800;border-radius:7px}.legend{display:flex;align-items:center;gap:15px;flex-wrap:wrap;color:#a9c4d4;font-size:.75rem}.key{width:10px;height:10px;display:inline-block;margin-right:5px;border-radius:50%}.key.direct{background:#ffd37b}.key.reflect{background:#70e7d9}
+.insight{display:flex;gap:12px;align-items:flex-start;background:#0d2c39;border:1px solid #2b6670;border-radius:13px;padding:13px;color:#d5f4f7;font-size:.89rem}.insight b{color:#90f4df}.insight .bulb{font-size:1.3rem}.compare{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.btn{border:1px solid #3e6076;background:#19364b;color:#e8f7ff;padding:11px 14px;border-radius:11px;font-weight:770;min-height:44px;transition:background .15s;text-decoration:none;text-align:center;display:inline-flex;justify-content:center;align-items:center}.btn:hover{background:#23506a}.btn.primary{background:linear-gradient(130deg,#9aefdf,#58c9de);color:#0a2d37;border-color:#7eebdc}.btn.primary:hover{filter:brightness(1.05)}.btn:active{transform:translateY(1px)}.btn.small{font-size:.83rem;padding:9px 11px;min-height:39px}.btn.ghost{background:transparent}.hint{font-size:.76rem;color:#9eb5c4;margin:0}
+.audio-bar{margin-top:16px;background:#0a1829;border:1px solid #2d4d64;border-radius:13px;padding:12px}.audio-bar label{display:block;color:#c8dae7;font-size:.8rem;font-weight:760;margin-bottom:9px}.sounds{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.sound{border-radius:9px;border:1px solid #375369;background:#142a3d;color:#cde2ed;padding:9px 7px;min-height:39px;font-size:.77rem}.sound[aria-pressed=true]{background:#155259;border-color:#66e7db;color:white}.upload{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:9px}.upload label{border:1px dashed #4f7887;padding:8px 11px;border-radius:9px;color:#addbdc;cursor:pointer;font-size:.78rem;font-weight:650;margin:0}.upload input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}.upload-name{color:#91aebf;font-size:.73rem;overflow-wrap:anywhere}
+.console{display:flex;gap:8px;margin:14px 0 0;flex-wrap:wrap}.status{color:#b5ead9;font-size:.75rem;min-height:22px;margin-top:9px}.control{background:#0b1b2b;border:1px solid #29475d;border-radius:13px;padding:12px 14px;margin-top:10px}.control label{display:flex;justify-content:space-between;gap:10px;font-size:.83rem;font-weight:760}.control output{color:var(--cyan);font-variant-numeric:tabular-nums}.control input[type=range]{width:100%;accent-color:#67e4d8;margin:11px 0 0;cursor:pointer;touch-action:pan-y}.control .desc{color:#8eaabb;font-size:.73rem;margin-top:5px}.control-summary{color:var(--muted);font-size:.87rem;margin-top:7px}.moods,.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px 0}.mood{background:#102b3c;border:1px solid #355a6d;border-radius:11px;padding:11px 5px;color:#d3e5f0;text-align:center;font-size:.78rem;font-weight:730}.mood[aria-pressed=true]{background:#15464a;border-color:#76e7d6;color:#fff}
+.plot{border-radius:12px;border:1px solid #32536b;background:#071725;overflow:hidden}.plot canvas{display:block;width:100%;height:auto;aspect-ratio:2.8/1}.plot-caption{display:flex;justify-content:space-between;gap:10px;color:#94b3c5;font-size:.73rem;margin-top:6px}.scenario{border:1px solid #375870;background:#132b3e;border-radius:12px;padding:13px 9px;color:#d4ebf1;text-align:left;min-height:88px}.scenario strong{display:block;font-size:.84rem}.scenario span{display:block;color:#a5c5d2;font-size:.73rem;margin-top:4px}.scenario[aria-pressed=true]{border-color:#7aead9;background:#164550}.banner{background:linear-gradient(105deg,#123748,#17334a);border:1px solid #2f7180;padding:15px;border-radius:13px}.banner strong{color:#a3ffec}.banner p{color:#d2e8ec;font-size:.87rem;margin:5px 0 0}.footnote{border-top:1px solid #274355;padding-top:16px;margin-top:28px;color:#8daabb;font-size:.78rem}.pager{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-top:17px}.pager .subtle{font-size:.81rem}.mini-info{font-size:.82rem;color:#a9c6d6;margin-top:8px}.room-info{color:#abe6d8;font-size:.84rem;min-height:19px}details{background:#0b1c2d;border-radius:12px;border:1px solid #29485e;padding:10px 13px;margin-top:13px}summary{cursor:pointer;font-weight:730;font-size:.83rem;color:#b9e9e3}details p{color:#b2ccda;font-size:.8rem;margin-bottom:0}
+@media(max-width:920px){.layout{grid-template-columns:1fr}.panel{padding:16px}}@media(max-width:620px){.shell{width:min(100% - 24px,1170px)}.steps{gap:5px}.step{padding:10px 8px;min-height:62px;gap:7px;font-size:.79rem}.step small{font-size:.63rem}.cards{grid-template-columns:1fr}.scenario{min-height:50px}.hero h1{font-size:2.3rem}.moods{gap:5px}.mood{padding:9px 2px;font-size:.72rem}.panel h2{font-size:1.33rem}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+.home-link{display:inline-flex;align-items:center;min-height:44px;font-weight:750}
+.topline{align-items:center;padding:4px 0}
+@media(max-width:380px){.step small{display:none}.panel-heading{flex-wrap:wrap}}
+
+/* ---- Audio 3D ---- */
+.page[hidden]{display:none}
+.canvas-box{background:#071320;border:1px solid #294e64;border-radius:14px;overflow:hidden;position:relative}
+.canvas-box canvas{display:block;width:100%;height:auto;touch-action:none}
+.canvas-box .scene-tag{position:absolute;top:10px;left:12px;background:#091724ce;color:#cce8ee;padding:5px 9px;font-size:.65rem;letter-spacing:.10em;font-weight:800;border-radius:7px;pointer-events:none}
+.drag{cursor:grab}.drag:active{cursor:grabbing}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.positions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.readouts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.readout{background:#0b1b2b;border:1px solid #29475d;border-radius:12px;padding:10px 12px}
+.readout small{display:block;color:#8eaabb;font-size:.7rem;font-weight:700;letter-spacing:.04em}
+.readout b{display:block;font-size:1.25rem;font-variant-numeric:tabular-nums;margin:2px 0}
+.readout span{font-size:.74rem;color:#b9d2df}
+.ear-l{color:#69bfe9}.ear-r{color:#ffd37b}
+.guess{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px}
+.guess .mood{padding:9px 2px}
+.feedback{margin-top:10px;background:#0d2c39;border:1px solid #2b6670;border-radius:12px;padding:11px 13px;color:#d5f4f7;font-size:.86rem;min-height:44px}
+.feedback b{color:#90f4df}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.modes .mood{text-align:left;padding:10px 11px}
+.modes .mood small{display:block;color:#9fc0cf;font-weight:550;font-size:.68rem;margin-top:2px}
+@media(max-width:620px){.canvas-box .scene-tag{display:none}.two{grid-template-columns:1fr}.positions{grid-template-columns:repeat(3,1fr)}.guess{grid-template-columns:repeat(3,1fr)}}
+</style></head><body>
+<div class="shell">
+<nav class="topline" aria-label="Navegación general"><a class="home-link" href="audio3d.html">← Audio 3D</a><span>Laboratorio interactivo de diseño sonoro</span></nav>
+<header><div class="brand"><div class="mark" aria-hidden="true">◎</div><div><div class="brand-title">Audio 3D</div><div class="brand-sub">ESCUCHA · OBSERVA · EXPERIMENTA</div></div></div>
+<div class="hero"><div class="eyebrow" id="heroEyebrow">Parte 01 de 03 · Observa</div><h1 tabindex="-1" id="heroTitle">¿De dónde viene <em>el sonido?</em></h1><p id="heroText">Con solo dos oídos ubicamos sonidos adelante, atrás, a los lados y arriba. Escucha cómo lo logra el cerebro.</p>
+<div class="chips"><span class="chip">🎧 Usa audífonos (obligatorio)</span><span class="chip">◉ Audio procesado en el navegador</span><span class="chip" id="pageChip">01/03</span></div></div></header>
+<nav class="steps" aria-label="Páginas de audio 3D"><a class="step" href="#observa"><span class="number">01</span><span>Observa<small>¿De dónde viene?</small></span></a><a class="step" href="#experimenta"><span class="number">02</span><span>Experimenta<small>Mueve la fuente</small></span></a><a class="step" href="#aplica"><span class="number">03</span><span>Aplica<small>Diseña un movimiento</small></span></a></nav>
+
+<!-- =================================================== 01 · OBSERVA -->
+<section class="page" data-page="observa" hidden>
+<main class="layout">
+<section class="panel visual-panel" aria-labelledby="h-obs"><div class="panel-heading"><div><div class="eyebrow">01 · Observa</div><h2 id="h-obs">Un sonido. Distintas posiciones.</h2></div><span class="stage-tag">Estéreo vs. 3D</span></div>
+<div class="canvas-box"><canvas id="obsTop" width="900" height="560" role="img" aria-label="Vista superior de una cabeza y la posición de la fuente sonora"></canvas><span class="scene-tag">VISTA SUPERIOR</span></div>
+<div class="positions" role="group" aria-label="Posición de la fuente">
+<button class="mood" data-pos="left" aria-pressed="false">◀ Izquierda</button><button class="mood" data-pos="front" aria-pressed="true">▲ Frente</button><button class="mood" data-pos="right" aria-pressed="false">Derecha ▶</button>
+<button class="mood" data-pos="back" aria-pressed="false">▼ Detrás</button><button class="mood" data-pos="up" aria-pressed="false">⤒ Arriba</button><button class="mood" data-pos="orbit" aria-pressed="false">↻ Vuelta completa</button></div>
+<div class="compare"><button class="btn" id="obsPan">▶ Estéreo normal</button><button class="btn primary" id="obsHrtf">▶ Audio 3D</button></div>
+<div class="insight"><span class="bulb">✦</span><span id="obsInsight">El <b>estéreo normal</b> solo cambia el volumen entre los lados: el sonido queda “entre los oídos”. El <b>audio 3D</b> agrega lo que hace tu cabeza: el sonido <b>llega antes</b> a un oído, <b>más fuerte</b> a ese oído, y la <b>oreja</b> lo colorea.</span></div>
+</section>
+<aside class="panel" aria-label="Escucha y prueba"><div class="eyebrow">Escucha primero</div><h2>Compara</h2><p class="control-summary">Elige una posición y escúchala en estéreo y en 3D. Prueba sobre todo <b>Detrás</b> y <b>Arriba</b>: el estéreo normal no puede hacerlo.</p>
+<div class="audio-bar"><label>FUENTE SONORA</label><div class="sounds"><button class="sound" data-sound="maraca" aria-pressed="true">🪇 Maraca</button><button class="sound" data-sound="zumbido" aria-pressed="false">🪰 Zumbido</button><button class="sound" data-sound="pasos" aria-pressed="false">👣 Pasos</button></div></div>
+<h3 style="margin-top:18px">Prueba a ciegas</h3><p class="subtle">El sonido aparece en una posición al azar. ¿Dónde lo oyes? No hay puntaje: es para descubrir cómo funciona tu oído.</p>
+<div class="console"><button class="btn primary" id="blindPlay">▶ Sonido misterioso</button><button class="btn small ghost" id="blindRepeat" disabled>↺ Repetir</button></div>
+<div class="guess" role="group" aria-label="¿De dónde viene?"><button class="mood" data-guess="front" disabled>Frente</button><button class="mood" data-guess="back" disabled>Detrás</button><button class="mood" data-guess="left" disabled>Izquierda</button><button class="mood" data-guess="right" disabled>Derecha</button><button class="mood" data-guess="up" disabled>Arriba</button></div>
+<div class="feedback" id="blindFeedback" aria-live="polite">Pulsa “Sonido misterioso”.</div>
+<div class="console"><button class="btn small ghost" data-stop>■ Detener</button></div>
+<div class="status" data-status role="status" aria-live="polite">Pulsa un botón de escucha para activar el audio.</div>
+</aside></main>
+<nav class="pager" aria-label="Continuar"><span class="subtle">Inicio · Observa</span><span class="subtle">Página 1 de 3</span><a class="btn small primary" href="#experimenta">Experimenta →</a></nav>
+</section>
+
+<!-- =================================================== 02 · EXPERIMENTA -->
+<section class="page" data-page="experimenta" hidden>
+<main class="layout">
+<section class="panel visual-panel" aria-labelledby="h-exp"><div class="panel-heading"><div><div class="eyebrow">02 · Experimenta</div><h2 id="h-exp">Mueve la fuente. Mira cada oído.</h2></div><span class="stage-tag">Tiempo · nivel · oreja</span></div>
+<div class="canvas-box"><canvas id="expTop" class="drag" width="900" height="620" role="img" aria-label="Vista superior interactiva: arrastra la fuente para cambiar dirección y distancia"></canvas><span class="scene-tag">ARRASTRA LA FUENTE</span></div>
+<div class="two">
+<div class="canvas-box"><canvas id="expSide" class="drag" width="600" height="380" role="img" aria-label="Vista lateral: arrastra para cambiar la elevación"></canvas><span class="scene-tag">ELEVACIÓN</span></div>
+<div class="canvas-box"><canvas id="expResp" width="600" height="380" role="img" aria-label="Respuesta en frecuencia de cada oído"></canvas><span class="scene-tag">LO QUE OYE CADA OÍDO</span></div>
+</div>
+<div class="legend"><span><i class="key" style="background:#69bfe9"></i> Oído izquierdo</span><span><i class="key" style="background:#ffd37b"></i> Oído derecho</span><span>Zona sombreada: 5–13 kHz, donde actúa la oreja</span></div>
+<div class="insight"><span class="bulb">✦</span><span id="expInsight"></span></div>
+</section>
+<aside class="panel" aria-label="Controles de audio 3D"><div class="eyebrow">Laboratorio</div><h2>Mueve y escucha</h2><p class="control-summary">Pulsa reproducir y arrastra la fuente: el sonido cambia en vivo.</p>
+<div class="console"><button class="btn primary" id="expPlay">▶ Reproducir en bucle</button><button class="btn small ghost" data-stop>■ Detener</button></div>
+<h3 style="margin-top:16px">Método</h3>
+<div class="modes" role="group" aria-label="Método de espacialización">
+<button class="mood" data-mode="0" aria-pressed="true">HRTF medida<small>Tiempo + nivel + oreja</small></button>
+<button class="mood" data-mode="1" aria-pressed="false">Cabeza esférica<small>Sin orejas</small></button>
+<button class="mood" data-mode="2" aria-pressed="false">Estéreo normal<small>Solo volumen</small></button>
+<button class="mood" data-mode="3" aria-pressed="false">Original<small>Sin procesar</small></button></div>
+<div class="readouts">
+<div class="readout"><small>ITD · DIFERENCIA DE TIEMPO</small><b id="roItd">0 µs</b><span id="roItdTxt">igual en ambos oídos</span></div>
+<div class="readout"><small>ILD · DIFERENCIA DE NIVEL</small><b id="roIld">0 dB</b><span id="roIldTxt">igual en ambos oídos</span></div></div>
+<div class="control"><label for="az">Dirección (azimut) <output id="azOut">30°</output></label><input type="range" id="az" min="-180" max="180" step="1" value="30"><div class="desc">0° frente · +90° derecha · −90° izquierda · 180° detrás</div></div>
+<div class="control"><label for="el">Elevación <output id="elOut">0°</output></label><input type="range" id="el" min="-40" max="90" step="1" value="0"><div class="desc">De −40° (abajo) a 90° (encima de la cabeza)</div></div>
+<div class="control"><label for="dist">Distancia <output id="distOut">1,5 m</output></label><input type="range" id="dist" min="0" max="1000" step="1" value="0"><div class="desc">Más lejos: menos volumen, menos agudos y más sala.</div></div>
+<div class="control"><label for="room">Sala <output id="roomOut">25 %</output></label><input type="range" id="room" min="0" max="100" step="1" value="25"><div class="desc">Un poco de sala ayuda a sacar el sonido de la cabeza.</div></div>
+<details><summary>Opcional · Órbita automática</summary><div class="control"><label for="orbit">Velocidad de giro <output id="orbitOut">0 °/s</output></label><input type="range" id="orbit" min="-120" max="120" step="5" value="0"><div class="desc">La fuente gira sola alrededor de tu cabeza.</div></div></details>
+<div class="audio-bar"><label>FUENTE SONORA</label><div class="sounds"><button class="sound" data-sound="maraca" aria-pressed="true">🪇 Maraca</button><button class="sound" data-sound="zumbido" aria-pressed="false">🪰 Zumbido</button><button class="sound" data-sound="pasos" aria-pressed="false">👣 Pasos</button></div>
+<div class="upload"><label>↑ Importar audio <input accept="audio/*" type="file" data-upload></label><span class="upload-name" data-filename>WAV, MP3…</span></div></div>
+<div class="status" data-status role="status" aria-live="polite">Pulsa reproducir para comenzar.</div>
+</aside></main>
+<nav class="pager" aria-label="Continuar"><a class="btn small ghost" href="#observa">← Observa</a><span class="subtle">Página 2 de 3</span><a class="btn small primary" href="#aplica">Aplica →</a></nav>
+</section>
+
+<!-- =================================================== 03 · APLICA -->
+<section class="page" data-page="aplica" hidden>
+<main class="layout">
+<section class="panel visual-panel" aria-labelledby="h-apl"><div><div class="eyebrow">03 · Aplica</div><h2 id="h-apl">Diseña un movimiento</h2><p class="subtle">Elige una situación, coloca el inicio <b>A</b> y el final <b>B</b>, y escucha el recorrido. No hay un recorrido perfecto: busca que se entienda la escena.</p></div>
+<div class="cards"><button class="scenario" data-scene="nave" aria-pressed="true"><strong>🛸 Nave que pasa</strong><span>De un lado a otro, por encima</span></button><button class="scenario" data-scene="mosca" aria-pressed="false"><strong>🪰 Mosca molesta</strong><span>Gira cerca de tu cabeza</span></button><button class="scenario" data-scene="pasos" aria-pressed="false"><strong>👣 Alguien se acerca</strong><span>Desde atrás, hasta tu hombro</span></button></div>
+<div class="banner"><strong id="goalTitle"></strong><p id="goalText"></p></div>
+<div class="canvas-box"><canvas id="aplTop" class="drag" width="900" height="620" role="img" aria-label="Vista superior: arrastra los puntos A y B para definir el recorrido"></canvas><span class="scene-tag">ARRASTRA A Y B</span></div>
+<div class="compare"><button class="btn primary" id="aplPlay">▶ Escuchar en 3D</button><button class="btn" id="aplPlayPan">▶ Mismo recorrido en estéreo</button></div>
+<div class="compare"><button class="btn" id="aplExport">↓ Exportar WAV 3D</button><button class="btn small ghost" data-stop>■ Detener</button></div>
+<p class="hint">El WAV es binaural: escúchalo con audífonos o impórtalo en REAPER, MorningDAW u otro DAW.</p>
+</section>
+<aside class="panel" aria-label="Ajustes del recorrido"><div class="eyebrow">Tu escena</div><h2>Ajusta el recorrido</h2><p class="control-summary">Arrastra A y B en la vista superior. Aquí ajustas la altura, la duración y la forma del recorrido.</p>
+<h3 style="margin-top:14px">Recorrido</h3>
+<div class="moods" role="group" aria-label="Tipo de recorrido"><button class="mood" data-path="line" aria-pressed="true">Recta A → B</button><button class="mood" data-path="orbit" aria-pressed="false">Girar alrededor</button><button class="mood" data-path="still" aria-pressed="false">Quieto en A</button></div>
+<div class="control"><label for="elA">Altura en A <output id="elAOut">0°</output></label><input type="range" id="elA" min="-40" max="90" step="1" value="0"></div>
+<div class="control"><label for="elB">Altura en B <output id="elBOut">0°</output></label><input type="range" id="elB" min="-40" max="90" step="1" value="0"></div>
+<div class="control"><label for="dur">Duración <output id="durOut">5 s</output></label><input type="range" id="dur" min="1" max="12" step="0.5" value="5"></div>
+<div class="control" id="turnsBox"><label for="turns">Vueltas (girar alrededor) <output id="turnsOut">2</output></label><input type="range" id="turns" min="0.5" max="5" step="0.5" value="2"><div class="desc">Radio y altura inicial: los de A.</div></div>
+<div class="control"><label for="aroom">Sala <output id="aroomOut">25 %</output></label><input type="range" id="aroom" min="0" max="100" step="1" value="25"></div>
+<div class="audio-bar"><label>FUENTE SONORA</label><div class="sounds"><button class="sound" data-sound="nave" aria-pressed="true">🛸 Nave</button><button class="sound" data-sound="zumbido" aria-pressed="false">🪰 Zumbido</button><button class="sound" data-sound="pasos" aria-pressed="false">👣 Pasos</button></div>
+<div class="upload"><label>↑ Importar audio <input accept="audio/*" type="file" data-upload></label><span class="upload-name" data-filename>WAV, MP3…</span></div></div>
+<div class="status" data-status role="status" aria-live="polite">Elige una escena y diseña el recorrido.</div>
+<p class="hint">Las escenas solo proponen un objetivo; tú decides el recorrido.</p>
+</aside></main>
+<nav class="pager" aria-label="Continuar"><a class="btn small ghost" href="#experimenta">← Experimenta</a><span class="subtle">Página 3 de 3</span><span class="subtle">Fin del módulo</span></nav>
+</section>
+
+<footer class="footnote">Audio 3D · Material educativo experimental · Audio binaural procesado con Web Audio en tu navegador. HRTF: MIT KEMAR, B. Gardner y K. Martin, MIT Media Lab (1994). Modelo esférico: Brown y Duda (1998). Son HRTF de un maniquí, no de tu oreja: es normal que a veces delante y detrás se confundan. Sin evaluaciones automáticas.</footer>
+</div>
+<script src="audio3d-motor.js"></script>
+<script>
+(function () {
+'use strict';
+const $ = id => document.getElementById(id);
+const M = motorAudio3D();
+const H44 = new M.HrtfSet(44100);           // copia para las gráficas
+const PAGES = ['observa', 'experimenta', 'aplica'];
+const HERO = {
+  observa: ['Parte 01 de 03 · Observa', '¿De dónde viene <em>el sonido?</em>', 'Con solo dos oídos ubicamos sonidos adelante, atrás, a los lados y arriba. Escucha cómo lo logra el cerebro.'],
+  experimenta: ['Parte 02 de 03 · Experimenta', 'Mueve el sonido <em>a tu alrededor.</em>', 'Arrastra la fuente y observa qué cambia en cada oído: tiempo, nivel y color.'],
+  aplica: ['Parte 03 de 03 · Aplica', 'Diseña un sonido <em>que se mueve.</em>', 'Crea un recorrido en 3D, compáralo con el estéreo normal y llévalo a tu DAW.']
+};
+const POS = { front: { az: 0, el: 0, name: 'Frente' }, back: { az: 180, el: 0, name: 'Detrás' }, left: { az: -90, el: 0, name: 'Izquierda' },
+              right: { az: 90, el: 0, name: 'Derecha' }, up: { az: 0, el: 70, name: 'Arriba' } };
+const SCENES = {
+  nave:  { title: 'Objetivo: una nave pasa por encima', text: 'Que se oiga llegar desde un lado, pasar sobre ti y alejarse al otro. Pista: A y B lejos y a lados opuestos, con algo de altura.', sound: 'nave' },
+  mosca: { title: 'Objetivo: una mosca molesta', text: 'Que zumbe muy cerca de tu cabeza, dando vueltas. Pista: usa “Girar alrededor” con A a menos de 1 m.', sound: 'zumbido' },
+  pasos: { title: 'Objetivo: alguien se acerca por detrás', text: 'Que los pasos empiecen lejos, detrás de ti, y terminen junto a tu hombro. Pista: A lejos atrás, B cerca y un poco al lado.', sound: 'pasos' }
+};
+const MIN_D = 0.3, MAX_D = 20;
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const fmt = (n, d = 1) => Number(n).toLocaleString('es-CO', { maximumFractionDigits: d });
+const deg = r => r * 180 / Math.PI, rad = d => d * Math.PI / 180;
+
+const S = {
+  page: 'observa',
+  sound: { observa: 'maraca', experimenta: 'maraca', aplica: 'nave' },
+  uploaded: { experimenta: null, aplica: null },
+  obsPos: 'front', mode: 0, az: 30, el: 0, dist: 1.5, room: 25, orbit: 0,
+  scene: 'nave', path: 'line', A: { x: -7, y: 3 }, B: { x: 7, y: 3 }, elA: 25, elB: 25, dur: 6, turns: 2, aroom: 25,
+  show: null,          // posición que se dibuja en Observa
+  blind: null, blindRevealed: true,
+  marker: null         // punto que se mueve en Aplica durante la reproducción
+};
+
+// ------------------------------------------------------------------ audio
+const A = { ctx: null, node: null, kind: '', master: null, src: null, buf: null, timer: 0, anim: 0, params: { mode: 0, azimuth: 0, elevation: 0, distance: 1.5, room: 0.25 }, hrtfAtRate: null, sounds: {} };
+
+function status(msg) { const el = document.querySelector(`.page[data-page="${S.page}"] [data-status]`); if (el) el.textContent = msg; }
+
+async function ensureAudio() {
+  if (A.ctx) { if (A.ctx.state !== 'running') await A.ctx.resume(); return A.ctx; }
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) { status('Este navegador no admite Web Audio.'); throw new Error('sin Web Audio'); }
+  const ctx = A.ctx = new AC();
+  A.master = ctx.createGain(); A.master.gain.value = 0.9; A.master.connect(ctx.destination);
+  try {
+    if (!ctx.audioWorklet || typeof AudioWorkletNode !== 'function') throw new Error('sin AudioWorklet');
+    const code = `${motorAudio3D.toString()}\n(${registrarProcesadorAudio3D.toString()})();`;
+    const url = URL.createObjectURL(new Blob([code], { type: 'application/javascript' }));
+    await ctx.audioWorklet.addModule(url);
+    A.node = new AudioWorkletNode(ctx, 'audio3d', { numberOfInputs: 1, numberOfOutputs: 1, outputChannelCount: [2] });
+    A.kind = 'worklet';
+    A.node.port.postMessage(A.params);
+  } catch (err) {
+    // Respaldo para navegadores sin AudioWorklet (o abiertos desde archivo con restricciones)
+    const eng = new M.BinauralEngine(ctx.sampleRate);
+    const sp = ctx.createScriptProcessor(2048, 2, 2);
+    let mono = new Float32Array(2048);
+    sp.onaudioprocess = ev => {
+      const ib = ev.inputBuffer, ob = ev.outputBuffer, n = ob.length;
+      if (mono.length < n) mono = new Float32Array(n);
+      const a = ib.getChannelData(0), b = ib.numberOfChannels > 1 ? ib.getChannelData(1) : a;
+      for (let i = 0; i < n; i++) mono[i] = 0.5 * (a[i] + b[i]);
+      eng.process(mono, ob.getChannelData(0), ob.getChannelData(1), n, A.params);
+    };
+    A.node = sp; A.kind = 'script';
+  }
+  A.node.connect(A.master);
+  await ctx.resume();
+  return ctx;
+}
+
+function setParams(p) {
+  Object.assign(A.params, p);
+  if (A.kind === 'worklet') A.node.port.postMessage(p);
+}
+
+function stopAll(msg) {
+  clearTimeout(A.timer); cancelAnimationFrame(A.anim); A.anim = 0;
+  if (A.src) { try { A.src.onended = null; A.src.stop(); } catch (_) {} try { A.src.disconnect(); } catch (_) {} A.src = null; }
+  S.marker = null;
+  setPlayLabel(false);
+  if (msg) status(msg);
+  drawAll();
+}
+
+// ------------------------------------------------------------------ sonidos de ejemplo
+function loopBuffer(ctx, seconds, gen) {
+  const sr = ctx.sampleRate, n = Math.round(seconds * sr), F = Math.round(0.03 * sr);
+  const tmp = new Float32Array(n + F);
+  gen(tmp, sr);
+  // bucle sin clic: el final se funde con el principio
+  for (let i = 0; i < F; i++) { const w = i / F; tmp[i] = tmp[i] * w + tmp[n + i] * (1 - w); }
+  const b = ctx.createBuffer(1, n, sr); b.getChannelData(0).set(tmp.subarray(0, n));
+  return b;
+}
+function makeSound(type, ctx) {
+  const key = type + '@' + ctx.sampleRate;
+  if (A.sounds[key]) return A.sounds[key];
+  let b;
+  if (type === 'maraca') b = loopBuffer(ctx, 4, (d, sr) => {
+    let lp = 0;
+    for (let i = 0; i < d.length; i++) {
+      const t = i / sr, k = Math.floor(t / 0.25), ph = t - k * 0.25, r = Math.random() * 2 - 1;
+      lp = 0.7 * lp + 0.3 * r;
+      d[i] = 0.55 * (r - lp) * Math.exp(-ph * 38) * (k % 2 ? 0.6 : 1) * (ph < 0.004 ? ph / 0.004 : 1);
+    }
+  });
+  else if (type === 'zumbido') b = loopBuffer(ctx, 4, (d, sr) => {
+    let ph = 0, ph2 = 0, hp = 0, prev = 0;
+    for (let i = 0; i < d.length; i++) {
+      const t = i / sr, f = 210 + 14 * Math.sin(2 * Math.PI * 5.5 * t) + 25 * Math.sin(2 * Math.PI * 0.75 * t);
+      ph = (ph + f / sr) % 1; ph2 = (ph2 + f * 1.007 / sr) % 1;
+      const saw = (2 * ph - 1) * 0.6 + (2 * ph2 - 1) * 0.4;
+      hp = 0.97 * (hp + saw - prev); prev = saw;
+      d[i] = 0.32 * hp * (0.75 + 0.25 * Math.sin(2 * Math.PI * 3 * t));
+    }
+  });
+  else if (type === 'pasos') b = loopBuffer(ctx, 4.4, (d, sr) => {
+    let lp = 0;
+    for (let i = 0; i < d.length; i++) {
+      const t = i / sr, k = Math.floor(t / 0.55), ph = t - k * 0.55, r = Math.random() * 2 - 1;
+      lp = 0.82 * lp + 0.18 * r;
+      const thump = Math.sin(2 * Math.PI * 75 * ph) * Math.exp(-ph * 32);
+      const scuff = lp * Math.exp(-ph * 55) + 0.35 * r * Math.exp(-ph * 120);
+      d[i] = (k % 2 ? 0.8 : 1) * 0.6 * (0.7 * thump + 0.8 * scuff) * (ph < 0.003 ? ph / 0.003 : 1);
+    }
+  });
+  else if (type === 'nave') b = loopBuffer(ctx, 4, (d, sr) => {
+    let p1 = 0, p2 = 0, lp = 0, lp2 = 0;
+    for (let i = 0; i < d.length; i++) {
+      const t = i / sr, r = Math.random() * 2 - 1;
+      p1 = (p1 + 55 / sr) % 1; p2 = (p2 + 82.6 / sr) % 1;
+      lp = 0.985 * lp + 0.015 * r; lp2 = 0.7 * lp2 + 0.3 * r;
+      const whine = Math.sin(2 * Math.PI * (1180 + 30 * Math.sin(2 * Math.PI * 0.5 * t)) * t);
+      d[i] = 0.18 * ((2 * p1 - 1) + 0.7 * (2 * p2 - 1)) + 2.2 * lp + 0.12 * lp2 * (0.6 + 0.4 * Math.sin(2 * Math.PI * 1.25 * t)) + 0.05 * whine;
+    }
+  });
+  A.sounds[key] = b;
+  return b;
+}
+function currentSound(ctx, page) {
+  const s = S.sound[page];
+  if (s === 'uploaded' && S.uploaded[page]) return S.uploaded[page];
+  return makeSound(s === 'uploaded' ? 'maraca' : s, ctx);
+}
+
+// ------------------------------------------------------------------ reproducción en vivo
+async function playLive(buf, loop, seconds) {
+  const ctx = await ensureAudio();
+  stopAll();
+  const s = ctx.createBufferSource(); s.buffer = buf; s.loop = loop; s.connect(A.node); s.start();
+  A.src = s;
+  if (seconds) A.timer = setTimeout(() => stopAll(), seconds * 1000);
+  s.onended = () => { if (A.src === s) { A.src = null; setPlayLabel(false); } };
+  return ctx;
+}
+function setPlayLabel(on) { const b = $('expPlay'); if (b) b.textContent = on ? '■ Detener bucle' : '▶ Reproducir en bucle'; }
+
+// ------------------------------------------------------------------ dibujo
+const COL = { bg: '#071320', ring: '#22405a', text: '#a9c4d4', head: '#15283b', headStroke: '#70e7d9', src: '#70e7d9', left: '#69bfe9', right: '#ffd37b', a: '#ffd37b', b: '#70e7d9' };
+function geom(cv) {
+  const w = cv.width, h = cv.height, cx = w / 2, cy = h / 2 + 8, maxR = Math.min(w, h) / 2 - 44, headR = 46;
+  const rFor = d => headR + (maxR - headR) * Math.log(clamp(d, MIN_D, MAX_D) / MIN_D) / Math.log(MAX_D / MIN_D);
+  const dFor = r => MIN_D * Math.pow(MAX_D / MIN_D, clamp((r - headR) / (maxR - headR), 0, 1));
+  const toXY = (az, d) => { const r = rFor(d), a = rad(az); return [cx + r * Math.sin(a), cy - r * Math.cos(a)]; };
+  return { w, h, cx, cy, maxR, headR, rFor, dFor, toXY };
+}
+function drawHeadTop(c, g) {
+  const { cx, cy } = g, hr = 30;
+  c.fillStyle = COL.head; c.strokeStyle = COL.headStroke; c.lineWidth = 3;
+  c.beginPath(); c.arc(cx, cy, hr, 0, 2 * Math.PI); c.fill(); c.stroke();
+  c.fillStyle = COL.headStroke; c.beginPath(); c.moveTo(cx - 8, cy - hr + 2); c.lineTo(cx + 8, cy - hr + 2); c.lineTo(cx, cy - hr - 12); c.closePath(); c.fill();
+  c.fillStyle = COL.left; c.beginPath(); c.ellipse(cx - hr - 4, cy, 6, 11, 0, 0, 2 * Math.PI); c.fill();
+  c.fillStyle = COL.right; c.beginPath(); c.ellipse(cx + hr + 4, cy, 6, 11, 0, 0, 2 * Math.PI); c.fill();
+}
+function drawTopBase(cv) {
+  const c = cv.getContext('2d'), g = geom(cv);
+  c.fillStyle = COL.bg; c.fillRect(0, 0, g.w, g.h);
+  c.font = '600 19px system-ui,sans-serif'; c.textBaseline = 'middle';
+  for (const d of [0.5, 1, 2, 5, 10, 20]) {
+    const r = g.rFor(d);
+    c.strokeStyle = COL.ring; c.lineWidth = 1.5; c.beginPath(); c.arc(g.cx, g.cy, r, 0, 2 * Math.PI); c.stroke();
+    c.fillStyle = '#5f8196'; c.textAlign = 'left'; c.fillText(`${fmt(d)} m`, g.cx + r * 0.71 + 4, g.cy + r * 0.71);
+  }
+  c.strokeStyle = '#1b3448'; c.beginPath(); c.moveTo(g.cx - g.maxR, g.cy); c.lineTo(g.cx + g.maxR, g.cy); c.moveTo(g.cx, g.cy - g.maxR); c.lineTo(g.cx, g.cy + g.maxR); c.stroke();
+  c.fillStyle = COL.text; c.font = '700 22px system-ui,sans-serif'; c.textAlign = 'center';
+  c.fillText('FRENTE', g.cx, g.cy - g.maxR - 20); c.fillText('DETRÁS', g.cx, g.cy + g.maxR + 22);
+  c.textAlign = 'right'; c.fillText('IZQ', g.cx - g.maxR - 8, g.cy); c.textAlign = 'left'; c.fillText('DER', g.cx + g.maxR + 8, g.cy);
+  drawHeadTop(c, g);
+  return { c, g };
+}
+function drawSource(c, g, az, d, el, label, color) {
+  const [x, y] = g.toXY(az, d);
+  c.strokeStyle = (color || COL.src) + '66'; c.lineWidth = 2.5; c.beginPath(); c.moveTo(g.cx, g.cy); c.lineTo(x, y); c.stroke();
+  const halo = 22 + clamp(el / 6, -6, 15);
+  c.fillStyle = (color || COL.src) + '33'; c.beginPath(); c.arc(x, y, halo, 0, 2 * Math.PI); c.fill();
+  c.fillStyle = color || COL.src; c.beginPath(); c.arc(x, y, 13, 0, 2 * Math.PI); c.fill();
+  c.fillStyle = '#071320'; c.font = '800 15px system-ui,sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText(label || '', x, y + 1);
+}
+
+function drawObserva() {
+  const cv = $('obsTop'); if (!cv || S.page !== 'observa') return;
+  const { c, g } = drawTopBase(cv);
+  if (S.blind && !S.blindRevealed) {
+    c.fillStyle = '#ffd37b'; c.font = '800 46px system-ui,sans-serif'; c.textAlign = 'center'; c.fillText('?', g.cx + 90, g.cy - 90);
+    return;
+  }
+  const p = S.show || POS[S.obsPos] || POS.front;
+  drawSource(c, g, p.az, 1.5, p.el || 0, '', COL.src);
+  if ((p.el || 0) > 30) { const [x, y] = g.toXY(p.az, 1.5); c.fillStyle = COL.text; c.font = '700 16px system-ui'; c.fillText(`arriba ${Math.round(p.el)}°`, x, y - 36); }
+}
+
+function drawExpTop() {
+  const cv = $('expTop'); if (!cv || S.page !== 'experimenta') return;
+  const { c, g } = drawTopBase(cv);
+  drawSource(c, g, S.az, S.dist, S.el, '', COL.src);
+}
+function drawSide() {
+  const cv = $('expSide'); if (!cv || S.page !== 'experimenta') return;
+  const c = cv.getContext('2d'), w = cv.width, h = cv.height, cx = w / 2, cy = h * 0.6, R = Math.min(w * 0.33, h * 0.45);
+  c.fillStyle = COL.bg; c.fillRect(0, 0, w, h);
+  c.strokeStyle = COL.ring; c.lineWidth = 3;
+  c.beginPath(); c.arc(cx, cy, R, rad(-90), rad(40)); c.stroke();     // adelante: −40…90
+  c.beginPath(); c.arc(cx, cy, R, rad(140), rad(270)); c.stroke();    // atrás
+  c.strokeStyle = '#1b3448'; c.lineWidth = 1.5; c.beginPath(); c.moveTo(cx - R - 20, cy); c.lineTo(cx + R + 20, cy); c.stroke();
+  c.fillStyle = COL.text; c.font = '700 26px system-ui'; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText('arriba', cx, cy - R - 24); c.fillText('frente', cx + R, cy + 28); c.fillText('detrás', cx - R, cy + 28);
+  // cabeza de perfil
+  c.fillStyle = COL.head; c.strokeStyle = COL.headStroke; c.lineWidth = 3; c.beginPath(); c.arc(cx, cy, 24, 0, 2 * Math.PI); c.fill(); c.stroke();
+  c.fillStyle = COL.headStroke; c.beginPath(); c.moveTo(cx + 23, cy - 7); c.lineTo(cx + 34, cy + 3); c.lineTo(cx + 23, cy + 7); c.closePath(); c.fill();
+  c.fillStyle = '#b3a07a'; c.beginPath(); c.ellipse(cx - 4, cy, 6, 10, 0, 0, 2 * Math.PI); c.fill();
+  const behind = Math.abs(S.az) > 90, a = rad(S.el);
+  const x = cx + (behind ? -1 : 1) * R * Math.cos(a), y = cy - R * Math.sin(a);
+  c.strokeStyle = COL.src + '66'; c.lineWidth = 2.5; c.beginPath(); c.moveTo(cx, cy); c.lineTo(x, y); c.stroke();
+  c.fillStyle = COL.src; c.beginPath(); c.arc(x, y, 12, 0, 2 * Math.PI); c.fill();
+  c.fillStyle = COL.text; c.font = '800 26px system-ui'; c.fillText(`${Math.round(S.el)}°`, x + (behind ? -46 : 46), y);
+}
+function drawResponse(an) {
+  const cv = $('expResp'); if (!cv || S.page !== 'experimenta') return;
+  const c = cv.getContext('2d'), w = cv.width, h = cv.height, L = 64, Rm = 16, T = 54, B = 46;
+  const lo = -30, hi = 20, xf = f => L + (w - L - Rm) * Math.log(f / 100) / Math.log(200), yd = d => T + (h - T - B) * (hi - clamp(d, lo, hi)) / (hi - lo);
+  c.fillStyle = COL.bg; c.fillRect(0, 0, w, h);
+  c.fillStyle = '#1a3a2e'; c.fillRect(xf(5000), T, xf(13000) - xf(5000), h - T - B);
+  c.font = '600 21px system-ui'; c.textBaseline = 'middle';
+  for (let d = lo; d <= hi; d += 10) { c.strokeStyle = d === 0 ? '#3a5b72' : '#1b3448'; c.lineWidth = 1; c.beginPath(); c.moveTo(L, yd(d)); c.lineTo(w - Rm, yd(d)); c.stroke(); c.fillStyle = '#7f9fb2'; c.textAlign = 'right'; c.fillText(`${d}`, L - 8, yd(d)); }
+  c.textAlign = 'center';
+  for (const f of [100, 1000, 10000]) { c.strokeStyle = '#1b3448'; c.beginPath(); c.moveTo(xf(f), T); c.lineTo(xf(f), h - B); c.stroke(); c.fillStyle = '#7f9fb2'; c.fillText(f >= 1000 ? `${f / 1000}k` : `${f}`, xf(f), h - B + 24); }
+  c.fillText('Hz', w - Rm - 16, h - B + 24); c.save(); c.translate(16, (T + h - B) / 2); c.rotate(-Math.PI / 2); c.fillText('dB', 0, 0); c.restore();
+  const curve = (arr, col) => { c.strokeStyle = col; c.lineWidth = 3.5; c.beginPath(); for (let i = 0; i < arr.length; i++) { const x = xf(an.freqs[i]), y = yd(arr[i]); i ? c.lineTo(x, y) : c.moveTo(x, y); } c.stroke(); };
+  curve(an.L, COL.left); curve(an.R, COL.right);
+}
+
+function trajectory(t) {
+  if (S.path === 'still') { const az = deg(Math.atan2(S.A.x, S.A.y)); return { az, el: S.elA, dist: Math.max(MIN_D, Math.hypot(S.A.x, S.A.y)) }; }
+  const el = S.elA + (S.elB - S.elA) * t;
+  if (S.path === 'orbit') {
+    const r = Math.max(MIN_D, Math.hypot(S.A.x, S.A.y)), az0 = deg(Math.atan2(S.A.x, S.A.y));
+    return { az: M.wrapDeg(az0 + 360 * S.turns * t), el, dist: r };
+  }
+  const x = S.A.x + (S.B.x - S.A.x) * t, y = S.A.y + (S.B.y - S.A.y) * t;
+  return { az: deg(Math.atan2(x, y)), el, dist: Math.max(MIN_D, Math.hypot(x, y)) };
+}
+function drawAplica() {
+  const cv = $('aplTop'); if (!cv || S.page !== 'aplica') return;
+  const { c, g } = drawTopBase(cv);
+  c.strokeStyle = '#ffd37b99'; c.lineWidth = 4; c.setLineDash([10, 8]); c.beginPath();
+  for (let i = 0; i <= 160; i++) { const p = trajectory(i / 160), [x, y] = g.toXY(p.az, p.dist); i ? c.lineTo(x, y) : c.moveTo(x, y); }
+  c.stroke(); c.setLineDash([]);
+  const pa = trajectory(0), pb = S.path === 'line' ? trajectory(1) : null;
+  drawSource(c, g, pa.az, pa.dist, S.elA, 'A', COL.a);
+  if (pb) drawSource(c, g, pb.az, pb.dist, S.elB, 'B', COL.b);
+  if (S.marker) { const [x, y] = g.toXY(S.marker.az, S.marker.dist); c.fillStyle = '#ffffff'; c.beginPath(); c.arc(x, y, 9, 0, 2 * Math.PI); c.fill(); }
+}
+function drawAll() { drawObserva(); drawExpTop(); drawSide(); if (S.page === 'experimenta') updateAnalysis(); drawAplica(); }
+
+// ------------------------------------------------------------------ OBSERVA
+document.querySelectorAll('[data-pos]').forEach(b => b.addEventListener('click', () => {
+  S.obsPos = b.dataset.pos; S.show = null;
+  document.querySelectorAll('[data-pos]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  drawObserva();
+}));
+async function obsPlay(mode) {
+  const ctx = await ensureAudio();
+  const buf = makeSound(S.sound.observa, ctx);
+  S.blind = null; S.blindRevealed = true;
+  guessBtns().forEach(b => { b.disabled = true; b.setAttribute('aria-pressed', 'false'); }); $('blindRepeat').disabled = true;
+  $('blindFeedback').textContent = 'Pulsa “Sonido misterioso”.';
+  if (S.obsPos === 'orbit') {
+    setParams({ mode, azimuth: 0, elevation: 0, distance: 1.5, room: 0.2 });
+    await playLive(buf, true, 6);
+    const t0 = performance.now();
+    const step = () => {
+      const t = (performance.now() - t0) / 6000; if (t > 1 || !A.src) { S.show = null; drawObserva(); return; }
+      const az = M.wrapDeg(360 * t); S.show = { az, el: 0 }; setParams({ azimuth: az }); drawObserva(); A.anim = requestAnimationFrame(step);
+    };
+    A.anim = requestAnimationFrame(step);
+  } else {
+    const p = POS[S.obsPos];
+    setParams({ mode, azimuth: p.az, elevation: p.el, distance: 1.5, room: 0.2 });
+    await playLive(buf, true, 3);
+  }
+  status(mode === 2 ? `Estéreo normal · ${S.obsPos === 'orbit' ? 'vuelta completa' : POS[S.obsPos].name}. ¿Se ubica de verdad ahí?` : `Audio 3D · ${S.obsPos === 'orbit' ? 'vuelta completa' : POS[S.obsPos].name}. Compáralo con el estéreo normal.`);
+}
+$('obsPan').addEventListener('click', () => obsPlay(2).catch(console.warn));
+$('obsHrtf').addEventListener('click', () => obsPlay(0).catch(console.warn));
+
+const guessBtns = () => document.querySelectorAll('[data-guess]');
+async function blindPlay(newOne) {
+  const keys = Object.keys(POS);
+  if (newOne || !S.blind) { let k; do { k = keys[Math.floor(Math.random() * keys.length)]; } while (k === S.blind && keys.length > 1); S.blind = k; }
+  S.blindRevealed = false;
+  const ctx = await ensureAudio(), p = POS[S.blind];
+  setParams({ mode: 0, azimuth: p.az, elevation: p.el, distance: 1.5, room: 0.2 });
+  await playLive(makeSound(S.sound.observa, ctx), true, 3);
+  guessBtns().forEach(b => { b.disabled = false; b.setAttribute('aria-pressed', 'false'); });
+  $('blindRepeat').disabled = false;
+  $('blindFeedback').textContent = '¿De dónde viene? Elige una opción.';
+  status('Sonido misterioso en 3D.');
+  drawObserva();
+}
+$('blindPlay').addEventListener('click', () => blindPlay(true).catch(console.warn));
+$('blindRepeat').addEventListener('click', () => blindPlay(false).catch(console.warn));
+guessBtns().forEach(b => b.addEventListener('click', () => {
+  if (!S.blind) return;
+  const real = S.blind, g = b.dataset.guess, R = POS[real].name;
+  guessBtns().forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  let msg;
+  const fb = (a, c) => (a === 'front' && c === 'back') || (a === 'back' && c === 'front');
+  if (g === real) msg = `<b>¡Exacto! Era ${R}.</b> ` + (real === 'up' ? 'La altura es la pista más difícil: la reconoces por pequeños cambios que tu oreja hace en los agudos.' : real === 'left' || real === 'right' ? 'De lado es lo más fácil: llega antes y más fuerte a un oído.' : 'Delante y detrás solo se distinguen por cómo la oreja filtra el sonido.');
+  else if (fb(g, real)) msg = `<b>Era ${R}.</b> Confundir delante y detrás es lo más común: los dos oídos reciben casi lo mismo en ambos casos y solo la oreja marca la diferencia. Estas HRTF son de un maniquí, no de tu oreja.`;
+  else if (real === 'up' || g === 'up') msg = `<b>Era ${R}.</b> La altura es la pista más débil: depende de muescas que la oreja produce entre 5 y 13 kHz, y cambian de persona a persona.`;
+  else if ((g === 'left' && real === 'right') || (g === 'right' && real === 'left')) msg = `<b>Era ${R}.</b> ¿Tienes los audífonos al revés? Revisa las marcas L (izquierdo) y R (derecho).`;
+  else msg = `<b>Era ${R}.</b> Vuelve a escucharlo con “Repetir” y fíjate en qué oído lo oyes primero.`;
+  $('blindFeedback').innerHTML = msg;
+  S.blindRevealed = true; S.show = POS[real]; drawObserva();
+}));
+
+// ------------------------------------------------------------------ EXPERIMENTA
+const distToSlider = d => Math.round(1000 * Math.log(d / MIN_D) / Math.log(MAX_D / MIN_D));
+const sliderToDist = v => MIN_D * Math.pow(MAX_D / MIN_D, v / 1000);
+function syncExp() {
+  $('az').value = Math.round(S.az); $('azOut').textContent = `${Math.round(S.az)}°`;
+  $('el').value = Math.round(S.el); $('elOut').textContent = `${Math.round(S.el)}°`;
+  $('dist').value = distToSlider(S.dist); $('distOut').textContent = `${fmt(S.dist, S.dist < 10 ? 1 : 0)} m`;
+  $('room').value = S.room; $('roomOut').textContent = `${S.room} %`;
+  $('orbit').value = S.orbit; $('orbitOut').textContent = `${S.orbit} °/s`;
+  document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.mode) === S.mode)));
+  setParams({ mode: S.mode, azimuth: S.az, elevation: S.el, distance: S.dist, room: S.room / 100 });
+  drawExpTop(); drawSide(); updateAnalysis();
+}
+function explain() {
+  const a = Math.abs(S.az), an = lastAnalysis;
+  let t;
+  if (S.mode === 3) return 'Señal <b>original</b>, sin procesar. Úsala como referencia para comparar los métodos.';
+  if (S.mode === 2) t = '<b>Estéreo normal:</b> solo cambia el volumen entre los lados. No hay diferencia de tiempo ni filtrado: el sonido se queda entre los oídos, nunca detrás ni arriba.';
+  else if (S.mode === 1) t = '<b>Cabeza esférica sin orejas:</b> solo hay diferencia de tiempo y de nivel. Prueba 30° y 150°: suenan idénticos. Es el <b>cono de confusión</b>.';
+  else if (S.el > 45) t = '<b>Arriba:</b> la altura se reconoce casi solo por las muescas que la oreja produce entre 5 y 13 kHz (zona sombreada). Es la pista más débil.';
+  else if (S.el < -20) t = '<b>Abajo:</b> además de la oreja, el hombro y el torso reflejan el sonido.';
+  else if (a < 15) t = '<b>Al frente:</b> los dos oídos reciben casi lo mismo. Sin diferencias de tiempo ni de nivel, el cerebro depende de la oreja.';
+  else if (a > 160) t = '<b>Detrás:</b> la oreja tapa parte de los agudos que vienen de atrás. Mira cómo bajan las curvas.';
+  else t = `<b>De lado:</b> el sonido llega ${Math.round(Math.abs(an.itd))} µs antes a un oído y la cabeza le hace sombra al otro, sobre todo en los agudos.`;
+  if (S.dist > 3) t += ' <b>Lejos:</b> menos volumen, menos agudos y más proporción de sala.';
+  if (S.room < 5) t += ' Sin sala el sonido tiende a sentirse <b>dentro de la cabeza</b>.';
+  return t;
+}
+let lastAnalysis = { itd: 0, ild: 0 };
+function updateAnalysis() {
+  if (S.page !== 'experimenta') return;
+  const an = lastAnalysis = M.analyse(H44, S.mode, S.az, S.el);
+  drawResponse(an);
+  const itd = an.itd, ild = an.ild;
+  $('roItd').textContent = `${Math.round(Math.abs(itd))} µs`;
+  $('roItd').className = Math.abs(itd) < 20 ? '' : itd > 0 ? 'ear-r' : 'ear-l';
+  $('roItdTxt').textContent = Math.abs(itd) < 20 ? 'llega igual a ambos oídos' : itd > 0 ? 'llega antes al oído derecho' : 'llega antes al oído izquierdo';
+  $('roIld').textContent = `${fmt(Math.abs(ild))} dB`;
+  $('roIld').className = Math.abs(ild) < 0.5 ? '' : ild > 0 ? 'ear-r' : 'ear-l';
+  $('roIldTxt').textContent = Math.abs(ild) < 0.5 ? 'igual de fuerte en ambos' : ild > 0 ? 'más fuerte en el derecho' : 'más fuerte en el izquierdo';
+  $('expInsight').innerHTML = explain();
+}
+$('az').addEventListener('input', e => { S.az = Number(e.target.value); syncExp(); });
+$('el').addEventListener('input', e => { S.el = Number(e.target.value); syncExp(); });
+$('dist').addEventListener('input', e => { S.dist = sliderToDist(Number(e.target.value)); syncExp(); });
+$('room').addEventListener('input', e => { S.room = Number(e.target.value); syncExp(); });
+$('orbit').addEventListener('input', e => { S.orbit = Number(e.target.value); syncExp(); if (S.orbit && A.src) startOrbit(); });
+document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => { S.mode = Number(b.dataset.mode); syncExp(); }));
+
+function startOrbit() {
+  cancelAnimationFrame(A.anim);
+  let last = performance.now();
+  const step = now => {
+    if (!A.src || S.page !== 'experimenta') return;
+    const dt = (now - last) / 1000; last = now;
+    if (S.orbit) { S.az = M.wrapDeg(S.az + S.orbit * dt); syncExp(); }
+    A.anim = requestAnimationFrame(step);
+  };
+  A.anim = requestAnimationFrame(step);
+}
+$('expPlay').addEventListener('click', async () => {
+  if (A.src) { stopAll('Detenido.'); return; }
+  const ctx = await ensureAudio();
+  syncExp();
+  await playLive(currentSound(ctx, 'experimenta'), true, 0);
+  setPlayLabel(true);
+  startOrbit();
+  status('Sonando en bucle. Arrastra la fuente o cambia el método.');
+});
+
+// arrastre: vista superior (dirección + distancia) y lateral (elevación)
+function pointerOn(cv, onMove, onDown, onUp) {
+  const pt = e => { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) * cv.width / r.width, (e.clientY - r.top) * cv.height / r.height]; };
+  cv.addEventListener('pointerdown', e => { cv.setPointerCapture(e.pointerId); const p = pt(e); if (onDown && onDown(p) === false) return; cv._drag = true; onMove(p); });
+  cv.addEventListener('pointermove', e => { if (cv._drag) onMove(pt(e)); });
+  const end = () => { cv._drag = false; if (onUp) onUp(); };
+  cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
+}
+pointerOn($('expTop'), ([x, y]) => {
+  const g = geom($('expTop')), dx = x - g.cx, dy = y - g.cy;
+  S.az = deg(Math.atan2(dx, -dy)); S.dist = g.dFor(Math.hypot(dx, dy));
+  if (S.orbit) { S.orbit = 0; }
+  syncExp();
+});
+pointerOn($('expSide'), ([x, y]) => {
+  const cv = $('expSide'), cx = cv.width / 2, cy = cv.height * 0.6;
+  S.el = clamp(deg(Math.atan2(cy - y, Math.abs(x - cx) + 0.001)), -40, 90);
+  syncExp();
+});
+
+// ------------------------------------------------------------------ APLICA
+function syncApl() {
+  for (const [k, out, u] of [['elA', 'elAOut', '°'], ['elB', 'elBOut', '°'], ['dur', 'durOut', ' s'], ['turns', 'turnsOut', ''], ['aroom', 'aroomOut', ' %']]) {
+    $(k).value = S[k]; $(out).textContent = `${fmt(S[k])}${u}`;
+  }
+  document.querySelectorAll('[data-path]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.path === S.path)));
+  document.querySelectorAll('[data-scene]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.scene === S.scene)));
+  $('goalTitle').textContent = SCENES[S.scene].title; $('goalText').textContent = SCENES[S.scene].text;
+  $('turnsBox').style.display = S.path === 'orbit' ? '' : 'none';
+  $('elB').closest('.control').style.display = S.path === 'still' ? 'none' : '';
+  drawAplica();
+}
+for (const k of ['elA', 'elB', 'dur', 'turns', 'aroom']) $(k).addEventListener('input', e => { S[k] = Number(e.target.value); syncApl(); });
+document.querySelectorAll('[data-path]').forEach(b => b.addEventListener('click', () => { S.path = b.dataset.path; syncApl(); }));
+document.querySelectorAll('[data-scene]').forEach(b => b.addEventListener('click', () => {
+  S.scene = b.dataset.scene; S.sound.aplica = SCENES[S.scene].sound;
+  document.querySelectorAll('.page[data-page="aplica"] [data-sound]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.sound === S.sound.aplica)));
+  syncApl(); status('Escena elegida. Coloca A y B, y escucha.');
+}));
+let dragHandle = null;
+pointerOn($('aplTop'), ([x, y]) => {
+  if (!dragHandle) return;
+  const g = geom($('aplTop')), dx = x - g.cx, dy = y - g.cy, d = g.dFor(Math.hypot(dx, dy)), a = Math.atan2(dx, -dy);
+  S[dragHandle] = { x: d * Math.sin(a), y: d * Math.cos(a) };
+  drawAplica();
+}, ([x, y]) => {
+  const g = geom($('aplTop'));
+  const near = h => { const p = { az: deg(Math.atan2(S[h].x, S[h].y)), d: Math.max(MIN_D, Math.hypot(S[h].x, S[h].y)) }, [hx, hy] = g.toXY(p.az, p.d); return Math.hypot(hx - x, hy - y); };
+  const cands = S.path === 'line' ? ['A', 'B'] : ['A'];
+  cands.sort((a, b) => near(a) - near(b));
+  dragHandle = near(cands[0]) < 60 ? cands[0] : null;
+  return dragHandle !== null;
+}, () => { dragHandle = null; });
+
+async function renderScene(mode) {
+  const ctx = await ensureAudio();
+  const sr = ctx.sampleRate, src = currentSound(ctx, 'aplica').getChannelData(0);
+  if (!A.hrtfAtRate || A.hrtfAtRate.fs !== sr) A.hrtfAtRate = new M.HrtfSet(sr);
+  const eng = new M.BinauralEngine(sr, A.hrtfAtRate);
+  const n = Math.round(S.dur * sr), tail = Math.round(1.0 * sr), total = n + tail;
+  const inp = new Float32Array(total), L = new Float32Array(total), R = new Float32Array(total);
+  for (let i = 0; i < n; i++) inp[i] = src[i % src.length];
+  const F = Math.round(0.02 * sr); for (let i = 0; i < F; i++) { inp[i] *= i / F; inp[n - 1 - i] *= i / F; }
+  const block = 256;
+  for (let i = 0; i < total; i += block) {
+    const p = trajectory(clamp((i + block / 2) / n, 0, 1));
+    eng.process(inp.subarray(i), L.subarray(i), R.subarray(i), Math.min(block, total - i), { mode, azimuth: p.az, elevation: p.el, distance: p.dist, room: S.aroom / 100 });
+  }
+  let peak = 0; for (let i = 0; i < total; i++) peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
+  if (peak > 0.89) { const g = 0.89 / peak; for (let i = 0; i < total; i++) { L[i] *= g; R[i] *= g; } }
+  const out = ctx.createBuffer(2, total, sr); out.getChannelData(0).set(L); out.getChannelData(1).set(R);
+  return out;
+}
+async function aplPlay(mode) {
+  status('Calculando el recorrido…');
+  const buf = await renderScene(mode), ctx = A.ctx;
+  stopAll();
+  const s = ctx.createBufferSource(); s.buffer = buf; s.connect(A.master); s.start(); A.src = s;
+  s.onended = () => { if (A.src === s) { A.src = null; S.marker = null; drawAplica(); } };
+  const t0 = ctx.currentTime;
+  const step = () => {
+    if (A.src !== s) return;
+    const t = (ctx.currentTime - t0) / S.dur;
+    S.marker = t <= 1 ? trajectory(t) : null; drawAplica();
+    A.anim = requestAnimationFrame(step);
+  };
+  A.anim = requestAnimationFrame(step);
+  status(mode === 0 ? 'Recorrido en 3D. Ahora escúchalo en estéreo y compara.' : 'Mismo recorrido en estéreo normal: ¿se nota cuándo pasa por detrás o por encima?');
+}
+$('aplPlay').addEventListener('click', () => aplPlay(0).catch(e => { console.warn(e); status('No se pudo reproducir.'); }));
+$('aplPlayPan').addEventListener('click', () => aplPlay(2).catch(e => { console.warn(e); status('No se pudo reproducir.'); }));
+$('aplExport').addEventListener('click', async () => {
+  try {
+    status('Preparando el WAV…');
+    const buf = await renderScene(0), wav = toWav(buf);
+    const url = URL.createObjectURL(new Blob([wav], { type: 'audio/wav' }));
+    const a = document.createElement('a'); a.href = url; a.download = `audio3d_${S.scene}.wav`; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+    status('WAV exportado (estéreo binaural, 16 bits).');
+  } catch (e) { console.warn(e); status('No se pudo exportar.'); }
+});
+function toWav(buf) {
+  const ch = 2, sr = buf.sampleRate, n = buf.length, data = new DataView(new ArrayBuffer(44 + n * ch * 2));
+  const w = (o, s) => { for (let i = 0; i < s.length; i++) data.setUint8(o + i, s.charCodeAt(i)); };
+  w(0, 'RIFF'); data.setUint32(4, 36 + n * ch * 2, true); w(8, 'WAVE'); w(12, 'fmt '); data.setUint32(16, 16, true);
+  data.setUint16(20, 1, true); data.setUint16(22, ch, true); data.setUint32(24, sr, true); data.setUint32(28, sr * ch * 2, true);
+  data.setUint16(32, ch * 2, true); data.setUint16(34, 16, true); w(36, 'data'); data.setUint32(40, n * ch * 2, true);
+  const L = buf.getChannelData(0), R = buf.getChannelData(1);
+  for (let i = 0, o = 44; i < n; i++) for (const v of [L[i], R[i]]) { data.setInt16(o, clamp(v, -1, 1) * 32767, true); o += 2; }
+  return data.buffer;
+}
+
+// ------------------------------------------------------------------ fuentes e importación
+document.querySelectorAll('.page').forEach(pg => {
+  const page = pg.dataset.page;
+  pg.querySelectorAll('[data-sound]').forEach(b => b.addEventListener('click', async () => {
+    S.sound[page] = b.dataset.sound;
+    pg.querySelectorAll('[data-sound]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    const fn = pg.querySelector('[data-filename]'); if (fn) fn.textContent = 'WAV, MP3…';
+    if (page === 'experimenta' && A.src) { const ctx = await ensureAudio(); await playLive(currentSound(ctx, page), true, 0); setPlayLabel(true); startOrbit(); }
+  }));
+  const up = pg.querySelector('[data-upload]');
+  if (up) up.addEventListener('change', async e => {
+    const file = e.target.files && e.target.files[0]; if (!file) return;
+    if (file.size > 30 * 1024 * 1024) { status('El archivo debe pesar menos de 30 MB.'); return; }
+    try {
+      const ctx = await ensureAudio(), buf = await ctx.decodeAudioData(await file.arrayBuffer());
+      if (!(buf.duration > 0) || buf.duration > 30) { status('Usa un audio de hasta 30 segundos.'); return; }
+      S.uploaded[page] = buf; S.sound[page] = 'uploaded';
+      pg.querySelectorAll('[data-sound]').forEach(x => x.setAttribute('aria-pressed', 'false'));
+      pg.querySelector('[data-filename]').textContent = `✓ ${file.name}`;
+      status('Audio cargado. Se usa en mono: una fuente es un punto en el espacio.');
+    } catch (err) { console.warn(err); status('No se pudo leer ese archivo. Prueba WAV o MP3.'); }
+  });
+});
+document.querySelectorAll('[data-stop]').forEach(b => b.addEventListener('click', () => stopAll('Detenido.')));
+
+// ------------------------------------------------------------------ páginas
+function showPage(name) {
+  if (!PAGES.includes(name)) name = 'observa';
+  stopAll();
+  S.page = name;
+  document.querySelectorAll('.page').forEach(p => { p.hidden = p.dataset.page !== name; });
+  const i = PAGES.indexOf(name), h = HERO[name];
+  $('heroEyebrow').textContent = h[0]; $('heroTitle').innerHTML = h[1]; $('heroText').textContent = h[2];
+  $('pageChip').textContent = `0${i + 1}/03`;
+  document.querySelectorAll('.steps .step').forEach((s, k) => { if (k === i) s.setAttribute('aria-current', 'page'); else s.removeAttribute('aria-current'); });
+  document.title = `Audio Pedagógico · Audio 3D · ${h[0].split('· ')[1]}`;
+  if (name === 'experimenta') syncExp();
+  if (name === 'aplica') syncApl();
+  drawAll();
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]'); if (!a) return;
+  const dest = a.getAttribute('href').slice(1); if (!PAGES.includes(dest)) return;
+  e.preventDefault();
+  try { history.pushState(null, '', '#' + dest); } catch (_) {}
+  showPage(dest); window.scrollTo(0, 0); $('heroTitle').focus({ preventScroll: true });
+});
+window.addEventListener('hashchange', () => showPage(location.hash.slice(1).toLowerCase()));
+document.addEventListener('visibilitychange', () => { if (document.hidden && A.src) stopAll('Detenido al cambiar de pestaña.'); });
+showPage(location.hash.slice(1).toLowerCase());
+window.__audio3d = { S, A, M };   // para pruebas
+})();
+
+</script>
+</body></html>

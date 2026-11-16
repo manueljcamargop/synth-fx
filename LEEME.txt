@@ -14,6 +14,7 @@ INICIAR
 ARCHIVOS
 - index.html: navegación principal.
 - Mision_*.html: cuatro misiones, con sus actividades y sintetizadores originales revisados.
+- audio3d.html, Audio3D_Interactivo_3_Paginas.html, audio3d-motor.js: módulo de audio 3D binaural (usar audífonos).
 - knobs.js: perillas giratorias para todos los parámetros y posiciones temporales.
 - synthfx.js / synthfx.css: utilidades locales de formas de onda, escucha y presentación.
 - Escena_Muda_Mision_*.mp4: referencias audiovisuales, disponibles también dentro de las misiones.
