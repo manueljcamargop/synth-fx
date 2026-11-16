@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081423">
+<meta name="application-name" content="Audio Pedagógico">
+<meta name="application-version" content="0.1-sala-virtual">
+<meta name="description" content="Sala virtual: diseña un espacio (alto, ancho, profundidad, material) y escucha su reverberación con el mismo motor y las mismas perillas del plugin MJ Reverb.">
+<title>Audio Pedagógico · Sala virtual · Reverberación</title>
+<style>
+:root{color-scheme:dark;--bg:#081423;--panel:#101d2f;--stroke:#294359;--text:#f0f8ff;--muted:#a6bbcc;--cyan:#70e7d9;--blue:#69bfe9;--amber:#ffd37b}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 86% 0%,#16445377,transparent 46%),radial-gradient(ellipse at 5% 80%,#1c264477,transparent 52%),var(--bg);font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);min-height:100vh}
+a{color:var(--cyan)}button,input{font:inherit}button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.shell{width:min(1180px,calc(100% - 36px));margin:auto;padding-bottom:54px}
+.topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;padding:4px 0;border-bottom:1px solid var(--stroke);font-size:.77rem;color:var(--muted)}
+.home-link{display:inline-flex;align-items:center;min-height:44px;font-weight:750}
+.hero{margin:24px 0 16px}.eyebrow{font-size:.76rem;letter-spacing:.12em;color:var(--cyan);font-weight:800;text-transform:uppercase}
+.hero h1{font-size:clamp(2rem,4.6vw,3.3rem);letter-spacing:-.05em;line-height:1.07;margin:6px 0}.hero h1 em{font-style:normal;color:var(--cyan)}.hero p{max-width:780px;color:var(--muted);margin:0}
+.plugin{border:1px solid var(--stroke);border-radius:20px;background:#081423;padding:20px;box-shadow:0 20px 60px #0007}
+.plugin-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px}.logo .mark{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--cyan);color:#0b2936}
+.logo b{display:block;font-size:1.35rem;letter-spacing:.02em}.logo small{font-size:.7rem;letter-spacing:.12em;color:var(--muted)}
+.transport{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid #3e6076;background:#19364b;color:#e8f7ff;padding:9px 14px;border-radius:11px;font-weight:770;min-height:44px}
+.btn:hover{background:#23506a}.btn.primary{background:linear-gradient(130deg,#9aefdf,#58c9de);color:#0a2d37;border-color:#7eebdc}
+.btn.small{min-height:32px;padding:4px 10px;font-size:.78rem;border-radius:8px}
+.btn[aria-pressed=true]{background:#16414b;border-color:#70e7d9;color:#fff}
+.sources{display:flex;gap:6px;flex-wrap:wrap}
+.check{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--muted);min-height:44px}.check input{width:18px;height:18px;accent-color:#70e7d9}
+.views{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:12px;margin-top:16px}
+.view{background:#0b1b2b;border:1px solid var(--stroke);border-radius:14px;padding:12px 14px;min-width:0}
+.view-head{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.72rem;color:var(--muted);flex-wrap:wrap}
+.view-head b{color:var(--cyan);font-weight:650}
+.view svg{width:100%;height:auto;display:block;margin-top:6px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.72rem;color:var(--muted);margin-top:6px}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.rowlabel{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--muted);margin:18px 0 8px}
+.knobs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.knob{background:#12243a;border:1px solid var(--stroke);border-radius:14px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.knob .lbl{font-size:.7rem;font-weight:800;letter-spacing:.1em;color:var(--cyan)}
+.knob button{width:96px;height:96px;padding:0;border:0;border-radius:50%;background:transparent;cursor:ns-resize;touch-action:none}
+.knob .val{min-width:92px;padding:3px 10px;text-align:center;font-size:.9rem;font-weight:800;font-variant-numeric:tabular-nums;background:#0b1b2b;border:1px solid var(--stroke);border-radius:7px}
+.knob .desc{font-size:.7rem;line-height:1.3;text-align:center;color:var(--muted)}
+.hint{display:flex;flex-direction:column;justify-content:center;gap:6px;font-size:.74rem;color:var(--muted)}.hint b{color:var(--text)}
+.status{font-size:.8rem;color:#b5ead9;min-height:22px;margin-top:10px}
+.panel2{margin-top:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.card{border:1px solid var(--stroke);border-radius:16px;background:linear-gradient(150deg,#12243a,#101b2e);padding:16px}
+.card h2{margin:0 0 6px;font-size:1.1rem}.card p{margin:0;color:var(--muted);font-size:.88rem}
+pre{white-space:pre-wrap;background:#0b1b2b;border:1px solid var(--stroke);border-radius:10px;padding:10px;font-size:.82rem;margin:10px 0 8px;color:#d5f4f7}
+.footnote{border-top:1px solid #274355;padding-top:16px;margin-top:28px;color:#8daabb;font-size:.78rem}
+@media(max-width:980px){.views,.panel2{grid-template-columns:1fr}.knobs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.shell{width:calc(100% - 20px)}.plugin{padding:14px}.knobs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="topline" aria-label="Navegación general"><a class="home-link" href="reverberacion.html">← Reverberación</a><span>Laboratorio interactivo de diseño sonoro</span></nav>
+<header class="hero">
+  <div class="eyebrow">Parte 05 · Sala virtual</div>
+  <h1>Diseña la sala. <em>Escúchala.</em></h1>
+  <p>Cambia el tamaño y el material de un espacio y oye cómo cambia su reverberación. Las perillas, sus rangos y el motor de sonido son los mismos del plugin MJ Reverb: lo que aprendes aquí lo encuentras igual en el DAW.</p>
+</header>
+
+<section class="plugin" aria-label="MJ Reverb">
+  <div class="plugin-head">
+    <div class="logo"><div class="mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 12h3l2-6 3 12 3-9 2 3h5"/></svg></div><div><b>MJ REVERB</b><small>AUDIO PEDAGÓGICO · WEB · v0.1</small></div></div>
+    <div class="transport">
+      <div class="sources" role="group" aria-label="Fuente sonora" id="sources"></div>
+      <button class="btn primary" id="play">▶ Escuchar</button>
+      <label class="check"><input type="checkbox" id="bypass"> Bypass (sin reverb)</label>
+    </div>
+  </div>
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+
+  <div class="views">
+    <div class="view">
+      <div class="view-head"><span>LA SALA · <b id="volume"></b></span><span><button class="btn small" id="vPlan" aria-pressed="true">Planta</button> <button class="btn small" id="v3d" aria-pressed="false">3D</button></span></div>
+      <svg id="room" viewBox="0 0 300 170" role="img" aria-label="Sala"></svg>
+      <div class="view-head" id="planBar"><span>Tiempo real: <b id="tReal">0 ms</b> · cámara lenta ×<span id="slow"></span></span><button class="btn small" id="anim">Pausa</button></div>
+      <div class="legend"><span><i style="background:#ffd37b"></i>Fuente</span><span><i style="background:#8dc9ed"></i>Oyente</span><span><i style="border:2px solid #ffd37b;background:none"></i>Directo</span><span><i style="border:2px solid #69bfe9;background:none"></i>Reflejada</span></div>
+    </div>
+    <div class="view">
+      <div class="view-head"><span>RESPUESTA DEL ESPACIO</span><b id="decayInfo"></b></div>
+      <svg id="graph" viewBox="0 0 340 170" role="img" aria-label="Respuesta del espacio"></svg>
+      <div class="legend" id="reflInfo"></div>
+    </div>
+  </div>
+
+  <div class="rowlabel">ESPACIO · LA FORMA DE LA SALA Y SU COLA</div>
+  <div class="knobs" id="row1"></div>
+  <div class="rowlabel">MATERIAL Y MEZCLA · DE QUÉ ESTÁ HECHA Y CUÁNTO SE OYE</div>
+  <div class="knobs" id="row2"><div class="hint" id="hint"><span><b>Arrastra</b> una perilla hacia arriba o abajo.</span><span><b>Shift</b> para ajuste fino. <b>Flechas</b> con el teclado.</span><span><b>Doble clic</b> vuelve al valor inicial.</span></div></div>
+</section>
+
+<section class="panel2">
+  <div class="card">
+    <h2>Prueba esto</h2>
+    <p>1. Con la palmada, pasa de un baño (3 × 2,5 × 4 m) a una iglesia (30 × 15 × 50 m): las reflexiones llegan cada vez más tarde.<br>2. Deja la sala igual y lleva el material de concreto a cortina: la cola pierde los agudos.<br>3. Con la voz, sube el pre-delay a 80 ms: la palabra se separa de la sala y se entiende mejor.</p>
+  </div>
+  <div class="card">
+    <h2>Llévalo al plugin</h2>
+    <p>Copia estos valores y ponlos en MJ Reverb dentro de tu DAW: debe sonar igual.</p>
+    <pre id="preset"></pre>
+    <button class="btn small" id="copy">Copiar valores</button>
+  </div>
+</section>
+<footer class="footnote">Sala virtual · Motor MJ Reverb (el mismo del plugin VST3) procesado en el navegador con Web Audio. Fuente y oyente están en posiciones fijas. Los materiales son valores pedagógicos, no coeficientes de absorción medidos. El decay es el RT60 en frecuencias medias (500 Hz).</footer>
+</div>
+
+<script src="mjreverb-core.js"></script>
+<script>
+(() => {
+'use strict';
+const M = window.MJReverb;
+const $ = (id) => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const fmt = (v, d) => Number(v).toLocaleString('es-CO', { minimumFractionDigits: d, maximumFractionDigits: d });
+const say = (t) => { $('status').textContent = t; };
+
+/* ---------- Parámetros y perillas ---------- */
+const params = M.defaults();
+const ROW1 = ['heightM', 'roomWidthM', 'depthM', 'decayS', 'preDelayMs'];
+const ROW2 = ['materialPct', 'earlyPct', 'widthPct', 'mixPct'];
+const specOf = (key) => M.SPECS.find((s) => s.key === key);
+function valueText(key, v) {
+  const s = specOf(key);
+  if (key === 'materialPct') return M.materialName(v);
+  return fmt(v, s.precision) + ' ' + s.units;
+}
+const knobs = {};
+function arcPath(a0, a1) {
+  const r = 40, pt = (deg) => [48 + r * Math.cos(deg * Math.PI / 180), 48 + r * Math.sin(deg * Math.PI / 180)];
+  const [x0, y0] = pt(a0), [x1, y1] = pt(a1);
+  return `M ${x0.toFixed(2)} ${y0.toFixed(2)} A ${r} ${r} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`;
+}
+function makeKnob(key, parent, before) {
+  const s = specOf(key), el = document.createElement('div');
+  el.className = 'knob';
+  el.innerHTML = `<div class="lbl">${s.label}</div>
+    <button type="button" aria-label="${s.name}"><svg width="96" height="96" viewBox="0 0 96 96" aria-hidden="true">
+      <path d="${arcPath(135, 405)}" fill="none" stroke="#1f3a4f" stroke-width="7" stroke-linecap="round"/>
+      <path class="v" fill="none" stroke="#70e7d9" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="48" cy="48" r="27" fill="#0b1b2b" stroke="#294359" stroke-width="1.5"/>
+      <line class="h" stroke="#f0f8ff" stroke-width="3" stroke-linecap="round"/></svg></button>
+    <div class="val"></div><div class="desc">${s.desc}</div>`;
+  parent.insertBefore(el, before || null);
+  const btn = el.querySelector('button');
+  const k = { el, btn, path: el.querySelector('.v'), hand: el.querySelector('.h'), val: el.querySelector('.val') };
+  knobs[key] = k;
+  const setNorm = (n) => { params[key] = M.toPlain(s, Math.max(0, Math.min(1, n))); changed(); };
+  let drag = null;
+  btn.addEventListener('pointerdown', (e) => { drag = { y: e.clientY, n: M.toNormalized(s, params[key]) }; btn.setPointerCapture(e.pointerId); });
+  btn.addEventListener('pointermove', (e) => { if (drag) setNorm(drag.n + (drag.y - e.clientY) / (e.shiftKey ? 800 : 200)); });
+  const end = () => { drag = null; };
+  btn.addEventListener('pointerup', end); btn.addEventListener('pointercancel', end);
+  btn.addEventListener('dblclick', () => { params[key] = M.RANGES[key].def; changed(); });
+  btn.addEventListener('keydown', (e) => {
+    const n = M.toNormalized(s, params[key]), st = e.shiftKey ? 0.01 : 0.05;
+    const map = { ArrowUp: n + st, ArrowRight: n + st, ArrowDown: n - st, ArrowLeft: n - st, Home: 0, End: 1, PageUp: n + 0.2, PageDown: n - 0.2 };
+    if (e.key in map) { e.preventDefault(); setNorm(map[e.key]); }
+  });
+  btn.addEventListener('wheel', (e) => { e.preventDefault(); setNorm(M.toNormalized(s, params[key]) - Math.sign(e.deltaY) * 0.02); }, { passive: false });
+}
+function paintKnob(key) {
+  const s = specOf(key), k = knobs[key], n = M.toNormalized(s, params[key]), end = 135 + 270 * n;
+  k.path.setAttribute('d', n > 0.005 ? arcPath(135, end) : 'M 0 0');
+  const p = (rr) => [48 + rr * Math.cos(end * Math.PI / 180), 48 + rr * Math.sin(end * Math.PI / 180)];
+  const [x1, y1] = p(10), [x2, y2] = p(24);
+  k.hand.setAttribute('x1', x1); k.hand.setAttribute('y1', y1); k.hand.setAttribute('x2', x2); k.hand.setAttribute('y2', y2);
+  const text = valueText(key, params[key]);
+  k.val.textContent = text;
+  k.btn.setAttribute('aria-valuetext', text);
+  k.btn.setAttribute('aria-label', `${s.name}: ${text}. Arrastra o usa las flechas.`);
+}
+ROW1.forEach((k) => makeKnob(k, $('row1')));
+ROW2.forEach((k) => makeKnob(k, $('row2'), $('hint')));
+
+/* ---------- Dibujo ---------- */
+function svgEl(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const a in attrs) e.setAttribute(a, attrs[a]); if (parent) parent.appendChild(e); return e; }
+function wallStyle() {
+  const m = params.materialPct;
+  return { color: m < 40 ? '#c9a6ff' : m < 60 ? '#e0b27a' : m < 80 ? '#d8e6ee' : '#9fb3c2', width: (1.5 + 3 * m / 100).toFixed(1), dash: m < 20 ? '3 3' : 'none' };
+}
+let view = 'plan', animOn = !window.matchMedia('(prefers-reduced-motion: reduce)').matches, tAnim = 0.35, last = 0;
+let ringEls = [];
+function drawRoomStatic() {
+  const svg = $('room'); svg.innerHTML = '';
+  const W = params.roomWidthM, H = params.heightM, D = params.depthM, ws = wallStyle();
+  $('volume').textContent = 'Volumen ' + Math.round(W * H * D).toLocaleString('es-CO') + ' m³';
+  $('planBar').hidden = view !== 'plan';
+  if (view === 'plan') {
+    const k = Math.min(276 / W, 138 / D), rw = W * k, rh = D * k, rx = (300 - rw) / 2, ry = 8 + (140 - rh) / 2;
+    const clip = svgEl('clipPath', { id: 'roomClip' }, svgEl('defs', {}, svg));
+    svgEl('rect', { x: rx, y: ry, width: rw, height: rh }, clip);
+    svgEl('rect', { x: rx, y: ry, width: rw, height: rh, fill: '#0d2234' }, svg);
+    const g = svgEl('g', { 'clip-path': 'url(#roomClip)' }, svg);
+    ringEls = [];
+    for (let i = 0; i < 13; i++) ringEls.push(svgEl('circle', { fill: 'none' }, g));
+    svgEl('rect', { x: rx, y: ry, width: rw, height: rh, fill: 'none', stroke: ws.color, 'stroke-width': ws.width, 'stroke-dasharray': ws.dash }, svg);
+    const pos = M.positions(W, H, D);
+    svgEl('circle', { cx: rx + pos.src.x * k, cy: ry + pos.src.z * k, r: 5, fill: '#ffd37b' }, svg);
+    drawRoomStatic.ear = svgEl('circle', { cx: rx + pos.ear.x * k, cy: ry + pos.ear.z * k, r: 5, fill: '#8dc9ed' }, svg);
+    const t = svgEl('text', { x: 150, y: 166, fill: '#f0f8ff', 'font-size': 10, 'font-weight': 600, 'text-anchor': 'middle' }, svg);
+    t.textContent = `${fmt(W, 1)} × ${fmt(D, 1)} m · vista desde arriba`;
+    drawRoomStatic.geo = { k, rx, ry, W, D, pos };
+    svg.setAttribute('aria-label', `Vista de planta animada de una sala de ${fmt(W, 1)} por ${fmt(D, 1)} metros: la onda sale de la fuente y se refleja en las paredes`);
+    drawRings();
+  } else {
+    const c = Math.cos(Math.PI / 6), raw = (x, y, z) => [(x - z) * c, (x + z) * 0.5 - y];
+    const vs = []; for (const x of [0, W]) for (const y of [0, H]) for (const z of [0, D]) vs.push(raw(x, y, z));
+    const xs = vs.map((v) => v[0]), ys = vs.map((v) => v[1]);
+    const k = Math.min(240 / (Math.max(...xs) - Math.min(...xs)), 125 / (Math.max(...ys) - Math.min(...ys)));
+    const ox = 150 - k * (Math.min(...xs) + Math.max(...xs)) / 2, oy = 80 - k * (Math.min(...ys) + Math.max(...ys)) / 2;
+    const P = (x, y, z) => { const q = raw(x, y, z); return [ox + k * q[0], oy + k * q[1]]; };
+    const pts = (...p) => p.map((v) => v[0].toFixed(1) + ',' + v[1].toFixed(1)).join(' ');
+    const face = (p, fill) => svgEl('polygon', { points: p, fill, stroke: ws.color, 'stroke-width': 1.5, 'stroke-linejoin': 'round', 'stroke-dasharray': ws.dash }, svg);
+    face(pts(P(0, H, 0), P(W, H, 0), P(W, H, D), P(0, H, D)), '#16344a');
+    face(pts(P(W, 0, 0), P(W, 0, D), P(W, H, D), P(W, H, 0)), '#102a3d');
+    face(pts(P(0, 0, D), P(W, 0, D), P(W, H, D), P(0, H, D)), '#0d2234');
+    const pos = M.positions(W, H, D), S = P(pos.src.x, 0, pos.src.z), E = P(pos.ear.x, 0, pos.ear.z), hit = P(W, H * 0.45, D * 0.5);
+    svgEl('polyline', { points: pts(S, hit, E), fill: 'none', stroke: '#69bfe9', 'stroke-width': 1.5, 'stroke-dasharray': '4 3' }, svg);
+    svgEl('line', { x1: S[0], y1: S[1], x2: E[0], y2: E[1], stroke: '#ffd37b', 'stroke-width': 1.5 }, svg);
+    svgEl('circle', { cx: S[0], cy: S[1], r: 5, fill: '#ffd37b' }, svg);
+    svgEl('circle', { cx: E[0], cy: E[1], r: 5, fill: '#8dc9ed' }, svg);
+    const lab = (p, txt, anchor, dx, dy) => { const t = svgEl('text', { x: Math.min(275, p[0] + dx), y: Math.min(166, p[1] + dy), fill: '#f0f8ff', 'font-size': 11, 'font-weight': 600, 'text-anchor': anchor }, svg); t.textContent = txt; };
+    lab(P(W, H / 2, D), fmt(H, 1) + ' m', 'start', 8, 4); lab(P(W / 2, 0, D), fmt(W, 1) + ' m', 'middle', 0, 16); lab(P(W, 0, D / 2), fmt(D, 1) + ' m', 'middle', 16, 16);
+    svg.setAttribute('aria-label', `Sala en 3D: ${fmt(W, 1)} de ancho, ${fmt(H, 1)} de alto y ${fmt(D, 1)} metros de profundidad`);
+  }
+}
+function drawRings() {
+  const g = drawRoomStatic.geo; if (!g || view !== 'plan') return;
+  const { k, rx, ry, W, D, pos } = g, c = M.SPEED_OF_SOUND;
+  const maxDim = Math.max(W, D), slow = 1.6 / (maxDim / c), tMax = 3.2 * Math.hypot(W, D) / c;
+  const tReal = (tAnim / slow) % tMax, r = c * tReal, refl = M.materialReflectance(params.materialPct);
+  const sx = pos.src.x, sy = pos.src.z;
+  const xs = [[sx, 0], [-sx, 1], [2 * W - sx, 1], [sx - 2 * W, 2], [2 * W + sx, 2]];
+  const ys = [[sy, 0], [-sy, 1], [2 * D - sy, 1], [sy - 2 * D, 2], [2 * D + sy, 2]];
+  let i = 0, hit = 0;
+  for (const [ix, ox] of xs) for (const [iy, oy] of ys) {
+    const order = ox + oy; if (order > 2) continue;
+    const amp = Math.pow(10, -3 * tReal / params.decayS) * Math.pow(refl, order) / Math.sqrt(1 + r / 4);
+    const o = Math.min(0.95, amp * 1.6), el = ringEls[i++];
+    el.setAttribute('cx', rx + ix * k); el.setAttribute('cy', ry + iy * k); el.setAttribute('r', Math.max(0.5, r * k));
+    el.setAttribute('stroke', order === 0 ? '#ffd37b' : '#69bfe9'); el.setAttribute('stroke-width', order === 0 ? 2.5 : 1.8);
+    el.setAttribute('stroke-opacity', o < 0.04 ? 0 : o);
+    if (o >= 0.04 && Math.abs(Math.hypot(pos.ear.x - ix, pos.ear.z - iy) - r) < 0.04 * maxDim) hit = Math.max(hit, o);
+  }
+  drawRoomStatic.ear.setAttribute('r', 5 + 4 * hit);
+  $('tReal').textContent = fmt(tReal * 1000, 1) + ' ms';
+  $('slow').textContent = Math.round(slow);
+}
+function drawGraph() {
+  const svg = $('graph'); svg.innerHTML = '';
+  const pre = params.preDelayMs, T = params.decayS, hr = M.materialHighRatio(params.materialPct);
+  const tx = (ms) => ms <= 150 ? 6 + ms / 150 * 130 : 136 + 196 * Math.log(ms / 150) / Math.log(10000 / 150);
+  const ty = (db) => 50 + 110 * Math.min(1, -db / 60);
+  for (const y of [160, 105, 50]) svgEl('line', { x1: 0, y1: y, x2: 340, y2: y, stroke: y === 160 ? '#294359' : '#1a3044' }, svg);
+  svgEl('line', { x1: 136, y1: 20, x2: 136, y2: 160, stroke: '#1a3044', 'stroke-dasharray': '2 3' }, svg);
+  const lab = (x, y, txt, fill, size, weight) => { const t = svgEl('text', { x, y, fill, 'font-size': size, 'font-weight': weight || 400 }, svg); t.textContent = txt; };
+  svgEl('rect', { x: 6, y: 152, width: Math.max(0, tx(pre) - 6), height: 8, fill: '#ffd37b', opacity: 0.22 }, svg);
+  svgEl('line', { x1: 6, y1: 160, x2: 6, y2: 14, stroke: '#ffd37b', 'stroke-width': 4, 'stroke-linecap': 'round' }, svg);
+  const taps = M.computeEarlyTaps(params.roomWidthM, params.heightM, params.depthM, params.materialPct);
+  const g0 = taps.length ? Math.hypot(taps[0].gainL, taps[0].gainR) : 1;
+  taps.slice(0, 12).forEach((t) => {
+    const x = tx(pre + t.delayMs), h = Math.max(2, 100 * params.earlyPct / 100 * Math.hypot(t.gainL, t.gainR) / g0);
+    svgEl('line', { x1: x, y1: 160, x2: x, y2: 160 - h, stroke: '#69bfe9', 'stroke-width': 2.5 }, svg);
+  });
+  const curve = (Td) => { const p = []; for (let i = 0; i <= 40; i++) p.push(tx(pre + Td * 1000 * i / 40).toFixed(1) + ',' + ty(-60 * i / 40).toFixed(1)); return p; };
+  const tail = curve(T), hi = curve(T * hr);
+  svgEl('path', { d: 'M ' + tail[0].split(',')[0] + ' 160 L ' + tail.join(' L ') + ' Z', fill: '#70e7d9', opacity: 0.16 }, svg);
+  svgEl('polyline', { points: tail.join(' '), fill: 'none', stroke: '#70e7d9', 'stroke-width': 3 }, svg);
+  svgEl('polyline', { points: hi.join(' '), fill: 'none', stroke: '#f0f8ff', 'stroke-width': 2, 'stroke-dasharray': '5 4' }, svg);
+  lab(12, 24, 'Directo', '#ffd37b', 11, 600); lab(12, 146, 'Pre-delay ' + Math.round(pre) + ' ms', '#ffd37b', 10);
+  lab(140, 32, '150 ms →', '#a6bbcc', 9); lab(Math.min(300, tx(pre + T * 1000) - 34), 118, 'Cola', '#b4e9de', 11, 600);
+  lab(Math.min(296, Math.max(150, tx(pre + T * hr * 1000) - 44)), 148, 'Agudos', '#f0f8ff', 10);
+  $('decayInfo').textContent = `Cola ${fmt(T, 2)} s · agudos ${fmt(T * hr, 2)} s`;
+  $('reflInfo').textContent = taps.length ? `Primera reflexión ≈ ${fmt(taps[0].delayMs, 1)} ms después del pre-delay · ${taps.length} reflexiones tempranas calculadas` : '';
+  svg.setAttribute('aria-label', `Respuesta del espacio: ${Math.round(pre)} ms de pre-delay, reflexiones tempranas y cola de ${fmt(T, 2)} segundos; los agudos duran ${fmt(T * hr, 2)} segundos`);
+}
+function drawPreset() {
+  $('preset').textContent = M.SPECS.map((s) => `${s.name}: ${s.key === 'materialPct' ? Math.round(params[s.key]) + ' % (' + M.materialName(params[s.key]) + ')' : valueText(s.key, params[s.key])}`).join('\n');
+}
+$('copy').addEventListener('click', async () => { try { await navigator.clipboard.writeText($('preset').textContent); say('Valores copiados.'); } catch (_) { say('No se pudo copiar: selecciona el texto y cópialo a mano.'); } });
+$('vPlan').addEventListener('click', () => { view = 'plan'; $('vPlan').setAttribute('aria-pressed', 'true'); $('v3d').setAttribute('aria-pressed', 'false'); drawRoomStatic(); });
+$('v3d').addEventListener('click', () => { view = '3d'; $('v3d').setAttribute('aria-pressed', 'true'); $('vPlan').setAttribute('aria-pressed', 'false'); drawRoomStatic(); });
+$('anim').addEventListener('click', () => { animOn = !animOn; $('anim').textContent = animOn ? 'Pausa' : 'Animar'; });
+$('anim').textContent = animOn ? 'Pausa' : 'Animar';
+function frame(now) { if (last && animOn && view === 'plan' && !document.hidden) { tAnim += (now - last) / 1000; drawRings(); } last = now; requestAnimationFrame(frame); }
+
+/* ---------- Audio ---------- */
+let ctx = null, node = null, src = null, sound = 'clap';
+const SOUNDS = { clap: '👏 Palmada', voice: '🗣 Voz', bell: '🔔 Campana', impact: '✦ Impacto' };
+for (const [id, name] of Object.entries(SOUNDS)) {
+  const b = document.createElement('button'); b.className = 'btn small'; b.textContent = name; b.setAttribute('aria-pressed', String(id === sound));
+  b.addEventListener('click', () => { sound = id; document.querySelectorAll('#sources button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); play(); });
+  $('sources').appendChild(b);
+}
+function genSound(type, c) {
+  const sr = c.sampleRate, dur = type === 'bell' ? 1.8 : type === 'impact' ? 0.9 : type === 'voice' ? 1.25 : 0.28;
+  const b = c.createBuffer(1, Math.ceil(dur * sr), sr), d = b.getChannelData(0); let low = 0;
+  if (type === 'voice') {
+    // Voz sintética: sílabas con formantes de vocales. No es habla real.
+    const syl = [[.02, .25, [730, 1090, 2440]], [.33, .55, [530, 1840, 2480]], [.63, .88, [570, 840, 2410]], [.96, 1.2, [300, 2290, 3010]]];
+    for (const [t0, t1, F] of syl) { const f0 = 122; for (let i = Math.floor(t0 * sr); i < Math.min(d.length, Math.floor(t1 * sr)); i++) { const t = i / sr, lt = (t - t0) / (t1 - t0), env = Math.pow(Math.sin(Math.PI * Math.min(1, Math.max(0, lt))), 0.6); let s = 0; for (let h = 1; h <= 30; h++) { const f = f0 * h * (1 - 0.04 * lt); if (f > 4200) break; let g = 0; for (let q = 0; q < 3; q++) { const bw = 80 + q * 40; g += (q === 0 ? 1 : q === 1 ? 0.6 : 0.3) / (1 + ((f - F[q]) / bw) ** 2); } s += g * Math.sin(2 * Math.PI * f * t) / Math.sqrt(h); } d[i] = s * env * 0.11; } }
+    return b;
+  }
+  for (let i = 0; i < d.length; i++) {
+    const t = i / sr, r = Math.random() * 2 - 1;
+    if (type === 'clap') { const bu = Math.exp(-t * 55) + 0.42 * Math.exp(-Math.max(0, t - 0.012) * 120) * (t >= 0.012) + 0.28 * Math.exp(-Math.max(0, t - 0.025) * 120) * (t >= 0.025); low = 0.86 * low + 0.14 * r; d[i] = Math.max(-1, Math.min(1, (r - low) * bu * 0.55)); }
+    else if (type === 'bell') { const e = Math.exp(-3.4 * t); d[i] = (0.43 * Math.sin(2 * Math.PI * 680 * t) + 0.23 * Math.sin(2 * Math.PI * 1357 * t) + 0.12 * Math.sin(2 * Math.PI * 2034 * t)) * e; }
+    else { const e = Math.exp(-t * 11); low = 0.92 * low + 0.08 * r; d[i] = (Math.sin(2 * Math.PI * (105 * t - 72 * t * t)) * 0.45 + low * 0.37) * e; }
+  }
+  return b;
+}
+// Dos caminos con el mismo motor:
+// 1. AudioWorklet (en un hilo de audio aparte), cuando la página se sirve desde un sitio web.
+// 2. ScriptProcessor (en la página), cuando se abre como archivo local y el navegador
+//    no permite cargar el worklet. Suena igual; solo tiene un poco más de latencia.
+let fallbackCore = null;
+async function ensureAudio() {
+  if (ctx) { await ctx.resume(); return; }
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) throw new Error('Este navegador no admite Web Audio.');
+  ctx = new AC();
+  const out = ctx.createGain(); out.gain.value = 0.85; out.connect(ctx.destination);
+  try {
+    if (!ctx.audioWorklet || location.protocol === 'file:') throw new Error('sin worklet');
+    const url = URL.createObjectURL(new Blob([M.workletSource()], { type: 'application/javascript' }));
+    await ctx.audioWorklet.addModule(url);
+    URL.revokeObjectURL(url);
+    node = new AudioWorkletNode(ctx, 'mjreverb', { numberOfInputs: 1, numberOfOutputs: 1, outputChannelCount: [2], processorOptions: { params: $('bypass').checked ? { ...params, mixPct: 0 } : { ...params } } });
+  } catch (_) {
+    fallbackCore = new M.ReverbCore(); fallbackCore.setParams(params); fallbackCore.prepare(ctx.sampleRate);
+    node = ctx.createScriptProcessor(1024, 1, 2);
+    node.onaudioprocess = (e) => {
+      const inp = e.inputBuffer.getChannelData(0);
+      fallbackCore.process(inp, inp, e.outputBuffer.getChannelData(0), e.outputBuffer.getChannelData(1), inp.length);
+    };
+  }
+  node.connect(out);
+  sendParams();
+}
+function sendParams() {
+  const p = $('bypass').checked ? { ...params, mixPct: 0 } : { ...params };
+  if (fallbackCore) fallbackCore.setParams(p); else if (node) node.port.postMessage({ params: p });
+}
+async function play() {
+  try {
+    await ensureAudio();
+    if (src) { try { src.stop(); } catch (_) {} }
+    src = ctx.createBufferSource(); src.buffer = genSound(sound, ctx); src.connect(node); src.start();
+    tAnim = 0;
+    say(`Escuchando: ${SOUNDS[sound].replace(/^\S+\s/, '')}${$('bypass').checked ? ' sin reverberación' : ''}.`);
+  } catch (e) { say(e.message || 'No se pudo iniciar el audio.'); }
+}
+$('play').addEventListener('click', play);
+$('bypass').addEventListener('change', () => { sendParams(); say($('bypass').checked ? 'Bypass: solo el sonido original.' : 'Reverberación activa.'); });
+document.addEventListener('visibilitychange', () => { if (document.hidden && src) { try { src.stop(); } catch (_) {} } });
+
+/* ---------- Cambios ---------- */
+let pendingRoom = false;
+function changed() {
+  Object.keys(knobs).forEach(paintKnob);
+  drawGraph(); drawPreset(); sendParams();
+  if (!pendingRoom) { pendingRoom = true; requestAnimationFrame(() => { pendingRoom = false; drawRoomStatic(); }); }
+}
+changed(); drawRoomStatic(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
