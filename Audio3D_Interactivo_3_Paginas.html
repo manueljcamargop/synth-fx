@@ -71,11 +71,12 @@
 <section class="page" data-page="experimenta" hidden>
 <main class="layout">
 <section class="panel visual-panel" aria-labelledby="h-exp"><div class="panel-heading"><div><div class="eyebrow">02 · Experimenta</div><h2 id="h-exp">Mueve la fuente. Mira cada oído.</h2></div><span class="stage-tag">Tiempo · nivel · oreja</span></div>
-<div class="canvas-box"><canvas id="expTop" class="drag" width="900" height="620" role="img" aria-label="Vista superior interactiva: arrastra la fuente para cambiar dirección y distancia"></canvas><span class="scene-tag">ARRASTRA LA FUENTE</span></div>
+<div class="canvas-box"><canvas id="expTop" class="drag" width="900" height="620" role="img" aria-label="Vista superior interactiva: arrastra la fuente para cambiar dirección y distancia"></canvas><span class="scene-tag">MAPA · ARRASTRA LA FUENTE</span></div>
 <div class="two">
-<div class="canvas-box"><canvas id="expSide" class="drag" width="600" height="380" role="img" aria-label="Vista lateral: arrastra para cambiar la elevación"></canvas><span class="scene-tag">ELEVACIÓN</span></div>
+<div class="canvas-box"><canvas id="expSide" class="drag" width="600" height="380" role="img" aria-label="Altura de la fuente: arrastra hacia arriba o hacia abajo"></canvas><span class="scene-tag">ALTURA · ARRASTRA ▲▼</span></div>
 <div class="canvas-box"><canvas id="expResp" width="600" height="380" role="img" aria-label="Respuesta en frecuencia de cada oído"></canvas><span class="scene-tag">LO QUE OYE CADA OÍDO</span></div>
 </div>
+<p class="hint">El <b>mapa</b> de arriba decide hacia dónde está el sonido y a qué distancia; la barra de <b>altura</b>, qué tan arriba o abajo.</p>
 <div class="legend"><span><i class="key" style="background:#69bfe9"></i> Oído izquierdo</span><span><i class="key" style="background:#ffd37b"></i> Oído derecho</span><span>Zona sombreada: 5–13 kHz, donde actúa la oreja</span></div>
 <div class="insight"><span class="bulb">✦</span><span id="expInsight"></span></div>
 </section>
@@ -352,25 +353,46 @@ function drawExpTop() {
   const { c, g } = drawTopBase(cv);
   drawSource(c, g, S.az, S.dist, S.el, '', COL.src);
 }
+// Altura: barra vertical junto a una cabeza vista de frente
+function sideGeom(cv) {
+  const w = cv.width, h = cv.height, top = 46, bottom = h - 34;
+  const yFor = el => top + (90 - clamp(el, -40, 90)) / 130 * (bottom - top);
+  const elFor = y => clamp(90 - (y - top) / (bottom - top) * 130, -40, 90);
+  return { w, h, top, bottom, hx: 120, tx: 255, yFor, elFor };
+}
 function drawSide() {
   const cv = $('expSide'); if (!cv || S.page !== 'experimenta') return;
-  const c = cv.getContext('2d'), w = cv.width, h = cv.height, cx = w / 2, cy = h * 0.6, R = Math.min(w * 0.33, h * 0.45);
-  c.fillStyle = COL.bg; c.fillRect(0, 0, w, h);
-  c.strokeStyle = COL.ring; c.lineWidth = 3;
-  c.beginPath(); c.arc(cx, cy, R, rad(-90), rad(40)); c.stroke();     // adelante: −40…90
-  c.beginPath(); c.arc(cx, cy, R, rad(140), rad(270)); c.stroke();    // atrás
-  c.strokeStyle = '#1b3448'; c.lineWidth = 1.5; c.beginPath(); c.moveTo(cx - R - 20, cy); c.lineTo(cx + R + 20, cy); c.stroke();
-  c.fillStyle = COL.text; c.font = '700 26px system-ui'; c.textAlign = 'center'; c.textBaseline = 'middle';
-  c.fillText('arriba', cx, cy - R - 24); c.fillText('frente', cx + R, cy + 28); c.fillText('detrás', cx - R, cy + 28);
-  // cabeza de perfil
-  c.fillStyle = COL.head; c.strokeStyle = COL.headStroke; c.lineWidth = 3; c.beginPath(); c.arc(cx, cy, 24, 0, 2 * Math.PI); c.fill(); c.stroke();
-  c.fillStyle = COL.headStroke; c.beginPath(); c.moveTo(cx + 23, cy - 7); c.lineTo(cx + 34, cy + 3); c.lineTo(cx + 23, cy + 7); c.closePath(); c.fill();
-  c.fillStyle = '#b3a07a'; c.beginPath(); c.ellipse(cx - 4, cy, 6, 10, 0, 0, 2 * Math.PI); c.fill();
-  const behind = Math.abs(S.az) > 90, a = rad(S.el);
-  const x = cx + (behind ? -1 : 1) * R * Math.cos(a), y = cy - R * Math.sin(a);
-  c.strokeStyle = COL.src + '66'; c.lineWidth = 2.5; c.beginPath(); c.moveTo(cx, cy); c.lineTo(x, y); c.stroke();
-  c.fillStyle = COL.src; c.beginPath(); c.arc(x, y, 12, 0, 2 * Math.PI); c.fill();
-  c.fillStyle = COL.text; c.font = '800 26px system-ui'; c.fillText(`${Math.round(S.el)}°`, x + (behind ? -46 : 46), y);
+  const c = cv.getContext('2d'), g = sideGeom(cv), y0 = g.yFor(0);
+  c.fillStyle = COL.bg; c.fillRect(0, 0, g.w, g.h);
+  // cabeza de frente: centrada a la altura de los oídos
+  c.fillStyle = COL.head; c.strokeStyle = COL.headStroke; c.lineWidth = 3;
+  c.beginPath(); c.ellipse(g.hx, y0 - 6, 40, 50, 0, 0, 2 * Math.PI); c.fill(); c.stroke();
+  c.fillStyle = COL.left; c.beginPath(); c.ellipse(g.hx - 44, y0, 8, 15, 0, 0, 2 * Math.PI); c.fill();
+  c.fillStyle = COL.right; c.beginPath(); c.ellipse(g.hx + 44, y0, 8, 15, 0, 0, 2 * Math.PI); c.fill();
+  c.fillStyle = COL.headStroke; c.beginPath(); c.arc(g.hx - 14, y0 - 16, 4, 0, 2 * Math.PI); c.arc(g.hx + 14, y0 - 16, 4, 0, 2 * Math.PI); c.fill();
+  // línea de los oídos
+  c.strokeStyle = '#3a5b72'; c.setLineDash([8, 7]); c.lineWidth = 2;
+  c.beginPath(); c.moveTo(g.hx + 54, y0); c.lineTo(g.tx, y0); c.stroke(); c.setLineDash([]);
+  // barra
+  c.strokeStyle = COL.ring; c.lineWidth = 12; c.lineCap = 'round';
+  c.beginPath(); c.moveTo(g.tx, g.top); c.lineTo(g.tx, g.bottom); c.stroke(); c.lineCap = 'butt';
+  c.font = '600 22px system-ui'; c.textAlign = 'left'; c.textBaseline = 'middle';
+  for (const [el, txt] of [[90, 'Encima de tu cabeza · 90°'], [45, 'Diagonal arriba · 45°'], [0, 'A la altura de tus oídos · 0°'], [-40, 'Abajo · −40°']]) {
+    const y = g.yFor(el);
+    c.strokeStyle = '#5f8196'; c.lineWidth = 2; c.beginPath(); c.moveTo(g.tx - 14, y); c.lineTo(g.tx + 14, y); c.stroke();
+    c.fillStyle = el === 0 ? '#cfe3ee' : COL.text; c.fillText(txt, g.tx + 26, y);
+  }
+  // fuente
+  const y = g.yFor(S.el);
+  c.fillStyle = COL.src + '33'; c.beginPath(); c.arc(g.tx, y, 24, 0, 2 * Math.PI); c.fill();
+  c.fillStyle = COL.src; c.beginPath(); c.arc(g.tx, y, 14, 0, 2 * Math.PI); c.fill();
+  c.fillStyle = '#071320'; c.beginPath(); c.arc(g.tx, y, 5, 0, 2 * Math.PI); c.fill();
+  // número sobre un recuadro, a la izquierda de la barra y por encima de la línea de los oídos
+  const label = `${Math.round(S.el)}°`, ly = y - 30;
+  c.font = '800 24px system-ui'; c.textAlign = 'center';
+  const lw = c.measureText(label).width + 16;
+  c.fillStyle = '#0b2a35'; c.fillRect(g.tx - lw / 2, ly - 16, lw, 32);
+  c.fillStyle = COL.src; c.fillText(label, g.tx, ly + 1);
 }
 function drawResponse(an) {
   const cv = $('expResp'); if (!cv || S.page !== 'experimenta') return;
@@ -556,11 +578,7 @@ pointerOn($('expTop'), ([x, y]) => {
   if (S.orbit) { S.orbit = 0; }
   syncExp();
 });
-pointerOn($('expSide'), ([x, y]) => {
-  const cv = $('expSide'), cx = cv.width / 2, cy = cv.height * 0.6;
-  S.el = clamp(deg(Math.atan2(cy - y, Math.abs(x - cx) + 0.001)), -40, 90);
-  syncExp();
-});
+pointerOn($('expSide'), ([, y]) => { S.el = Math.round(sideGeom($('expSide')).elFor(y)); syncExp(); });
 
 // ------------------------------------------------------------------ APLICA
 function syncApl() {
