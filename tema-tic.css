@@ -1,0 +1,30 @@
+/* Tema visual compartido con TIC · se carga al final del <head> y solo cambia la apariencia. */
+:root{--bg:#0b1120;--panel:#141e32;--panel2:#1b2941;--stroke:#2d3b53;--text:#edf3ff;--muted:#adbbd2;--cyan:#63e4ce;--cyan2:#3fbfaa;--blue:#b6a0ff;--purple:#b6a0ff;--coral:#ffab95;--ok:#90dfac;--bad:#ffab95}
+body{background:var(--bg)!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible,.sfx-knob:focus-visible{outline-color:var(--coral)!important}
+/* Marca */
+.mark,.logo .mark{background:#142f31!important;border:1px solid #41665f;color:var(--cyan)!important;box-shadow:none!important;border-radius:11px}
+.topbar,.topline{border-bottom-color:var(--stroke)!important}
+/* Paneles y tarjetas */
+.panel,.card{background:linear-gradient(130deg,#172439,#131c2e)!important;border-color:var(--stroke)!important}
+.banner{background:#162937!important;border-color:#34525d!important}
+.insight,.callout{background:#162937!important}
+.callout.amber,.stage-tag{background:#31252a!important;color:var(--coral)!important}
+.chip{background:#223147!important}
+.step{background:#141e32!important}
+.step[aria-current],.step[aria-current=step],.step[aria-current=page],.step[aria-current=true]{background:#193d42!important;border-color:#31575b!important;color:var(--cyan)}
+.progress>div{background:var(--cyan)!important}
+/* Botones */
+.btn{background:var(--panel2)!important;border-color:#56657d!important;color:var(--text)!important}
+.btn:hover{filter:brightness(1.12)}
+.btn.primary{background:var(--cyan)!important;border-color:var(--cyan)!important;color:#09241f!important;font-weight:750}
+.btn.warn{background:#31252a!important;border-color:#79534f!important;color:#ffe6df!important}
+/* Selecciones */
+.choice.chosen,.choice[aria-pressed=true],.mood[aria-pressed=true],.scenario[aria-pressed=true],.sound[aria-pressed=true],.btn[aria-pressed=true]{background:#2a254a!important;border-color:var(--purple)!important}
+.preset{background:#2a2645!important}
+.feedback.good,.feedback.ok,.choice.good{background:#173a2b!important}
+.feedback.bad,.feedback.no,.choice.badc{background:#31252a!important}
+/* Perillas y ondas (synthfx.css) */
+.sfx-knob-progress{stroke:var(--cyan)}.sfx-knob-track{stroke:#2d3b53}.sfx-knob-face{fill:#1b2941;stroke:#56657d}.sfx-knob-pointer path{stroke:#edf3ff}.sfx-knob:hover .sfx-knob-face,.sfx-knob.is-dragging .sfx-knob-face{fill:#223a47;stroke:var(--cyan)}
+.sfx-wave svg,.waveopt svg{color:var(--cyan)}.sfx-wave[aria-pressed=true]{border-color:var(--purple);background:#2a254a;box-shadow:inset 0 0 0 1px var(--purple)}
+.sfx-home a,.sfx-subtitle,.sfx-resource summary{color:var(--cyan)}
