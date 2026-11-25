@@ -15,10 +15,14 @@ a{color:var(--aqua);text-underline-offset:4px}
 .brand b{color:var(--aqua)}
 .brand small{display:block;font-size:8px;letter-spacing:.17em;color:var(--muted);margin-top:5px}
 .brand-mark{height:40px;width:40px;border:1px solid #41665f;border-radius:11px;display:grid;place-content:center;color:var(--aqua);font-size:24px;background:#142f31;line-height:1}
-.topbar nav{display:flex;align-items:center;gap:27px;font-size:13px}
-.topbar nav a{color:var(--muted);text-decoration:none;display:inline-flex;gap:7px;align-items:center;min-height:44px}
-.topbar nav a:hover{color:var(--ink)}
-.topbar nav a[aria-current=page]{color:var(--aqua)}
+.topbar nav{display:flex;align-items:center;gap:12px}
+.topbar nav a{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:800;color:var(--ink);text-decoration:none;padding:12px 20px;min-height:52px;border-radius:14px;border:2px solid var(--line);background:var(--raised);letter-spacing:-.01em;transition:border-color .15s,background .15s}
+.topbar nav a span{font-size:20px;line-height:1;color:var(--aqua)}
+.topbar nav a.alt span{color:var(--purple)}
+.topbar nav a:hover{border-color:#6b7a93}
+.topbar nav a[aria-current=page]{background:var(--aqua);border-color:var(--aqua);color:#09241f}
+.topbar nav a.alt[aria-current=page]{background:var(--purple);border-color:var(--purple);color:#1d1442}
+.topbar nav a[aria-current=page] span{color:inherit}
 
 /* Estructura con barra lateral */
 .layout{display:grid;grid-template-columns:245px minmax(0,1fr);max-width:1600px;margin:auto}
@@ -79,7 +83,7 @@ p{margin:0 0 16px}
 footer{border-top:1px solid var(--line);padding-top:23px;margin-top:40px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:10px;color:#94a5c0}
 footer b{color:var(--aqua);margin:0 5px}
 
-@media(max-width:1100px){.layout{grid-template-columns:215px minmax(0,1fr)}.sidebar{padding:30px 16px}main{padding:32px 27px}.hero{grid-template-columns:1.5fr .8fr}.hero-art{min-height:180px}.journey{font-size:10px;gap:7px}.journey b{display:block}}
+@media(max-width:1100px){.topbar nav a{font-size:15px;padding:10px 14px}.layout{grid-template-columns:215px minmax(0,1fr)}.sidebar{padding:30px 16px}main{padding:32px 27px}.hero{grid-template-columns:1.5fr .8fr}.hero-art{min-height:180px}.journey{font-size:10px;gap:7px}.journey b{display:block}}
 @media(max-width:900px){.hero{grid-template-columns:1fr}.hero-art{display:none}.exercise-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.topbar{padding:15px 18px;min-height:72px}.brand{font-size:23px}.topbar nav{display:none}.layout{display:block}.sidebar{position:relative;height:auto;overflow:visible;border-right:0;border-bottom:1px solid var(--line);padding:18px}.route-label,.local-notice{display:none}.side-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.block-link{flex-direction:column;padding:10px 4px;margin:0;text-align:center;font-size:11px;gap:8px}.block-link small{display:none}main{padding:28px 20px 22px}h1{font-size:44px}.exercise-grid,.exercise-grid.two{grid-template-columns:1fr}.section-head{flex-wrap:wrap}}
+@media(max-width:700px){.topbar{padding:15px 18px;min-height:72px}.brand{font-size:23px}.topbar nav{order:3;width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.topbar nav a{font-size:12px;padding:8px 4px;min-height:48px;justify-content:center;gap:5px;border-radius:12px}.topbar nav a span{font-size:14px}.topbar{flex-wrap:wrap;padding-bottom:12px}.sidebar{display:none}.layout{display:block}.sidebar{position:relative;height:auto;overflow:visible;border-right:0;border-bottom:1px solid var(--line);padding:18px}.route-label,.local-notice{display:none}.side-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.block-link{flex-direction:column;padding:10px 4px;margin:0;text-align:center;font-size:11px;gap:8px}.block-link small{display:none}main{padding:28px 20px 22px}h1{font-size:44px}.exercise-grid,.exercise-grid.two{grid-template-columns:1fr}.section-head{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
